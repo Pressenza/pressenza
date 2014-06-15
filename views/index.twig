@@ -5,12 +5,12 @@
 	{% for post in posts %}
 		{% include ['tease.twig'] %}
 	{% endfor %}
-	
+
 	<ul class="pagination">
     {% if pagination.prev %}
         <li><a href="{{pagination.prev.link}}" class="prev {{pagination.prev.link|length ? '' : 'invisible'}}">&laquo;</a></li>
     {% endif %}
-    
+
 	{% for page in pagination.pages %}
 	    <li>
     	{% if page.link %}
@@ -20,9 +20,9 @@
   		{% endif %}
         </li>
     {% endfor %}
-    
+
     {% if pagination.next %}
         <li><a href="{{pagination.next.link}}" class="next {{pagination.next.link|length ? '' : 'invisible'}}">&raquo;</a></li>
     {% endif %}
-	</ul>	
+	</ul>
 {% endblock %}

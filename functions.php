@@ -11,7 +11,7 @@
 	add_action('wp_enqueue_scripts', 'load_scripts');
 
 	define('THEME_URL', get_template_directory_uri());
-	
+
 	register_sidebar( array(
 		'name'          => __('Primary Sidebar'),
 		'id'            => 'sidebar-1',
@@ -28,14 +28,14 @@
 		'before_widget' => '<div class="col-xs-12 col-md-4">',
 		'after_widget'  => '</div>'
 	) );
-	
+
 	function add_to_context($data)
 	{
 		$data['THEME_URL'] = THEME_URL;
 		$data['homeurl'] = get_site_url();
 		if(ICL_LANGUAGE_CODE != 'en')
 		{
-			$data['homeurl'] .= '/'.ICL_LANGUAGE_CODE; 	
+			$data['homeurl'] .= '/'.ICL_LANGUAGE_CODE;
 		}
 		// Menus
 		$data['topmenu'] = new TimberMenu(36);
@@ -60,19 +60,19 @@
 	}
 
 	function load_scripts()
-	{		
+	{
 		wp_enqueue_style('bootstrap', THEME_URL . '/vendor/bootstrap/css/bootstrap.min.css', array(), '3.1.1');
 		wp_enqueue_style('style', get_stylesheet_uri());
-		
+
 		wp_enqueue_script('bootstrap', THEME_URL . '/vendor/bootstrap/js/bootstrap.min.js', array(), false, true);
 	}
-	
-	
-	function pressenza_gallery($output, $attr) 
+
+
+	function pressenza_gallery($output, $attr)
 	{
 		global $post;
-		
-		if (isset($attr['orderby'])) 
+
+		if (isset($attr['orderby']))
 		{
 		    $attr['orderby'] = sanitize_sql_orderby($attr['orderby']);
 		    if (!$attr['orderby'])
@@ -80,7 +80,7 @@
 		        unset($attr['orderby']);
       		}
 		}
-		
+
 		extract(shortcode_atts(array(
 		    'order' => 'ASC',
 		    'orderby' => 'menu_order ID',
@@ -93,65 +93,65 @@
 		    'include' => '',
 		    'exclude' => ''
 		), $attr));
-		
+
 		$id = intval($id);
 		if ('RAND' == $order) $orderby = 'none';
-		
-		if (!empty($include)) 
+
+		if (!empty($include))
 		{
 		    $include = preg_replace('/[^0-9,]+/', '', $include);
 		    $_attachments = get_posts(array(
-				'include' => $include, 
-				'post_status' => 'inherit', 
-				'post_type' => 'attachment', 
-				'post_mime_type' => 'image', 
-				'order' => $order, 
+				'include' => $include,
+				'post_status' => 'inherit',
+				'post_type' => 'attachment',
+				'post_mime_type' => 'image',
+				'order' => $order,
 				'orderby' => $orderby
 			));
-		
+
 		    $attachments = array();
-		    foreach ($_attachments as $key => $val) 
+		    foreach ($_attachments as $key => $val)
 			{
 		        $attachments[$val->ID] = $_attachments[$key];
 		    }
 		}
-		
+
 		if (empty($attachments)) return '';
-		
+
 		// Here's your actual output, you may customize it to your need
 		$output = "<div class=\"slideshow-wrapper\">\n";
 		$output .= "<div class=\"preloader\"></div>\n";
 		$output .= "<ul data-orbit>\n";
-		
+
 		// Now you loop through each attachment
-		foreach ($attachments as $id => $attachment) 
+		foreach ($attachments as $id => $attachment)
 		{
-		    // Fetch all data related to attachment 
+		    // Fetch all data related to attachment
 		    $img = wp_prepare_attachment_for_js($id);
-		
+
 		    // If you want a different size change 'large' to eg. 'medium'
 		    $url = $img['sizes']['large']['url'];
 		    $height = $img['sizes']['large']['height'];
 		    $width = $img['sizes']['large']['width'];
 		    $alt = $img['alt'];
-		
+
 		    // Store the caption
 		    $caption = $img['caption'];
-		
+
 		    $output .= "<li>\n";
 		    $output .= "<img src=\"{$url}\" width=\"{$width}\" height=\"{$height}\" alt=\"{$alt}\" />\n";
-		
+
 		    // Output the caption if it exists
-		    if ($caption) 
-			{ 
+		    if ($caption)
+			{
 		        $output .= "<div class=\"orbit-caption\">{$caption}</div>\n";
 		    }
 		    $output .= "</li>\n";
 		}
-		
+
 		$output .= "</ul>\n";
 		$output .= "</div>\n";
-		
+
 		return $output;
 	}
-	
+

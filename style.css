@@ -11,7 +11,7 @@ Version: 1.0
 	border-radius: 0;
 }
 .navbar-inverse {
-	background-color: #40454D;	
+	background-color: #40454D;
 }
 .navbar-collapse {
 	padding: 0;
@@ -180,7 +180,7 @@ p {
 	margin: 0 0 15px 0;
 }
 p.list {
-	margin: 0 0 10px 0;	
+	margin: 0 0 10px 0;
 }
 span.list-caret {
 	color: #999;
@@ -236,7 +236,7 @@ figcaption {
 	width: 100%;
 	padding: 5px 8px;
 	text-align: left;
-	background-color: rgba(0,0,0,0.6);	
+	background-color: rgba(0,0,0,0.6);
 }
 .carousel-caption h2 {
     margin: 0;
@@ -268,7 +268,7 @@ figcaption {
 
 /* Panel */
 .panel-group .panel {
-	border-radius: 0;	
+	border-radius: 0;
 	box-shadow: 1px 1px 2px 0px #afafaf;
 }
 .panel-heading {
@@ -546,39 +546,39 @@ figcaption {
 
 @media only screen and (max-width: 767px) {
 
-.navbar-collapse {
-    max-height: none;
-    overflow: visible;
-}
-.navbar-form {
-	margin: 0 10px;
-	padding: 10px 0;
-	border: 0;
-	box-shadow: none;
-}
-.nav > li {
-	padding-left: 10px;
-	border-bottom: 1px solid #aaa
-}
-.navbar-brand {
-	margin-right: 10px;
-}
-.ml-btn {
-	margin-top: 10px;
-	border: 0;
-	color: #fff;
-	background-color: #40454D;
-}
-#header {
-	padding-top: 16px;
-}
-.bottom-bar p.copyrights {
-    font-size: 11px;
-    margin: 12px 0;
-}
+	.navbar-collapse {
+	    max-height: none;
+	    overflow: visible;
+	}
+	.navbar-form {
+		margin: 0 10px;
+		padding: 10px 0;
+		border: 0;
+		box-shadow: none;
+	}
+	.nav > li {
+		padding-left: 10px;
+		border-bottom: 1px solid #aaa
+	}
+	.navbar-brand {
+		margin-right: 10px;
+	}
+	.ml-btn {
+		margin-top: 10px;
+		border: 0;
+		color: #fff;
+		background-color: #40454D;
+	}
+	#header {
+		padding-top: 16px;
+	}
+	.bottom-bar p.copyrights {
+	    font-size: 11px;
+	    margin: 12px 0;
+	}
 
-.ctc {
-	display: none;
-}
+	.ctc {
+		display: none;
+	}
 
 }

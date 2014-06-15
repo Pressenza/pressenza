@@ -2,15 +2,15 @@
 	<section class="box-content">
 	{% block content %}
 		<div class="article-list">
-			
+
 			<div class="article-list-date">
 				<span class="pull-left">{{ post.post_date|date("d.m.Y") }}</span>
 				<span class="pull-right">{{exp.postedby}}: <a href="{{post.author.path}}"> {{ post.author.name }} </a></span>
 				<div class="clearfix"></div>
 			</div>
-			
+
 			<h4><a href="{{post.link}}">{{post.title}}</a></h4>
-			
+
 			<div class="row">
 				{% if post.get_thumbnail %}
 				<div class="col-sm-4 col-xs-12">
@@ -19,13 +19,13 @@
 				<div class="col-sm-8 col-xs-12">
 					<p>{{post.get_preview}}</p>
 				</div>
-				{% else %}	
+				{% else %}
 				<div class="col-xs-12">
 					<p>{{post.get_preview}}</p>
 				</div>
-				{% endif %}	
+				{% endif %}
 			</div>
-			
+
 		</div>
 	{% endblock %}
 	</section>
