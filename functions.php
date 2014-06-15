@@ -61,10 +61,10 @@
 
 	function load_scripts()
 	{		
-		wp_enqueue_style('bootstrap', THEME_URL . '/css/bootstrap.min.css', array(), '3.1.0');
+		wp_enqueue_style('bootstrap', THEME_URL . '/vendor/bootstrap/css/bootstrap.min.css', array(), '3.1.1');
 		wp_enqueue_style('style', get_stylesheet_uri());
 		
-		wp_enqueue_script('bootstrap', THEME_URL . '/js/bootstrap.min.js', array(), false, true);
+		wp_enqueue_script('bootstrap', THEME_URL . '/vendor/bootstrap/js/bootstrap.min.js', array(), false, true);
 	}
 	
 	
