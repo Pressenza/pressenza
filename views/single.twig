@@ -1,0 +1,80 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<article class="box-page" id="post-{{post.ID}}">
+		<section class="box-content">
+			<div class="article-view-date">{{ post.post_date|date("d.m.Y") }}</div>
+
+			<h1>{{post.title}}</h1>
+
+			<div class="article-view-meta">
+				{{exp.postedby}}: <a href="{{post.author.path}}">{{post.author.name}}</a> &nbsp; {{exp.postedin}}: {{postcats}}
+			</div>
+
+			{% if post.get_thumbnail %}
+			<figure>
+				<img src="{{post.thumbnail.src}}" class="img-responsive" alt="{{post.title}}" />
+				<figcaption>
+				{% if language.language_code == 'de' %}
+				    {{post.thumbnail.caption_de}}
+				{% elseif language.language_code == 'es' %}
+				    {{post.thumbnail.caption_es}}
+				{% elseif language.language_code == 'fr' %}
+				    {{post.thumbnail.caption_fr}}
+				{% elseif language.language_code == 'it' %}
+				    {{post.thumbnail.caption_it}}
+				{% elseif language.language_code == 'de' %}
+				    {{post.thumbnail.caption_de}}
+				{% elseif language.language_code == 'pt' %}
+				    {{post.thumbnail.caption_pt}}
+				{% else %}
+				    {{post.thumbnail.caption}}
+				{% endif %}
+
+				{% if post.thumbnail.credits_pod != '' %}
+					(Image by {{post.thumbnail.credits_pod}})
+				{% endif %}
+				</figcaption>
+			</figure>
+			{% endif %}
+
+			<div class="article-view-content">
+				{{post.content}}
+			</div>
+		</section>
+	</article>
+
+
+	<div class="article-nav">
+		<p class="pull-left"><a href="{{post.prev.link}}" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-arrow-left"></span> &nbsp; {{exp.previous}}</a></p>
+		<p class="pull-right"><a href="{{post.next.link}}"  class="btn btn-default btn-sm">{{exp.next}} &nbsp; <span class="glyphicon glyphicon-arrow-right"></span></a></p>
+		<div class="clearfix"></div>
+	</div>
+
+
+	<div class="box">
+		<h2>{{exp.ata}}</h2>
+		<div class="box-content">
+			<div class="row">
+				<div class="col-sm-2 col-xs-4">
+				{{ authoravatar }}
+				</div>
+				<div class="col-sm-10 col-xs-8">
+					<p><strong><a href="{{post.author.link}}" rel="author">{{post.author.name}}</a></strong><br />{{post.get_author.description}}</p>
+					<div class="author_info">
+						<div class="pull-left">Number of Entries : {{ authorposts }}</div>
+						<div class="pull-right">
+						{% if post.get_author.facebook %}
+							<a href="{{post.get_author.facebook}}"><img src="/wp-content/themes/pressenza/images/icons/facebook.png" alt="Facebook"></a> &nbsp;
+						{% endif %}
+						{% if post.get_author.twitter %}
+							<a href="http://twitter.com/{{post.get_author.twitter}}"><img src="/wp-content/themes/pressenza/images/icons/twitter.png" alt="Twitter"></a>
+						{% endif %}
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

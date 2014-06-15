@@ -1,0 +1,60 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+<h1 class="pagetitle">{{ title }}</h1>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+
+		<div class="row">
+				{% if author.photo %}
+					<div class="col-sm-4 col-xs-12">
+						<img src="{{TimberImage(author.photo)|resize(200, 200)}}" alt="{{title}}" title="{{title}}" class="img-responsive"/>
+					</div>
+					<div class="col-sm-8 col-xs-12">
+						<p>
+							{% if language.language_code == 'de' %}
+							    {{author.bio_de}}
+							{% elseif language.language_code == 'es' %}
+							    {{author.bio_es}}
+							{% elseif language.language_code == 'fr' %}
+							    {{author.bio_fr}}
+							{% elseif language.language_code == 'it' %}
+							    {{author.bio_it}}
+							{% elseif language.language_code == 'pt' %}
+							    {{author.bio_pt}}
+							{% else %}
+							    {{author.description}}
+							{% endif %}
+						</p>
+					</div>
+				{% else %}
+				<div class="col-xs-12">
+					<p>
+						{% if language.language_code == 'de' %}
+						    {{author.bio_de}}
+						{% elseif language.language_code == 'es' %}
+						    {{author.bio_es}}
+						{% elseif language.language_code == 'fr' %}
+						    {{author.bio_fr}}
+						{% elseif language.language_code == 'it' %}
+						    {{author.bio_it}}
+						{% elseif language.language_code == 'pt' %}
+						    {{author.bio_pt}}
+						{% else %}
+						    {{author.description}}
+						{% endif %}
+					</p>
+				</div>
+				{% endif %}
+			</div>
+
+  </div>
+</div>
+
+	{% for post in posts %}
+		{% include ["tease.twig"] %}
+	{% endfor %}
+
+{% endblock %}
