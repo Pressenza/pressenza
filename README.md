@@ -1,4 +1,6 @@
-pressenza
+Pressenza WordPress theme
 =========
 
-pressenza.com WordPress theme, based on Timber
+[pressenza.com](http://pressenza.com) WordPress theme, based on Timber
+
+
