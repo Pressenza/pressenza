@@ -23,8 +23,5 @@ $exp['previous'] = __('Previous', 'pressenza');
 $exp['next'] = __('Next', 'pressenza');
 $exp['ata'] = __('About The Author', 'pressenza');
 $context['exp'] = $exp;
-//$context['comment_form'] = TimberHelper::get_comment_form();
-
-//print_r($post);
 
 Timber::render('single.twig', $context);
