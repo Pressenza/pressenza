@@ -183,6 +183,7 @@ p.list {
 	margin: 0 0 10px 0;
 }
 p.icl_post_in_other_langs {
+	padding: 3px 5px;
 	background-color: #eee;
 }
 span.list-caret {
