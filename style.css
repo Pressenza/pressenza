@@ -185,6 +185,7 @@ p.list {
 p.icl_post_in_other_langs, 
 p.tags {
 	padding: 3px 5px;
+	font-size: 12px;
 	background-color: #eee;
 }
 span.list-caret {

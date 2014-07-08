@@ -40,25 +40,10 @@
 
 			<div class="article-view-content">
 				{{post.content}}
-				
 				<p class="tags">{{posttags}}</p>
-				
-				<ul class="tag-list">
-    {% for term in post.terms('tags') %}
-        <li><a href="{{term.link}}">{{term.name}}</a></li>
-    {% endfor %}
-    </ul>
 			</div>
 		</section>
 	</article>
-
-
-	<!--div class="article-nav">
-		<p class="pull-left"><a href="{{post.prev.link}}" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-arrow-left"></span> &nbsp; {{exp.previous}}</a></p>
-		<p class="pull-right"><a href="{{post.next.link}}"  class="btn btn-default btn-sm">{{exp.next}} &nbsp; <span class="glyphicon glyphicon-arrow-right"></span></a></p>
-		<div class="clearfix"></div>
-	</div-->
-
 
 	<div class="box">
 		<h2>{{exp.ata}}</h2>
