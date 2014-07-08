@@ -416,6 +416,12 @@ figcaption {
 	color: #666;
 	border-bottom: 1px dotted #666;
 }
+.article-view-meta-bottom {
+	margin-top: 15px;
+	font-size: 12px;
+	color: #666;
+	border-top: 1px dotted #666;
+}
 .article-view-meta a {
 	font-weight: bold;
 	color: #666;
