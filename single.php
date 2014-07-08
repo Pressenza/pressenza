@@ -13,6 +13,7 @@ $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
 $context['postcats'] = get_the_category_list(', ', '', $post->ID);
+$context['posttags'] = the_tags();
 $context['authorposts'] = count_user_posts($post->post_author);
 $context['authoravatar'] = get_avatar($post->post_author, 70);
 $context['wp_title'] .= ' - ' . $post->title();
