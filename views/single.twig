@@ -3,12 +3,11 @@
 {% block content %}
 	<article class="box-page" id="post-{{post.ID}}">
 		<section class="box-content">
-			<div class="article-view-date">{{ post.post_date|date("d.m.Y") }}</div>
-
+		
 			<h1>{{post.title}}</h1>
 
 			<div class="article-view-meta">
-				{{exp.postedby}}: <a href="{{post.author.path}}">{{post.author.name}}</a> &nbsp; {{exp.postedin}}: {{postcats}}
+				{{ post.post_date|date("d.m.Y") }} &nbsp; {{exp.postedby}}: <a href="{{post.author.path}}">{{post.author.name}}</a>
 			</div>
 
 			{% if post.get_thumbnail %}
@@ -40,8 +39,9 @@
 
 			<div class="article-view-content">
 				{{post.content}}
-				<div class="article-view-meta-bottom">Categories: {{postcats}}<br>{{posttags}}</p>
+				<div class="article-view-meta-bottom">{{exp.categories}}: {{postcats}}<br>{{posttags}}</p>
 			</div>
+			
 		</section>
 	</article>
 

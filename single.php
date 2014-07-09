@@ -20,8 +20,7 @@ $context['wp_title'] .= ' - ' . $post->title();
 
 $exp['postedby'] = __('Posted by', 'pressenza');
 $exp['postedin'] = __('in', 'pressenza');
-$exp['previous'] = __('Previous', 'pressenza');
-$exp['next'] = __('Next', 'pressenza');
+$exp['categories'] = __('Categories', 'pressenza');
 $exp['ata'] = __('About The Author', 'pressenza');
 $context['exp'] = $exp;
 
