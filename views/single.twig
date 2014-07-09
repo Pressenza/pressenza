@@ -7,7 +7,7 @@
 			<h1>{{post.title}}</h1>
 
 			<div class="article-view-meta">
-				{{ post.post_date|date("d.m.Y") }} &nbsp; {{exp.postedby}}: <a href="{{post.author.path}}">{{post.author.name}}</a>
+				<strong>{{ post.post_date|date("d.m.Y") }}</strong> &nbsp; {{exp.postedby}}: <a href="{{post.author.path}}">{{post.author.name}}</a>
 			</div>
 
 			{% if post.get_thumbnail %}
