@@ -142,10 +142,9 @@ ul.top_social_icons li.tumblr a:hover {
     background-color: #2D4961;
 }
 
-.shareaholic-share-buttons-container ul.shareaholic-share-buttons {
+ul.shareaholic-share-buttons {
 	padding: 0 !important;
 }
-
 
 a {
 	color: #40454D

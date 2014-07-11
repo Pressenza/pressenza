@@ -23,7 +23,7 @@
 	if (is_home())
 	{
 		// get Featured (Category 10)
-		$context['featured'] = Timber::get_posts(array( 'numberposts' => '8', 'category' => 10, 'suppress_filters' => 0 ));
+		$context['featured'] = Timber::get_posts(array( 'numberposts' => '8', 'category' => 9609, 'suppress_filters' => 0 ));
 
 		// get Latest
 		$context['latest'] = Timber::get_posts(array( 'numberposts' => '5', 'suppress_filters' => 0 ));
