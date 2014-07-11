@@ -22,8 +22,9 @@
 
 	if (is_home())
 	{
-		// get Featured (Category 10)
-		$context['featured'] = Timber::get_posts(array( 'numberposts' => '8', 'category' => 96096546464, 'suppress_filters' => 0 ));
+		// get Featured (Category 10) post_type=movies&numberposts=8&orderby=rand
+		//$context['featured'] = Timber::get_posts(array( 'numberposts' => '8', 'category' => 10, 'suppress_filters' => 0 ));
+		$context['featured'] = Timber::get_posts('post_type=post&numberposts=8&category=10&orderby=rand&suppress_filters=0');
 
 		// get Latest
 		$context['latest'] = Timber::get_posts(array( 'numberposts' => '5', 'suppress_filters' => 0 ));
