@@ -15,12 +15,13 @@ $context['post'] = $post;
 
 $postcategories = wp_get_post_categories($post->ID);
 $cats = array();
+$catexlude = array(9609, 9610, 9611, 9612, 9613, 9614);
 foreach($postcategories as $c)
 {
-	if($c != 9609 && $c != 9613)
+	if(!in_array($c, $catexlude))
 	{
 	$cat = get_category($c);
-	$cats[] = '<a href="' . get_category_link( $cat->term_id ) . '">' . $cat->cat_name . '</a>';
+	$cats[] = '<a href="' . get_category_link( $cat->term_id ) . '">' . $cat->name . '</a>';
 	}
 }
 $context['postcats'] = implode(', ', $cats);
