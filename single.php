@@ -20,7 +20,7 @@ foreach($postcategories as $c)
 	if($c != 9609)
 	{
 	$cat = get_category($c);
-	$cats[] = '<a href="' . get_category_link( $cat->term_id ) . '">' . $cat->name . '</a>';
+	$cats[] = '<a href="' . get_category_link( $cat->term_id ) . '">' . $cat->cat_name . '</a>';
 	}
 }
 $context['postcats'] = implode(', ', $cats);
