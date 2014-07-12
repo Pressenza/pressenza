@@ -27,7 +27,7 @@
 		//$context['featured'] = Timber::get_posts('post_type=post&numberposts=8&category=10&suppress_filters=0');
 
 		// get Latest
-		$context['latest'] = Timber::get_posts(array( 'numberposts' => '5' ));
+		$context['latest'] = Timber::get_posts(array( 'numberposts' => '5', 'suppress_filters' => 0 ));
 
 		// get Opinions (Category 160)
 		$context['opinions'] = Timber::get_posts(array( 'numberposts' => '3', 'category' => 160, 'suppress_filters' => 0 ));
