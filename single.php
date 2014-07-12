@@ -13,14 +13,14 @@ $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
 
-$postcategories = wp_get_post_categories( $post->ID );
+$postcategories = wp_get_post_categories($post->ID);
 $cats = array();
 foreach($postcategories as $c)
 {
 	if($c != 9609)
 	{
-	$cat = get_category( $c );
-	$cats[] = '<a href="' . get_category_link( $c->term_id ) . '">' . $c->name . '</a>';
+	$cat = get_category($c);
+	$cats[] = '<a href="' . get_category_link( $cat->term_id ) . '">' . $cat->name . '</a>';
 	}
 }
 $context['postcats'] = implode(', ', $cats);
