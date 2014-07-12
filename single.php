@@ -12,7 +12,19 @@
 $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
-$context['postcats'] = get_the_category_list(', ', '', $post->ID);
+
+$postcategories = wp_get_post_categories( $post->ID );
+$cats = array();
+foreach($postcategories as $c)
+{
+	if($c != 9609)
+	{
+	$cat = get_category( $c );
+	$cats[] = '<a href="' . get_category_link( $c->term_id ) . '">' . $c->name . '</a>';
+	}
+}
+$context['postcats'] = implode(', ', $cats);
+//$context['postcats'] = get_the_category_list(', ', '', $post->ID);
 $context['posttags'] = get_the_tag_list('Tags: ', ', ');
 $context['authorposts'] = count_user_posts($post->post_author);
 $context['authoravatar'] = get_avatar($post->post_author, 70);
