@@ -38,7 +38,4 @@ if (is_day()){
 $data['posts'] = Timber::get_posts();
 $data['pagination'] = Timber::get_pagination();
 
-$exp['postedby'] = __('Posted by');
-$data['exp'] = $exp;
-
 Timber::render($templates, $data);
