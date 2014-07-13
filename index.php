@@ -60,11 +60,6 @@
 		}
 		$context['seccolumn'] = $seccolumn;
 
-		$exp['opinions'] = __('Opinions', 'pressenza');
-		$exp['interviews'] = __('Interviews', 'pressenza');
-		$exp['latest'] = __('Latest News', 'pressenza');
-		$context['exp'] = $exp;
-
 		$templates = array('home.twig');
 	}
 	else

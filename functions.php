@@ -1,5 +1,4 @@
 <?php
-
 	add_theme_support('post-formats');
 	add_theme_support('post-thumbnails');
 	add_theme_support('menus');
@@ -13,21 +12,33 @@
 	define('THEME_URL', get_template_directory_uri());
 
 	register_sidebar( array(
-		'name'          => __('Primary Sidebar'),
+		'name'          => 'Primary Sidebar',
 		'id'            => 'sidebar-1',
-		'description'   => __('Main sidebar that appears on the right.'),
+		'description'   => 'Main sidebar that appears on the right.',
 		'before_widget' => '<div id="%1$s" class="box %2$s">',
 		'after_widget'  => '</div></div>',
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3><div class="box-content">',
 	) );
 	register_sidebar( array(
-		'name'          => __('Footer Sidebar'),
+		'name'          => 'Footer Sidebar',
 		'id'            => 'sidebar-2',
-		'description'   => __('Sidebar that appears on the bottom'),
+		'description'   => 'Sidebar that appears on the bottom',
 		'before_widget' => '<div class="col-xs-12 col-md-4">',
 		'after_widget'  => '</div>'
 	) );
+
+	// Translatables in order to crste a po-file
+	$e1 = __('Read articles by region', 'pressenza');
+	$e1 = __('Read articles by section', 'pressenza');
+	$e1 = __('Opinions', 'pressenza');
+	$e1 = __('Interviews', 'pressenza');
+	$e1 = __('Latest News', 'pressenza');
+	$e1 = __('Posted by', 'pressenza');
+	$e1 = __('Categories', 'pressenza');
+	$e1 = __('About The Author', 'pressenza');
+	$e1 = __('Number of Entries', 'pressenza');
+	
 
 	function add_to_context($data)
 	{

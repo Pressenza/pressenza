@@ -31,7 +31,7 @@
 	<div class="row">
 		<div class="col-xs-12">
 			<div class="box">
-				<h2>{{exp.latest}}</h2>
+				<h2>{{__('Latest News', 'pressenza')}}</h2>
 				<div class="box-content">
 				{% for post in latest %}
 					<div class="article-latest" onclick="location.href='{{post.link}}'">
@@ -57,7 +57,7 @@
 	<div class="row">
 		<div class="col-xs-12 col-sm-6">
 			<div class="box">
-				<h2>{{exp.opinions}}</h2>
+				<h2>{{__('Opinions', 'pressenza')}}</h2>
 				<div class="box-content">
 				{% for post in opinions %}
 					<p class="list"><a href="{{post.link}}">{{post.title}}</a></p>
@@ -67,7 +67,7 @@
 		</div>
 		<div class="col-xs-12 col-sm-6">
 			<div class="box">
-				<h2>{{exp.interviews}}</h2>
+				<h2>{{__('Interviews', 'pressenza')}}</h2>
 				<div class="box-content">
 				{% for post in interviews %}
 					<p class="list"><a href="{{post.link}}">{{post.title}}</a></p>

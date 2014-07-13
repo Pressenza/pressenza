@@ -7,7 +7,7 @@
 			<h1>{{post.title}}</h1>
 
 			<div class="article-view-meta">
-				<strong>{{ post.post_date|date("d.m.Y") }}</strong> &nbsp; {{exp.postedby}}: <a href="{{post.author.path}}">{{post.author.name}}</a>
+				<strong>{{ post.post_date|date("d.m.Y") }}</strong> &nbsp; {{__('Posted by', 'pressenza')}}: <a href="{{post.author.path}}">{{post.author.name}}</a>
 			</div>
 
 			{% if post.get_thumbnail %}
@@ -39,14 +39,14 @@
 
 			<div class="article-view-content">
 				{{post.content}}
-				<div class="article-view-meta-bottom">{{exp.categories}}: {{postcats}}<br>{{posttags}}</div>
+				<div class="article-view-meta-bottom">{{__('Categories', 'pressenza')}}: {{postcats}}<br>{{posttags}}</div>
 			</div>
 			
 		</section>
 	</article>
 
 	<div class="box">
-		<h2>{{exp.ata}}</h2>
+		<h2>{{__('About The Author', 'pressenza')}}</h2>
 		<div class="box-content">
 			<div class="row">
 				<div class="col-sm-2 col-xs-4">
@@ -55,7 +55,7 @@
 				<div class="col-sm-10 col-xs-8">
 					<p><strong><a href="{{post.author.link}}" rel="author">{{post.author.name}}</a></strong><br />{{post.get_author.description}}</p>
 					<div class="author_info">
-						<div class="pull-left">Number of Entries : {{ authorposts }}</div>
+						<div class="pull-left">{{__('Number of Entries', 'pressenza')} : {{ authorposts }}</div>
 						<div class="pull-right">
 						{% if post.get_author.facebook %}
 							<a href="{{post.get_author.facebook}}"><img src="/wp-content/themes/pressenza/images/icons/facebook.png" alt="Facebook"></a> &nbsp;

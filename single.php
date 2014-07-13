@@ -31,10 +31,4 @@ $context['authorposts'] = count_user_posts($post->post_author);
 $context['authoravatar'] = get_avatar($post->post_author, 70);
 $context['wp_title'] .= ' - ' . $post->title();
 
-$exp['postedby'] = __('Posted by', 'pressenza');
-$exp['postedin'] = __('in', 'pressenza');
-$exp['categories'] = __('Categories', 'pressenza');
-$exp['ata'] = __('About The Author', 'pressenza');
-$context['exp'] = $exp;
-
 Timber::render('single.twig', $context);
