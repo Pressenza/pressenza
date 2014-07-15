@@ -1,0 +1,66 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Pressenza\n"
+"POT-Creation-Date: 2014-07-13 16:00+0100\n"
+"PO-Revision-Date: 2014-07-14 08:57+0100\n"
+"Last-Translator: \n"
+"Language-Team: Pressenza\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.6\n"
+"X-Poedit-Basepath: D:\\Running Jobs\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-SearchPath-0: D:\\Running Jobs\\pressenza\\rep\n"
+
+#: D:\Running Jobs\pressenza\rep/archive.php:21
+#: Jobs\pressenza\rep/archive.php:23 Jobs\pressenza\rep/archive.php:25
+#: Jobs\pressenza\rep/archive.php:27
+msgid "Archive"
+msgstr "Archivo"
+
+#: D:\Running Jobs\pressenza\rep/archive.php:41
+#: Jobs\pressenza\rep/author.php:21 Jobs\pressenza\rep/functions.php:37
+msgid "Posted by"
+msgstr "Autor"
+
+#: D:\Running Jobs\pressenza\rep/functions.php:32
+msgid "Read articles by region"
+msgstr "Noticias por Región"
+
+#: D:\Running Jobs\pressenza\rep/functions.php:33
+msgid "Read articles by section"
+msgstr "Noticias por Sección"
+
+#: D:\Running Jobs\pressenza\rep/functions.php:34
+msgid "Opinions"
+msgstr "Opiniones"
+
+#: D:\Running Jobs\pressenza\rep/functions.php:35
+msgid "Interviews"
+msgstr "Entrevistas"
+
+#: D:\Running Jobs\pressenza\rep/functions.php:36
+msgid "Latest News"
+msgstr "Últimas noticias"
+
+#: D:\Running Jobs\pressenza\rep/functions.php:38
+msgid "Categories"
+msgstr "Categorías"
+
+#: D:\Running Jobs\pressenza\rep/functions.php:39
+msgid "About The Author"
+msgstr "Acerca del autor"
+
+#: D:\Running Jobs\pressenza\rep/functions.php:40
+msgid "Number of Entries"
+msgstr "Número de entradas"
+
+#: D:\Running Jobs\pressenza\rep/searchform.php:3
+msgid "Search"
+msgstr "Buscar"
+
+#~ msgid "in"
+#~ msgstr "in"
