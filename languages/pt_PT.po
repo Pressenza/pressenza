@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pressenza\n"
 "POT-Creation-Date: 2014-07-13 16:00+0100\n"
-"PO-Revision-Date: 2014-07-14 09:11+0100\n"
+"PO-Revision-Date: 2014-07-17 07:46+0100\n"
 "Last-Translator: \n"
 "Language-Team: Pressenza\n"
 "Language: pt\n"
@@ -19,12 +19,12 @@ msgstr ""
 #: Jobs\pressenza\rep/archive.php:23 Jobs\pressenza\rep/archive.php:25
 #: Jobs\pressenza\rep/archive.php:27
 msgid "Archive"
-msgstr "Archiv"
+msgstr "Arquivo"
 
 #: D:\Running Jobs\pressenza\rep/archive.php:41
 #: Jobs\pressenza\rep/author.php:21 Jobs\pressenza\rep/functions.php:37
 msgid "Posted by"
-msgstr "Verfasst von"
+msgstr "Publicado por"
 
 #: D:\Running Jobs\pressenza\rep/functions.php:32
 msgid "Read articles by region"
@@ -52,11 +52,11 @@ msgstr "Categorias"
 
 #: D:\Running Jobs\pressenza\rep/functions.php:39
 msgid "About The Author"
-msgstr "Über den Autor"
+msgstr "Sobre o Autor"
 
 #: D:\Running Jobs\pressenza\rep/functions.php:40
 msgid "Number of Entries"
-msgstr "Anzahl Artikel"
+msgstr "Número de Artigos"
 
 #: D:\Running Jobs\pressenza\rep/searchform.php:3
 msgid "Search"
