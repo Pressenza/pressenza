@@ -99,7 +99,7 @@
 		    'itemtag' => 'dl',
 		    'icontag' => 'dt',
 		    'captiontag' => 'dd',
-		    'columns' => 3,
+		    'columns' => 10,
 		    'size' => 'thumbnail',
 		    'include' => '',
 		    'exclude' => ''
@@ -130,10 +130,10 @@
 		if (empty($attachments)) return '';
 
 		// Here's your actual output, you may customize it to your need
-		$output = "<div class=\"slideshow-wrapper\">\n";
-		$output .= "<div class=\"preloader\"></div>\n";
-		$output .= "<ul data-orbit>\n";
-
+		$output = '<div id="featured" class="carousel slide" data-ride="carousel">
+			<div class="carousel-inner">';
+			
+		$counter = 1;
 		// Now you loop through each attachment
 		foreach ($attachments as $id => $attachment)
 		{
@@ -148,20 +148,29 @@
 
 		    // Store the caption
 		    $caption = $img['caption'];
+		    
+		    if($counter == 1)
+		    {
+		    	$output .= '<div class="item active">';
+		    	$counter++;
+		    } else {
+		    	$output .= '<div class="item">';
+		    }
 
-		    $output .= "<li>\n";
-		    $output .= "<img src=\"{$url}\" width=\"{$width}\" height=\"{$height}\" alt=\"{$alt}\" />\n";
+		    $output .= "<img src=\"{$url}\" alt=\"{$alt}\" />\n";
 
 		    // Output the caption if it exists
 		    if ($caption)
 			{
-		        $output .= "<div class=\"orbit-caption\">{$caption}</div>\n";
+		        $output .= '<div class="carousel-caption">'.$caption.'</div>';
 		    }
-		    $output .= "</li>\n";
+		    $output .= '</div>'."\n";
 		}
 
-		$output .= "</ul>\n";
 		$output .= "</div>\n";
+		$output .= '<a class="left carousel-control" href="#featured" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+			<a class="right carousel-control" href="#featured" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+			</div>'."\n";
 
 		return $output;
 	}
