@@ -29,6 +29,6 @@ $context['postcats'] = implode(', ', $cats);
 $context['posttags'] = get_the_tag_list('Tags: ', ', ');
 $context['authorposts'] = count_user_posts($post->post_author);
 $context['authoravatar'] = get_avatar($post->post_author, 70);
-$context['wp_title'] .= ' - ' . $post->title();
+$context['wp_title'] = 'Pressenza - ' . $post->title();
 
 Timber::render('single.twig', $context);

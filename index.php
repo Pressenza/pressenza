@@ -59,6 +59,7 @@
 			}
 		}
 		$context['seccolumn'] = $seccolumn;
+		$context['wp_title'] = 'Pressenza';
 
 		$templates = array('home.twig');
 	}

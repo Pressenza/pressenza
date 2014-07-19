@@ -24,6 +24,6 @@
 $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
-$context['wp_title'] .= ' - ' . $post->title();
+$context['wp_title'] = 'Pressenza - ' . $post->title();
 $context['pagetitle'] = get_the_title();
 Timber::render('page.twig', $context);
