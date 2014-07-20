@@ -140,13 +140,8 @@
 		    // Fetch all data related to attachment
 		    $img = wp_prepare_attachment_for_js($id);
 
-		    // If you want a different size change 'large' to eg. 'medium'
-		    $url = $img['sizes']['large']['url'];
-		    $height = $img['sizes']['large']['height'];
-		    $width = $img['sizes']['large']['width'];
-		    $alt = $img['alt'];
-
 		    // Store the caption
+		    //$caption = $img['caption'].' - ES: '.$img['caption_es'];
 		    $caption = $img['caption'];
 		    
 		    if($counter == 1)
@@ -157,7 +152,7 @@
 		    	$output .= '<div class="item">';
 		    }
 
-		    $output .= "<img src=\"{$url}\" alt=\"{$alt}\" />\n";
+		    $output .= '<img src="'.$img['sizes']['large']['url'].'" alt="'.$img['alt'].'" />'."\n";
 
 		    // Output the caption if it exists
 		    if ($caption)

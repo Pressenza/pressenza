@@ -432,6 +432,9 @@ figcaption {
 .article-view-content a {
     color: #217dd3;
 }
+.article-view-content a.carousel-control {
+    color: #fff;
+}
 
 .article-nav {
 	margin-bottom: 10px;
