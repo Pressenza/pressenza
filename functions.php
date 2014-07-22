@@ -5,7 +5,6 @@
 
 	//add_filter('get_twig', 'add_to_twig');
 	add_filter('timber_context', 'add_to_context');
-	add_filter('post_gallery', 'pressenza_gallery', 10, 2);
 
 	add_action('wp_enqueue_scripts', 'load_scripts');
 
@@ -38,7 +37,6 @@
 	$e1 = __('Categories', 'pressenza');
 	$e1 = __('About The Author', 'pressenza');
 	$e1 = __('Number of Entries', 'pressenza');
-	
 
 	function add_to_context($data)
 	{
@@ -78,7 +76,7 @@
 		wp_enqueue_script('bootstrap', THEME_URL . '/vendor/bootstrap/js/bootstrap.min.js', array(), false, true);
 	}
 
-
+	add_filter('post_gallery', 'pressenza_gallery', 10, 2);
 	function pressenza_gallery($output, $attr)
 	{
 		global $post;
@@ -132,7 +130,7 @@
 		// Here's your actual output, you may customize it to your need
 		$output = '<div id="featured" class="carousel slide" data-ride="carousel">
 			<div class="carousel-inner">';
-			
+
 		$counter = 1;
 		// Now you loop through each attachment
 		foreach ($attachments as $id => $attachment)
@@ -143,7 +141,7 @@
 		    // Store the caption
 		    //$caption = $img['caption'].' - ES: '.$img['caption_es'];
 		    $caption = $img['caption'];
-		    
+
 		    if($counter == 1)
 		    {
 		    	$output .= '<div class="item active">';
