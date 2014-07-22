@@ -1,15 +1,33 @@
-<div class="row">
+<div id="featured" class="carousel slide" data-ride="carousel">
+	<div class="carousel-inner">
 	{% for photo in attachments %}
-		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-			<div class="media-teaser">
-			{% if TimberPost(photo).kind == 'video' %}
-				<img src="{{TimberImage(photo)|resize(300, 160)}}" alt="{{TimberPost(photo).post_excerpt}}" title="{{TimberPost(photo).post_excerpt}}" class="img-responsive" />
-			{% else %}
-				<a href="{{TimberImage(photo)}}" class="fancybox" data-fancybox-group="gallery" title="{{TimberPost(photo).post_excerpt}}">
-					<img src="{{TimberImage(photo)|resize(300, 160)}}" alt="{{TimberPost(photo).post_excerpt}}" title="{{TimberPost(photo).post_excerpt}}" class="img-responsive" />
-				</a>
-			{% endif %}
+		{% if loop.index == 1 %}
+		<div class="item active">
+		{% else %}
+		<div class="item">
+		{% endif %}
+			<img src="{{TimberImage(photo)|resize(780, 433)}}" alt="{{TimberImage(photo).title}}">
+			<div class="carousel-caption">
+				<p class="hidden-xs">
+				{% if language.language_code == 'de' %}
+				    {{TimberImage(photo).caption_de}}
+				{% elseif language.language_code == 'es' %}
+				    {{TimberImage(photo).caption_es}}
+				{% elseif language.language_code == 'fr' %}
+				    {{TimberImage(photo).caption_fr}}
+				{% elseif language.language_code == 'it' %}
+				    {{TimberImage(photo).caption_it}}
+				{% elseif language.language_code == 'pt' %}
+				    {{TimberImage(photo).caption_pt}}
+				{% else %}
+				    {{TimberImage(photo).post_excerpt}}
+				{% endif %}
+				</p>
 			</div>
 		</div>
 	{% endfor %}
+	</div>
+	
+	<a class="left carousel-control" href="#featured" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+	<a class="right carousel-control" href="#featured" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
 </div>
