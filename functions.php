@@ -76,95 +76,153 @@
 		wp_enqueue_script('bootstrap', THEME_URL . '/vendor/bootstrap/js/bootstrap.min.js', array(), false, true);
 	}
 
-	add_filter('post_gallery', 'pressenza_gallery', 10, 2);
-	function pressenza_gallery($output, $attr)
-	{
-		global $post;
+// CUSTOM GALLERY
+add_shortcode('gallery', 'pressenza_gallery_shortcode');
+function pressenza_gallery_shortcode($attr) {
+	$post = get_post();
 
-		if (isset($attr['orderby']))
-		{
-		    $attr['orderby'] = sanitize_sql_orderby($attr['orderby']);
-		    if (!$attr['orderby'])
-		    {
-		        unset($attr['orderby']);
-      		}
-		}
 
-		extract(shortcode_atts(array(
-		    'order' => 'ASC',
-		    'orderby' => 'menu_order ID',
-		    'id' => $post->ID,
-		    'itemtag' => 'dl',
-		    'icontag' => 'dt',
-		    'captiontag' => 'dd',
-		    'columns' => 10,
-		    'size' => 'thumbnail',
-		    'include' => '',
-		    'exclude' => ''
-		), $attr));
-
-		$id = intval($id);
-		if ('RAND' == $order) $orderby = 'none';
-
-		if (!empty($include))
-		{
-		    $include = preg_replace('/[^0-9,]+/', '', $include);
-		    $_attachments = get_posts(array(
-				'include' => $include,
-				'post_status' => 'inherit',
-				'post_type' => 'attachment',
-				'post_mime_type' => 'image',
-				'order' => $order,
-				'orderby' => $orderby
-			));
-
-		    $attachments = array();
-		    foreach ($_attachments as $key => $val)
-			{
-		        $attachments[$val->ID] = $_attachments[$key];
-		    }
-		}
-
-		if (empty($attachments)) return '';
-
-		// Here's your actual output, you may customize it to your need
-		$output = '<div id="featured" class="carousel slide" data-ride="carousel">
-			<div class="carousel-inner">';
-
-		$counter = 1;
-		// Now you loop through each attachment
-		foreach ($attachments as $id => $attachment)
-		{
-		    // Fetch all data related to attachment
-		    $img = wp_prepare_attachment_for_js($id);
-
-		    // Store the caption
-		    //$caption = $img['caption'].' - ES: '.$img['caption_es'];
-		    $caption = $img['caption'];
-
-		    if($counter == 1)
-		    {
-		    	$output .= '<div class="item active">';
-		    	$counter++;
-		    } else {
-		    	$output .= '<div class="item">';
-		    }
-
-		    $output .= '<img src="'.$img['sizes']['large']['url'].'" alt="'.$img['alt'].'" />'."\n";
-
-		    // Output the caption if it exists
-		    if ($caption)
-			{
-		        $output .= '<div class="carousel-caption">'.$caption.'</div>';
-		    }
-		    $output .= '</div>'."\n";
-		}
-
-		$output .= "</div>\n";
-		$output .= '<a class="left carousel-control" href="#featured" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-			<a class="right carousel-control" href="#featured" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-			</div>'."\n";
-
-		return $output;
+	if ( ! empty( $attr['ids'] ) ) {
+		// 'ids' is explicitly ordered, unless you specify otherwise.
+		if ( empty( $attr['orderby'] ) )
+			$attr['orderby'] = 'post__in';
+		$attr['include'] = $attr['ids'];
 	}
 
+	extract(shortcode_atts(array(
+		'order'      => 'ASC',
+		'orderby'    => 'menu_order ID',
+		'id'         => $post ? $post->ID : 0,
+		'itemtag'    => 'dl',
+		'icontag'    => 'dt',
+		'captiontag' => 'dd',
+		'columns'    => 3,
+		'size'       => 'thumbnail',
+		'include'    => '',
+		'exclude'    => '',
+		'link'       => ''
+	), $attr, 'gallery'));
+
+	$id = intval($id);
+	if ( 'RAND' == $order )
+		$orderby = 'none';
+
+	if ( !empty($include) ) {
+		$_attachments = get_posts( array('include' => $include, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby) );
+
+		$attachments = array();
+		foreach ( $_attachments as $key => $val ) {
+			$attachments[$val->ID] = $_attachments[$key];
+		}
+	} elseif ( !empty($exclude) ) {
+		$attachments = get_children( array('post_parent' => $id, 'exclude' => $exclude, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby) );
+	} else {
+		$attachments = get_children( array('post_parent' => $id, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby) );
+	}
+
+	if ( empty($attachments) )
+		return '';
+
+	$context = Timber::get_context();
+	$context['attachments'] = $attachments;
+
+	if (is_front_page()) {
+		$template = 'gallery-home.twig';
+	} else {
+		$template = 'gallery.twig';
+	}
+	return Timber::compile($template, $context);
+
+}
+
+	// add_filter('post_gallery', 'pressenza_gallery', 10, 2);
+	// function pressenza_gallery($output, $attr)
+	// {
+	// 	global $post;
+
+	// 	if (isset($attr['orderby']))
+	// 	{
+	// 	    $attr['orderby'] = sanitize_sql_orderby($attr['orderby']);
+	// 	    if (!$attr['orderby'])
+	// 	    {
+	// 	        unset($attr['orderby']);
+ //      		}
+	// 	}
+
+	// 	extract(shortcode_atts(array(
+	// 	    'order' => 'ASC',
+	// 	    'orderby' => 'menu_order ID',
+	// 	    'id' => $post->ID,
+	// 	    'itemtag' => 'dl',
+	// 	    'icontag' => 'dt',
+	// 	    'captiontag' => 'dd',
+	// 	    'columns' => 10,
+	// 	    'size' => 'thumbnail',
+	// 	    'include' => '',
+	// 	    'exclude' => ''
+	// 	), $attr));
+
+	// 	$id = intval($id);
+	// 	if ('RAND' == $order) $orderby = 'none';
+
+	// 	if (!empty($include))
+	// 	{
+	// 	    $include = preg_replace('/[^0-9,]+/', '', $include);
+	// 	    $_attachments = get_posts(array(
+	// 			'include' => $include,
+	// 			'post_status' => 'inherit',
+	// 			'post_type' => 'attachment',
+	// 			'post_mime_type' => 'image',
+	// 			'order' => $order,
+	// 			'orderby' => $orderby
+	// 		));
+
+	// 	    $attachments = array();
+	// 	    foreach ($_attachments as $key => $val)
+	// 		{
+	// 	        $attachments[$val->ID] = $_attachments[$key];
+	// 	    }
+	// 	}
+
+	// 	if (empty($attachments)) return '';
+
+	// 	// Here's your actual output, you may customize it to your need
+	// 	$output = '<div id="featured" class="carousel slide" data-ride="carousel">
+	// 		<div class="carousel-inner">';
+
+	// 	$counter = 1;
+	// 	// Now you loop through each attachment
+	// 	foreach ($attachments as $id => $attachment)
+	// 	{
+	// 	    // Fetch all data related to attachment
+	// 	    $img = wp_prepare_attachment_for_js($id);
+
+	// 	    // Store the caption
+	// 	    //$caption = $img['caption'].' - ES: '.$img['caption_es'];
+	// 	    $caption = $img['caption'];
+
+	// 	    if($counter == 1)
+	// 	    {
+	// 	    	$output .= '<div class="item active">';
+	// 	    	$counter++;
+	// 	    } else {
+	// 	    	$output .= '<div class="item">';
+	// 	    }
+
+	// 	    $output .= '<img src="'.$img['sizes']['large']['url'].'" alt="'.$img['alt'].'" />'."\n";
+
+	// 	    // Output the caption if it exists
+	// 	    if ($caption)
+	// 		{
+	// 	        $output .= '<div class="carousel-caption">'.$caption.'</div>';
+	// 	    }
+	// 	    $output .= '</div>'."\n";
+	// 	}
+
+	// 	$output .= "</div>\n";
+	// 	$output .= '<a class="left carousel-control" href="#featured" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+	// 		<a class="right carousel-control" href="#featured" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+	// 		</div>'."\n";
+
+	// 	return $output;
+	// }

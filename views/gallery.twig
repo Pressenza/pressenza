@@ -1,0 +1,15 @@
+<div class="row">
+	{% for photo in attachments %}
+		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+			<div class="media-teaser">
+			{% if TimberPost(photo).kind == 'video' %}
+				<img src="{{TimberImage(photo)|resize(300, 160)}}" alt="{{TimberPost(photo).post_excerpt}}" title="{{TimberPost(photo).post_excerpt}}" class="img-responsive" />
+			{% else %}
+				<a href="{{TimberImage(photo)}}" class="fancybox" data-fancybox-group="gallery" title="{{TimberPost(photo).post_excerpt}}">
+					<img src="{{TimberImage(photo)|resize(300, 160)}}" alt="{{TimberPost(photo).post_excerpt}}" title="{{TimberPost(photo).post_excerpt}}" class="img-responsive" />
+				</a>
+			{% endif %}
+			</div>
+		</div>
+	{% endfor %}
+</div>
