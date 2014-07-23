@@ -16,12 +16,13 @@ $context['post'] = $post;
 $postcategories = wp_get_post_categories($post->ID);
 $cats = array();
 $catexlude = array(9609, 9610, 9611, 9612, 9613, 9614);
+$needles = array('@de','@es','@fr','@pt');
 foreach($postcategories as $c)
 {
 	if(!in_array($c, $catexlude))
 	{
 	$cat = get_category($c);
-	$cats[] = '<a href="' . get_category_link( $cat->term_id ) . '">' . $cat->name . '</a>';
+	$cats[] = '<a href="' . get_category_link($cat->term_id) . '">' . str_replace($needles, NULL, $cat->name) . '</a>';
 	}
 }
 $context['postcats'] = implode(', ', $cats);
