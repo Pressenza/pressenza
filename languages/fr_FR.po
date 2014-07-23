@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Pressenza\n"
-"POT-Creation-Date: 2014-07-13 16:00+0100\n"
-"PO-Revision-Date: 2014-07-14 09:01+0100\n"
+"POT-Creation-Date: 2014-07-23 23:07+0100\n"
+"PO-Revision-Date: 2014-07-23 23:08+0100\n"
 "Last-Translator: \n"
 "Language-Team: Pressenza\n"
 "Language: fr\n"
@@ -21,42 +21,50 @@ msgstr ""
 msgid "Archive"
 msgstr "Archive"
 
-#: D:\Running Jobs\pressenza\rep/archive.php:41
-#: Jobs\pressenza\rep/author.php:21 Jobs\pressenza\rep/functions.php:37
+#: D:\Running Jobs\pressenza\rep/author.php:21
+#: Jobs\pressenza\rep/functions.php:35
 msgid "Posted by"
 msgstr "Ecrit par"
 
-#: D:\Running Jobs\pressenza\rep/functions.php:32
+#: D:\Running Jobs\pressenza\rep/functions.php:30
 msgid "Read articles by region"
 msgstr "Nouvelles des régions du monde"
 
-#: D:\Running Jobs\pressenza\rep/functions.php:33
+#: D:\Running Jobs\pressenza\rep/functions.php:31
 msgid "Read articles by section"
 msgstr "Nouvelles par thème"
 
-#: D:\Running Jobs\pressenza\rep/functions.php:34
+#: D:\Running Jobs\pressenza\rep/functions.php:32
 msgid "Opinions"
 msgstr "Opinion"
 
-#: D:\Running Jobs\pressenza\rep/functions.php:35
+#: D:\Running Jobs\pressenza\rep/functions.php:33
 msgid "Interviews"
 msgstr "Interviews"
 
-#: D:\Running Jobs\pressenza\rep/functions.php:36
+#: D:\Running Jobs\pressenza\rep/functions.php:34
 msgid "Latest News"
 msgstr "Dernières nouvelles"
 
-#: D:\Running Jobs\pressenza\rep/functions.php:38
+#: D:\Running Jobs\pressenza\rep/functions.php:36
 msgid "Categories"
 msgstr "Catégories"
 
-#: D:\Running Jobs\pressenza\rep/functions.php:39
+#: D:\Running Jobs\pressenza\rep/functions.php:37
 msgid "About The Author"
 msgstr "À propos de l'Auteur"
 
-#: D:\Running Jobs\pressenza\rep/functions.php:40
+#: D:\Running Jobs\pressenza\rep/functions.php:38
 msgid "Number of Entries"
 msgstr "Nombre d'entrées"
+
+#: D:\Running Jobs\pressenza\rep/functions.php:39
+msgid "Image by"
+msgstr "Crédit image :"
+
+#: D:\Running Jobs\pressenza\rep/functions.php:40
+msgid "The original article can be found on our partner's website here"
+msgstr "L’article original se trouve sur le site web de notre partenaire"
 
 #: D:\Running Jobs\pressenza\rep/searchform.php:3
 msgid "Search"

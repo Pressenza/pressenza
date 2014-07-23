@@ -29,7 +29,7 @@
 				{% endif %}
 
 				{% if post.thumbnail.credits_pod != '' %}
-					(Image by {{post.thumbnail.credits_pod}})
+					({{__('Image by', 'pressenza')}} {{post.thumbnail.credits_pod}})
 				{% endif %}
 				</figcaption>
 			</figure>
