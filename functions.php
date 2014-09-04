@@ -22,7 +22,7 @@ register_sidebar(array(
     'name' => 'Footer Sidebar',
     'id' => 'sidebar-2',
     'description' => 'Sidebar that appears on the bottom',
-    'before_widget' => '<div class="col-xs-12 col-md-4">',
+    'before_widget' => '<div class="footerwidget">',
     'after_widget' => '</div>'
 ));
 

@@ -490,7 +490,8 @@ figcaption {
 	background-color: #e0e0e0;
 }
 
-#footer h5 {
+#footer h5,
+#footer .footerwidget h2 {
 	margin: 0 0 5px 0;
 	font-family: 'Play';
 	font-size: 15px;
