@@ -7,7 +7,12 @@
 			<h1>{{post.title}}</h1>
 
 			<div class="article-view-meta">
-				<strong>{{ post.post_date|date("d.m.Y") }}</strong> &nbsp; {{__('Posted by', 'pressenza')}}: <a href="{{post.author.path}}">{{post.author.name}}</a>
+				<strong>
+				{{ post.post_date|date("d.m.Y") }}
+				{% if post.place != '' %}
+					- {{post.place}}
+				{% endif %}
+				</strong> &nbsp; {{__('Posted by', 'pressenza')}}: <a href="{{post.author.path}}">{{post.author.name}}</a>
 			</div>
 
 			{% if post.get_thumbnail %}
@@ -37,6 +42,13 @@
 
 			<div class="article-view-content">
 				{{post.content}}
+				
+				{% if post.original_article_url != '' %}
+					<div style="font-size:12px; text-align:right;">
+						<p><a href="{{post.original_article_url}}" target="_blank"><span class="glyphicon glyphicon-globe" style="font-size:11px;"></span> {{__('The original article can be found on our partner\'s website here', 'pressenza')}}</a></p>
+					</div>
+				{% endif %}
+				
 				<div class="article-view-meta-bottom">{{__('Categories', 'pressenza')}}: {{postcats}}<br>{{posttags}}</div>
 			</div>
 			
