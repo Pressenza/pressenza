@@ -9,6 +9,7 @@ Version: 1.0.1
 	font-size: 14px;
 	border: 0;
 	border-radius: 0;
+	min-height: 40px;
 }
 .navbar-inverse {
 	background-color: #40454D;
@@ -36,6 +37,15 @@ Version: 1.0.1
 	min-width: 140px;
 	background-color: #40454D;
 	border: 0;
+}
+.navbar-brand {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    height: 40px;
+}
+.navbar-nav > li > a {
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 .navbar .dropdown-menu > li > a {
 	color: #fff;
@@ -393,6 +403,7 @@ figcaption {
 .article-list-date {
 	padding-bottom: 4px;
 	font-size: 12px;
+	line-height: 13px;
 	color: #666;
 }
 .article-list-author {
@@ -488,7 +499,6 @@ figcaption {
     padding: 20px 0;
 	background-color: #e0e0e0;
 }
-
 #footer h5,
 #footer .footerwidget h2 {
 	margin: 0 0 5px 0;
@@ -559,6 +569,15 @@ figcaption {
 	text-decoration: underline;
 }
 
+@media only screen and (max-width: 992px) {
+	#meta .nav {
+		font-size: 14px;
+	}
+	
+	#meta .nav > li > a {
+		padding: 8px;
+	}
+
 @media only screen and (max-width: 767px) {
 
 	.navbar-collapse {
@@ -587,6 +606,15 @@ figcaption {
 	#header {
 		padding-top: 16px;
 	}
+	
+	h1 {
+		font-size: 24px;
+	}
+	
+	.article-latest h5 {
+    	font-size: 14px;
+	}
+	
 	.bottom-bar p.copyrights {
 	    font-size: 11px;
 	    margin: 12px 0;
