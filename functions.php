@@ -9,6 +9,9 @@ add_action('wp_enqueue_scripts', 'load_scripts');
 
 define('THEME_URL', get_template_directory_uri());
 
+define('ICL_DONT_LOAD_LANGUAGE_SELECTOR_CSS', true);
+define('ICL_DONT_LOAD_LANGUAGES_JS', true);
+
 register_sidebar(array(
     'name' => 'Primary Sidebar',
     'id' => 'sidebar-1',
