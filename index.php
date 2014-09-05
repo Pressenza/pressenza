@@ -23,16 +23,16 @@
 	if (is_home())
 	{
 		// get Featured (Category 9609)
-		$context['featured'] = Timber::get_posts(array( 'numberposts' => '8', 'category' => 9609, 'suppress_filters' => 0 ));
+		$context['featured'] = Timber::get_posts(array( 'numberposts' => '8', 'cat' => 9609, 'suppress_filters' => 0 ));
 
 		// get Latest
 		$context['latest'] = Timber::get_posts(array( 'numberposts' => '5', 'suppress_filters' => 0 ));
 
 		// get Opinions (Category 160)
-		$context['opinions'] = Timber::get_posts(array( 'numberposts' => '3', 'category' => 160, 'suppress_filters' => 0 ));
+		$context['opinions'] = Timber::get_posts(array( 'numberposts' => '3', 'cat' => 160, 'suppress_filters' => 0 ));
 
 		// get Interviews (Category 154)
-		$context['interviews'] = Timber::get_posts(array( 'numberposts' => '3', 'category' => 154, 'suppress_filters' => 0 ));
+		$context['interviews'] = Timber::get_posts(array( 'numberposts' => '3', 'cat' => 154, 'suppress_filters' => 0 ));
 
 		// get Sections and recent posts
 		$c = 0;
