@@ -1,4 +1,18 @@
 <?php
+// Texts in order to create a po-file
+/*$e1 = __('Read articles by region', 'pressenza');
+$e1 = __('Read articles by section', 'pressenza');
+$e1 = __('Sections', 'pressenza');
+$e1 = __('Opinions', 'pressenza');
+$e1 = __('Interviews', 'pressenza');
+$e1 = __('Latest News', 'pressenza');
+$e1 = __('Posted by', 'pressenza');
+$e1 = __('Categories', 'pressenza');
+$e1 = __('About The Author', 'pressenza');
+$e1 = __('Number of Entries', 'pressenza');
+$e1 = __('Image by', 'pressenza');
+$e1 = __('The original article can be found on our partner\'s website here', 'pressenza');
+*/
 add_theme_support('post-formats');
 add_theme_support('post-thumbnails');
 add_theme_support('menus');
@@ -29,19 +43,6 @@ register_sidebar(array(
     'after_widget' => '</div>'
 ));
 
-// Translatables in order to create a po-file
-/*$e1 = __('Read articles by region', 'pressenza');
-$e1 = __('Read articles by section', 'pressenza');
-$e1 = __('Opinions', 'pressenza');
-$e1 = __('Interviews', 'pressenza');
-$e1 = __('Latest News', 'pressenza');
-$e1 = __('Posted by', 'pressenza');
-$e1 = __('Categories', 'pressenza');
-$e1 = __('About The Author', 'pressenza');
-$e1 = __('Number of Entries', 'pressenza');
-$e1 = __('Image by', 'pressenza');
-$e1 = __('The original article can be found on our partner\'s website here', 'pressenza');
-*/
 function add_to_context($data)
 {
     $data['THEME_URL'] = THEME_URL;
@@ -52,8 +53,10 @@ function add_to_context($data)
     // Menus
     $data['topmenu'] = new TimberMenu(36);
     $data['menu'] = new TimberMenu(35);
-    $data['footerregion'] = new TimberMenu(9606);
-    $data['footersection'] = new TimberMenu(9607);
+    //$data['footerregion'] = new TimberMenu(9606);
+    //$data['footersection'] = new TimberMenu(9607);
+    $data['footerregion'] = new TimberMenu(13395);
+    $data['footersection'] = new TimberMenu(13396);
     // Sidebar
     $data['sidebar_right'] = Timber::get_widgets('sidebar-1');
     $data['sidebar_bottom'] = Timber::get_widgets('sidebar-2');
@@ -71,7 +74,7 @@ function load_scripts()
     wp_enqueue_script('pressenza', THEME_URL . '/js/pressenza.js', array(), false, true);
 }
 
-// CUSTOM GALLERY
+// Custom gallery
 add_shortcode('gallery', 'pressenza_gallery_shortcode');
 function pressenza_gallery_shortcode($attr)
 {
