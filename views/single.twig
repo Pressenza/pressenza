@@ -3,7 +3,7 @@
 {% block content %}
 	<article class="box-page" id="post-{{post.ID}}">
 		<section class="box-content">
-		
+
 			<h1>{{post.title}}</h1>
 
 			<div class="article-view-meta">
@@ -42,16 +42,16 @@
 
 			<div class="article-view-content">
 				{{post.content}}
-				
+
 				{% if post.original_article_url != '' %}
-					<div style="font-size:12px; text-align:right;">
+					<div style="font-size:15px; margin-top:15px;">
 						<p><a href="{{post.original_article_url}}" target="_blank"><span class="glyphicon glyphicon-globe" style="font-size:11px;"></span> {{__('The original article can be found on our partner\'s website here', 'pressenza')}}</a></p>
 					</div>
 				{% endif %}
-				
+
 				<div class="article-view-meta-bottom">{{__('Categories', 'pressenza')}}: {{postcats}}<br>{{posttags}}</div>
 			</div>
-			
+
 		</section>
 	</article>
 

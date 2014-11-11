@@ -442,6 +442,10 @@ figcaption {
 .article-view-content a {
     color: #217dd3;
 }
+.article-view-content img {
+	max-width: 100%;
+	height: auto;
+}
 .article-view-content a.carousel-control {
     color: #fff;
 }
@@ -573,10 +577,11 @@ figcaption {
 	#meta .nav {
 		font-size: 14px;
 	}
-	
+
 	#meta .nav > li > a {
 		padding: 8px;
 	}
+}
 
 @media only screen and (max-width: 767px) {
 
@@ -606,15 +611,15 @@ figcaption {
 	#header {
 		padding-top: 16px;
 	}
-	
+
 	h1 {
 		font-size: 24px;
 	}
-	
+
 	.article-latest h5 {
     	font-size: 14px;
 	}
-	
+
 	.bottom-bar p.copyrights {
 	    font-size: 11px;
 	    margin: 12px 0;
