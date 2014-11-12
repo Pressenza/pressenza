@@ -2,59 +2,79 @@
 
 {% block content %}
 
-<h1 class="pagetitle">{{ title }}</h1>
+    <h1 class="pagetitle">{{ title }}</h1>
 
-<div class="panel panel-default">
-  <div class="panel-body">
+    <div class="panel panel-default">
+        <div class="panel-body">
 
-		<div class="row">
-				{% if author.photo %}
-					<div class="col-sm-4 col-xs-12">
-						<img src="{{TimberImage(author.photo)|resize(200, 200)}}" alt="{{title}}" title="{{title}}" class="img-responsive"/>
-					</div>
-					<div class="col-sm-8 col-xs-12">
-						<p>
-							{% if language.language_code == 'de' %}
-							    {{author.bio_de}}
-							{% elseif language.language_code == 'es' %}
-							    {{author.bio_es}}
-							{% elseif language.language_code == 'fr' %}
-							    {{author.bio_fr}}
-							{% elseif language.language_code == 'it' %}
-							    {{author.bio_it}}
-							{% elseif language.language_code == 'pt' %}
-							    {{author.bio_pt}}
-							{% else %}
-							    {{author.description}}
-							{% endif %}
-						</p>
-					</div>
-				{% else %}
-				<div class="col-xs-12">
-					<p>
-						{% if language.language_code == 'de' %}
-						    {{author.bio_de}}
-						{% elseif language.language_code == 'es' %}
-						    {{author.bio_es}}
-						{% elseif language.language_code == 'fr' %}
-						    {{author.bio_fr}}
-						{% elseif language.language_code == 'it' %}
-						    {{author.bio_it}}
-						{% elseif language.language_code == 'pt' %}
-						    {{author.bio_pt}}
-						{% else %}
-						    {{author.description}}
-						{% endif %}
-					</p>
-				</div>
-				{% endif %}
-			</div>
+            <div class="row">
+                {% if author.photo %}
+                    <div class="col-sm-4 col-xs-12">
+                        <img src="{{ TimberImage(author.photo)|resize(200, 200) }}" alt="{{ title }}" title="{{ title }}" class="img-responsive"/>
+                    </div>
+                    <div class="col-sm-8 col-xs-12">
+                        <p>
+                            {% if language.language_code == 'de' %}
+                                {{ author.bio_de }}
+                            {% elseif language.language_code == 'es' %}
+                                {{ author.bio_es }}
+                            {% elseif language.language_code == 'fr' %}
+                                {{ author.bio_fr }}
+                            {% elseif language.language_code == 'it' %}
+                                {{ author.bio_it }}
+                            {% elseif language.language_code == 'pt' %}
+                                {{ author.bio_pt }}
+                            {% else %}
+                                {{ author.description }}
+                            {% endif %}
+                        </p>
+                    </div>
+                {% else %}
+                    <div class="col-xs-12">
+                        <p>
+                            {% if language.language_code == 'de' %}
+                                {{ author.bio_de }}
+                            {% elseif language.language_code == 'es' %}
+                                {{ author.bio_es }}
+                            {% elseif language.language_code == 'fr' %}
+                                {{ author.bio_fr }}
+                            {% elseif language.language_code == 'it' %}
+                                {{ author.bio_it }}
+                            {% elseif language.language_code == 'pt' %}
+                                {{ author.bio_pt }}
+                            {% else %}
+                                {{ author.description }}
+                            {% endif %}
+                        </p>
+                    </div>
+                {% endif %}
+            </div>
 
-  </div>
-</div>
+        </div>
+    </div>
 
-	{% for post in posts %}
-		{% include ["tease.twig"] %}
-	{% endfor %}
+    {% for post in posts %}
+        {% include ["tease.twig"] %}
+    {% endfor %}
+
+    <ul class="pagination">
+        {% if pagination.prev %}
+            <li><a href="{{ pagination.prev.link }}" class="prev {{ pagination.prev.link|length ? '' : 'invisible' }}">&laquo;</a></li>
+        {% endif %}
+
+        {% for page in pagination.pages %}
+            <li>
+                {% if page.link %}
+                    <a href="{{ page.link }}" class="{{ page.class }}">{{ page.title }}</a>
+                {% else %}
+                    <span class="{{ page.class }}">{{ page.title }}</span>
+                {% endif %}
+            </li>
+        {% endfor %}
+
+        {% if pagination.next %}
+            <li><a href="{{ pagination.next.link }}" class="next {{ pagination.next.link|length ? '' : 'invisible' }}">&raquo;</a></li>
+        {% endif %}
+    </ul>
 
 {% endblock %}
