@@ -42,7 +42,7 @@
 		$percolumn = ceil(count($categories)/2);
 		foreach($categories as $category)
 		{
-			$posts = wp_get_recent_posts(array('numberposts' => '3', 'category' => $category->cat_ID, 'suppress_filters' => 0));
+			$posts = wp_get_recent_posts(array('numberposts' => '3', 'category' => $category->cat_ID, 'post_status' => 'publish', 'suppress_filters' => 0));
 			if(count($posts) > 0)
 			{
 				$seccolumn[$s].= '<div class="sections"><h5><a href="' . get_category_link( $category->term_id ) . '">' . $category->name . '</a></h5><ul>';
