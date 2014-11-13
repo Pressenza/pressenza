@@ -12,7 +12,7 @@
 				{% if post.place != '' %}
 					- {{post.place}}
 				{% endif %}
-				</strong> &nbsp; {{__('Posted by', 'pressenza')}}: <a href="{{post.author.path}}">{{post.author.name}}</a>
+				</strong> - <a href="{{post.author.get_link}}">{{post.author.name}}</a>
 			</div>
 
 			{% if post.get_thumbnail %}
