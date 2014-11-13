@@ -446,8 +446,21 @@ figcaption {
     color: #217dd3;
 }
 .article-view-content img {
+	display: block;
 	max-width: 100%;
 	height: auto;
+	margin-bottom: 15px;
+}
+.article-view-content div.wp-caption {
+	margin: 0 0 15px 0;
+}
+.article-view-content div.wp-caption img {
+	margin: 0 0 5px 0;
+}
+.article-view-content p.wp-caption-text {
+	font-size: 13px;
+	color: #999;
+	margin: 0;
 }
 .article-view-content a.carousel-control {
     color: #fff;

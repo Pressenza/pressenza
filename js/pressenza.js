@@ -1,5 +1,5 @@
 jQuery(document).ready(function($){
-	
+
 	// Make Youtube and Vimeo responsive
 	// http://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php
 	var $allVideos = $("iframe[src^='//player.vimeo.com'], iframe[src^='http://www.youtube.com']"),
@@ -18,5 +18,7 @@ jQuery(document).ready(function($){
 	      .height(newWidth * $el.data('aspectRatio'));
 	  });
 	}).resize();
-	
+
+    $(".wp-caption").removeAttr('style');
+
 });

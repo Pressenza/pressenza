@@ -74,6 +74,8 @@ function load_scripts()
     wp_enqueue_script('pressenza', THEME_URL . '/js/pressenza.js', array(), false, true);
 }
 
+global $shortcode_tags;
+
 // Custom gallery
 add_shortcode('gallery', 'pressenza_gallery_shortcode');
 function pressenza_gallery_shortcode($attr)
@@ -148,15 +150,6 @@ function pressenza_gallery_shortcode($attr)
     return Timber::compile('gallery.twig', $context);
 }
 
-// Image shortcode for old images
-function image_shortcode($atts, $content = null)
-{
-    extract(shortcode_atts(array('src' => '', 'width' => '', 'height' => ''), $atts));
-    return '<img class="alignnone size-large" src="' . $src . '" alt="" width="' . $width . '" height="' . $height . '" />';
-}
-
-add_shortcode('image', 'image_shortcode');
-
 /*
  * disable the [media-credit] shortcodes, as explained here http://wordpress.org/plugins/media-credit/faq/
  */
@@ -164,8 +157,24 @@ function ignore_media_credit_shortcode($atts, $content = null)
 {
     return $content;
 }
-
-global $shortcode_tags;
+// Media credit shortcode for old articles
+function media_credit_shortcode($atts, $content = null)
+{
+    extract(shortcode_atts(array('name' => ''), $atts));
+    $output = '<div class="wp-caption alignnone">' . $content . '<p class="wp-caption-text">' . $name .'</p></div>';
+    return $output;
+}
 if (!array_key_exists('media-credit', $shortcode_tags)) {
-    add_shortcode('media-credit', 'ignore_media_credit_shortcode');
+    add_shortcode('media-credit', 'media_credit_shortcode');
+}
+
+// Image shortcode for old articles
+function image_shortcode($atts, $content = null)
+{
+    extract(shortcode_atts(array('src' => '', 'width' => '', 'height' => ''), $atts));
+    return '<img class="alignnone size-large" src="' . $src . '" alt="" width="' . $width . '" height="' . $height . '" />';
+}
+
+if (!array_key_exists('image', $shortcode_tags)) {
+    add_shortcode('image', 'image_shortcode');
 }
