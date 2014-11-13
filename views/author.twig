@@ -13,17 +13,37 @@
                         <img src="{{ TimberImage(author.photo)|resize(200, 200) }}" alt="{{ title }}" title="{{ title }}" class="img-responsive"/>
                     </div>
                     <div class="col-sm-8 col-xs-12">
-                        <p>
+                        <p class="single">
                             {% if language.language_code == 'de' %}
-                                {{ author.bio_de }}
+                                {% if author.bio_de != '' %}
+                                    {{ author.bio_de }}
+                                {% else %}
+                                    {{ author.description }}
+                                {% endif %}
                             {% elseif language.language_code == 'es' %}
-                                {{ author.bio_es }}
+                                {% if author.bio_es != '' %}
+                                    {{ author.bio_es }}
+                                {% else %}
+                                    {{ author.description }}
+                                {% endif %}
                             {% elseif language.language_code == 'fr' %}
-                                {{ author.bio_fr }}
+                                {% if author.bio_fr != '' %}
+                                    {{ author.bio_fr }}
+                                {% else %}
+                                    {{ author.description }}
+                                {% endif %}
                             {% elseif language.language_code == 'it' %}
-                                {{ author.bio_it }}
+                                {% if author.bio_it != '' %}
+                                    {{ author.bio_it }}
+                                {% else %}
+                                    {{ author.description }}
+                                {% endif %}
                             {% elseif language.language_code == 'pt' %}
-                                {{ author.bio_pt }}
+                                {% if author.bio_pt != '' %}
+                                    {{ author.bio_pt }}
+                                {% else %}
+                                    {{ author.description }}
+                                {% endif %}
                             {% else %}
                                 {{ author.description }}
                             {% endif %}
@@ -31,17 +51,37 @@
                     </div>
                 {% else %}
                     <div class="col-xs-12">
-                        <p>
+                        <p class="single">
                             {% if language.language_code == 'de' %}
-                                {{ author.bio_de }}
+                                {% if author.bio_de != '' %}
+                                    {{ author.bio_de }}
+                                {% else %}
+                                    {{ author.description }}
+                                {% endif %}
                             {% elseif language.language_code == 'es' %}
-                                {{ author.bio_es }}
+                                {% if author.bio_es != '' %}
+                                    {{ author.bio_es }}
+                                {% else %}
+                                    {{ author.description }}
+                                {% endif %}
                             {% elseif language.language_code == 'fr' %}
-                                {{ author.bio_fr }}
+                                {% if author.bio_fr != '' %}
+                                    {{ author.bio_fr }}
+                                {% else %}
+                                    {{ author.description }}
+                                {% endif %}
                             {% elseif language.language_code == 'it' %}
-                                {{ author.bio_it }}
+                                {% if author.bio_it != '' %}
+                                    {{ author.bio_it }}
+                                {% else %}
+                                    {{ author.description }}
+                                {% endif %}
                             {% elseif language.language_code == 'pt' %}
-                                {{ author.bio_pt }}
+                                {% if author.bio_pt != '' %}
+                                    {{ author.bio_pt }}
+                                {% else %}
+                                    {{ author.description }}
+                                {% endif %}
                             {% else %}
                                 {{ author.description }}
                             {% endif %}

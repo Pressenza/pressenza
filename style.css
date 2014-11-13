@@ -188,6 +188,9 @@ h5 {
 p {
 	margin: 0 0 15px 0;
 }
+p.single {
+	margin: 0;
+}
 p.list {
 	margin: 0 0 10px 0;
 }
