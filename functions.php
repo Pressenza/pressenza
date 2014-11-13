@@ -148,6 +148,15 @@ function pressenza_gallery_shortcode($attr)
     return Timber::compile('gallery.twig', $context);
 }
 
+// Image shortcode for old images
+function image_shortcode($atts, $content = null)
+{
+    extract(shortcode_atts(array('src' => '', 'width' => '', 'height' => ''), $atts));
+    return '<img class="alignnone size-large" src="' . $src . '" alt="" width="' . $width . '" height="' . $height . '" />';
+}
+
+add_shortcode('image', 'image_shortcode');
+
 /*
  * disable the [media-credit] shortcodes, as explained here http://wordpress.org/plugins/media-credit/faq/
  */
