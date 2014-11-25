@@ -10,7 +10,7 @@
             <div class="row">
                 {% if author.photo %}
                     <div class="col-sm-4 col-xs-12">
-                        <img src="{{ TimberImage(author.photo)|resize(200, 200) }}" alt="{{ title }}" title="{{ title }}" class="img-responsive"/>
+                        <img src="{{ TimberImage(author.photo)|resize(200) }}" alt="{{ title }}" title="{{ title }}" class="img-responsive"/>
                     </div>
                     <div class="col-sm-8 col-xs-12">
                         <p class="single">

@@ -61,7 +61,11 @@
         <div class="box-content">
             <div class="row">
                 <div class="col-sm-2 col-xs-4">
-                    {{ authoravatar }}
+                    {% if post.author.photo %}
+                        <img src="{{ TimberImage(post.author.photo)|resize(70) }}" alt="{{ post.author.name }}" title="{{ post.author.name }}"/>
+                    {% else %}
+                        {{ authoravatar }}
+                    {% endif %}
                 </div>
                 <div class="col-sm-10 col-xs-8">
                     <p><strong><a href="{{ post.author.link }}" rel="author">{{ post.author.name }}</a></strong><br/>
