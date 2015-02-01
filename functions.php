@@ -1,6 +1,6 @@
 <?php
 // Texts in order to create a po-file
-/*$e1 = __('Read articles by region', 'pressenza');
+$e1 = __('Read articles by region', 'pressenza');
 $e1 = __('Read articles by section', 'pressenza');
 $e1 = __('Sections', 'pressenza');
 $e1 = __('Opinions', 'pressenza');
@@ -12,7 +12,8 @@ $e1 = __('About The Author', 'pressenza');
 $e1 = __('Number of Entries', 'pressenza');
 $e1 = __('Image by', 'pressenza');
 $e1 = __('The original article can be found on our partner\'s website here', 'pressenza');
-*/
+$e1 = __('This post is also available in: %s', 'pressenza');
+
 add_theme_support('post-formats');
 add_theme_support('post-thumbnails');
 add_theme_support('menus');

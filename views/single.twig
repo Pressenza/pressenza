@@ -15,6 +15,10 @@
                 </strong> - <a href="{{ post.author.get_link }}">{{ post.author.name }}</a>
             </div>
 
+            {% if otherlanguages != '' %}
+                <p class="icl_post_in_other_langs">{{ __('This post is also available in: %s', 'pressenza')|format(otherlanguages) }}</p>
+            {% endif %}
+
             {% if post.get_thumbnail %}
                 <figure>
                     <img src="{{ post.thumbnail.src }}" class="img-responsive" alt="{{ post.title }}"/>
