@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Pressenza\n"
-"POT-Creation-Date: 2014-11-09 19:41+0100\n"
-"PO-Revision-Date: 2015-01-21 17:32+0100\n"
+"POT-Creation-Date: 2015-02-02 09:23+0100\n"
+"PO-Revision-Date: 2015-02-02 09:23+0100\n"
 "Last-Translator: Tom Bütikofer\n"
 "Language-Team: Pressenza\n"
 "Language: es\n"
@@ -21,11 +21,6 @@ msgstr ""
 #: /Users/tbutikofer/Documents/Work/Projects/pressenza/archive.php:27
 msgid "Archive"
 msgstr "Archivo"
-
-#: /Users/tbutikofer/Documents/Work/Projects/pressenza/author.php:21
-#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:9
-msgid "Posted by"
-msgstr "Autor"
 
 #: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:3
 msgid "Read articles by region"
@@ -51,6 +46,10 @@ msgstr "Entrevistas"
 msgid "Latest News"
 msgstr "Últimas noticias"
 
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:9
+msgid "Posted by"
+msgstr "Autor"
+
 #: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:10
 msgid "Categories"
 msgstr "Categorías"
@@ -71,6 +70,11 @@ msgstr "Imagen de"
 msgid "The original article can be found on our partner's website here"
 msgstr ""
 "El artículo original puede encontrarse en el sitio web de nuestros asociados"
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:15
+#, php-format
+msgid "This post is also available in: %s"
+msgstr "Este artículo también está disponible en: %s"
 
 #: /Users/tbutikofer/Documents/Work/Projects/pressenza/searchform.php:3
 msgid "Search"

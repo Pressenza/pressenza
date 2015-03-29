@@ -15,7 +15,7 @@
                 <div class="row">
                     {% if post.get_thumbnail %}
                         <div class="col-sm-4 col-xs-12">
-                            <a href="{{ post.link }}"><img src="{{ post.thumbnail.src|resize(360) }}" alt="{{ post.title }}" class="img-responsive"></a>
+                            <a href="{{ post.link }}"><img src="{{ post.thumbnail.src('medium') }}" alt="{{ post.title }}" class="img-responsive"></a>
                         </div>
                         <div class="col-sm-8 col-xs-12">
                             <p>{{ post.get_preview(50,false,'&raquo;') }}</p>

@@ -1,18 +1,19 @@
 <?php
 // Texts in order to create a po-file
-$e1 = __('Read articles by region', 'pressenza');
-$e1 = __('Read articles by section', 'pressenza');
-$e1 = __('Sections', 'pressenza');
-$e1 = __('Opinions', 'pressenza');
-$e1 = __('Interviews', 'pressenza');
-$e1 = __('Latest News', 'pressenza');
-$e1 = __('Posted by', 'pressenza');
-$e1 = __('Categories', 'pressenza');
-$e1 = __('About The Author', 'pressenza');
-$e1 = __('Number of Entries', 'pressenza');
-$e1 = __('Image by', 'pressenza');
-$e1 = __('The original article can be found on our partner\'s website here', 'pressenza');
-$e1 = __('This post is also available in: %s', 'pressenza');
+//$e1 = __('Read articles by region', 'pressenza');
+//$e1 = __('Read articles by section', 'pressenza');
+//$e1 = __('Sections', 'pressenza');
+//$e1 = __('Opinions', 'pressenza');
+//$e1 = __('Interviews', 'pressenza');
+//$e1 = __('Latest News', 'pressenza');
+//$e1 = __('Posted by', 'pressenza');
+//$e1 = __('Categories', 'pressenza');
+//$e1 = __('About The Author', 'pressenza');
+//$e1 = __('Number of Entries', 'pressenza');
+//$e1 = __('Image by', 'pressenza');
+//$e1 = __('The original article can be found on our partner\'s website here', 'pressenza');
+//$e1 = __('This post is also available in: %s', 'pressenza');
+//$e1 = __('Search results for', 'pressenza');
 
 add_theme_support('post-formats');
 add_theme_support('post-thumbnails');
@@ -22,10 +23,13 @@ add_filter('timber_context', 'add_to_context');
 
 add_action('wp_enqueue_scripts', 'load_scripts');
 
+add_image_size('featured', 750, 422, true);
+
 define('THEME_URL', get_template_directory_uri());
 
 define('ICL_DONT_LOAD_LANGUAGE_SELECTOR_CSS', true);
 define('ICL_DONT_LOAD_LANGUAGES_JS', true);
+load_theme_textdomain('pressenza', get_template_directory());
 
 register_sidebar(array(
     'name' => 'Primary Sidebar',
@@ -158,13 +162,15 @@ function ignore_media_credit_shortcode($atts, $content = null)
 {
     return $content;
 }
+
 // Media credit shortcode for old articles
 function media_credit_shortcode($atts, $content = null)
 {
     extract(shortcode_atts(array('name' => ''), $atts));
-    $output = '<div class="wp-caption alignnone">' . $content . '<p class="wp-caption-text">' . $name .'</p></div>';
+    $output = '<div class="wp-caption alignnone">' . $content . '<p class="wp-caption-text">' . $name . '</p></div>';
     return $output;
 }
+
 if (!array_key_exists('media-credit', $shortcode_tags)) {
     add_shortcode('media-credit', 'media_credit_shortcode');
 }
@@ -179,3 +185,14 @@ function image_shortcode($atts, $content = null)
 if (!array_key_exists('image', $shortcode_tags)) {
     add_shortcode('image', 'image_shortcode');
 }
+
+// Tag Cloud
+function pressenza_tag_cloud_args($args)
+{
+    $args['largest'] = 24;
+    $args['smallest'] = 10;
+    $args['unit'] = 'px';
+    return $args;
+}
+
+add_filter('widget_tag_cloud_args', 'pressenza_tag_cloud_args');

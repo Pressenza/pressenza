@@ -512,6 +512,11 @@ figcaption {
     width: 100%;
 }
 
+/* Tag Cloud */
+.tagcloud a {
+	color: #066899;
+}
+
 
 /* Footer */
 #footer {

@@ -39,7 +39,7 @@ $context['otherlanguages'] = $otherlanguages;
 $postcategories = wp_get_post_categories($post->ID);
 $cats = array();
 //$catexlude = array(9609, 9610, 9611, 9612, 9613, 9614); // dev
-$catexlude = array(11385, 11386, 11387, 11388, 11390); // live
+$catexlude = array(11385, 11386, 11387, 11388, 11389, 11390); // live
 $needles = array('@de', '@es', '@fr', '@pt');
 foreach ($postcategories as $c) {
     if (!in_array($c, $catexlude)) {
@@ -48,7 +48,6 @@ foreach ($postcategories as $c) {
     }
 }
 $context['postcats'] = implode(', ', $cats);
-//$context['postcats'] = get_the_category_list(', ', '', $post->ID);
 
 // get post tags
 $context['posttags'] = get_the_tag_list('Tags: ', ', ');

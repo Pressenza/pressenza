@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Pressenza\n"
-"POT-Creation-Date: 2015-02-01 11:55+0100\n"
-"PO-Revision-Date: 2015-02-01 11:56+0100\n"
+"POT-Creation-Date: 2015-02-14 21:07+0100\n"
+"PO-Revision-Date: 2015-02-14 21:17+0100\n"
 "Last-Translator: Tom Bütikofer\n"
 "Language-Team: Pressenza\n"
 "Language: de\n"
@@ -75,6 +75,10 @@ msgstr ""
 #, php-format
 msgid "This post is also available in: %s"
 msgstr "Dieser Artikel ist auch auf %s verfügbar."
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:16
+msgid "Search results for"
+msgstr "Suchergebnisse für"
 
 #: /Users/tbutikofer/Documents/Work/Projects/pressenza/searchform.php:3
 msgid "Search"

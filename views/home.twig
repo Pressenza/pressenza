@@ -11,10 +11,10 @@
 			{% else %}
 			<div class="item">
 			{% endif %}
-				<a href="{{post.link}}"><img src="{{post.thumbnail.src|resize(780, 433)}}" alt="{{post.title}}"></a>
+				<a href="{{ post.link }}"><img src="{{ post.thumbnail.src('featured') }}" alt="{{ post.title }}"></a>
 				<div class="carousel-caption">
-					<h2><a href="{{post.link}}">{{post.title}}</a></h2>
-					<p class="hidden-xs">{{post.get_preview(40,false,'',true)}}</p>
+					<h2><a href="{{ post.link }}">{{ post.title }}</a></h2>
+					<p class="hidden-xs">{{ post.get_preview(40,false,'',true) }}</p>
 				</div>
 			</div>
 			{% endif %}
@@ -34,17 +34,17 @@
 				<h2>{{__('Latest News', 'pressenza')}}</h2>
 				<div class="box-content">
 				{% for post in latest %}
-					<div class="article-latest" onclick="location.href='{{post.link}}'">
+					<div class="article-latest" onclick="location.href='{{ post.link }}'">
 					<div class="row">
 					{% if post.get_thumbnail %}
 						<div class="col-xs-5 col-sm-3">
-							<img src="{{post.thumbnail.src|resize(160,100)}}" alt="{{post.title}}" class="img-responsive">
+							<img src="{{ post.thumbnail.src('medium') }}" alt="{{ post.title }}" class="img-responsive">
 						</div>
 					{% endif %}
 						<div class="col-xs-7 col-sm-9">
 							<div class="article-list-date">{{ post.post_date|date("d.m.Y") }}</div>
-							<h5>{{post.title}}</h5>
-							<p class="hidden-xs">{{post.get_preview(20,false,'',true)}}</p>
+							<h5>{{ post.title }}</h5>
+							<p class="hidden-xs">{{ post.get_preview(20,false,'',true) }}</p>
 						</div>
 					</div>
 					</div>
