@@ -2,97 +2,104 @@
 
 {% block content %}
 
-	<div id="featured" class="carousel slide" data-ride="carousel">
-		<div class="carousel-inner">
-		{% for post in featured %}
-			{% if post.get_thumbnail %}
-			{% if loop.index == 1 %}
-			<div class="item active">
-			{% else %}
-			<div class="item">
-			{% endif %}
-				<a href="{{ post.link }}"><img src="{{ post.thumbnail.src('featured') }}" alt="{{ post.title }}"></a>
-				<div class="carousel-caption">
-					<h2><a href="{{ post.link }}">{{ post.title }}</a></h2>
-					<p class="hidden-xs">{{ post.get_preview(40,false,'',true) }}</p>
-				</div>
-			</div>
-			{% endif %}
-		{% endfor %}
-		</div>
-		<a class="left carousel-control" href="#featured" data-slide="prev">
-			<span class="glyphicon glyphicon-chevron-left"></span>
-	  	</a>
-		<a class="right carousel-control" href="#featured" data-slide="next">
-			<span class="glyphicon glyphicon-chevron-right"></span>
-	  	</a>
-	</div>
+    <div id="featured" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        {% for post in featured %}
+        {% if post.get_thumbnail %}
+        {% if loop.index == 1 %}
+        <div class="item active">
+            {% else %}
+            <div class="item">
+                {% endif %}
+                <a href="{{ post.link }}"><img src="{{ post.thumbnail.src('featured') }}" alt="{{ post.title }}"></a>
 
-	<div class="row">
-		<div class="col-xs-12">
-			<div class="box">
-				<h2>{{__('Latest News', 'pressenza')}}</h2>
-				<div class="box-content">
-				{% for post in latest %}
-					<div class="article-latest" onclick="location.href='{{ post.link }}'">
-					<div class="row">
-					{% if post.get_thumbnail %}
-						<div class="col-xs-5 col-sm-3">
-							<img src="{{ post.thumbnail.src('medium') }}" alt="{{ post.title }}" class="img-responsive">
-						</div>
-					{% endif %}
-						<div class="col-xs-7 col-sm-9">
-							<div class="article-list-date">{{ post.post_date|date("d.m.Y") }}</div>
-							<h5>{{ post.title }}</h5>
-							<p class="hidden-xs">{{ post.get_preview(20,false,'',true) }}</p>
-						</div>
-					</div>
-					</div>
-				{% endfor %}
-				</div>
-			</div>
-		</div>
-	</div>
+                <div class="carousel-caption">
+                    <h2><a href="{{ post.link }}">{{ post.title }}</a></h2>
 
-	<div class="row">
-		<div class="col-xs-12 col-sm-6">
-			<div class="box">
-				<h2>{{__('Opinions', 'pressenza')}}</h2>
-				<div class="box-content">
-				{% for post in opinions %}
-					<p class="list"><a href="{{post.link}}">{{post.title}}</a></p>
-				{% endfor %}
-				</div>
-			</div>
-		</div>
-		<div class="col-xs-12 col-sm-6">
-			<div class="box">
-				<h2>{{__('Interviews', 'pressenza')}}</h2>
-				<div class="box-content">
-				{% for post in interviews %}
-					<p class="list"><a href="{{post.link}}">{{post.title}}</a></p>
-				{% endfor %}
-				</div>
-			</div>
-		</div>
-	</div>
+                    <p class="hidden-xs">{{ post.get_preview(40,false,'',true) }}</p>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <a class="left carousel-control" href="#featured" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#featured" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div>
 
-	<div class="row hidden-sm">
-		<div class="col-xs-12">
-			<div class="box">
-				<h2>{{__('Sections', 'pressenza')}}</h2>
-				<div class="box-content">
-					<div class="row">
-						<div class="col-xs-12 col-sm-6">
-						{{seccolumn.0}}
-						</div>
-						<div class="col-xs-12 col-sm-6">
-						{{seccolumn.1}}
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <h2>{{ __('Latest News', 'pressenza') }}</h2>
+
+                <div class="box-content">
+                    {% for post in latest %}
+                        <div class="article-latest" onclick="location.href='{{ post.link }}'">
+                            <div class="row">
+                                <div class="col-xs-4 col-sm-2">
+                                    {% if post.get_thumbnail %}
+                                        <img src="{{ post.thumbnail.src('thumbnail') }}" alt="{{ post.title }}" class="img-responsive">
+                                    {% endif %}
+                                </div>
+                                <div class="col-xs-8 col-sm-10">
+                                    <div class="article-list-date">{{ post.post_date|date("d.m.Y") }}</div>
+                                    <h5>{{ post.title }}</h5>
+
+                                    <p class="hidden-xs">{{ post.get_preview(20,false,'',true) }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-6">
+            <div class="box">
+                <h2>{{ __('Opinions', 'pressenza') }}</h2>
+
+                <div class="box-content">
+                    {% for post in opinions %}
+                        <p class="list"><a href="{{ post.link }}">{{ post.title }}</a></p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+            <div class="box">
+                <h2>{{ __('Interviews', 'pressenza') }}</h2>
+
+                <div class="box-content">
+                    {% for post in interviews %}
+                        <p class="list"><a href="{{ post.link }}">{{ post.title }}</a></p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row hidden-sm">
+        <div class="col-xs-12">
+            <div class="box">
+                <h2>{{ __('Sections', 'pressenza') }}</h2>
+
+                <div class="box-content">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6">
+                            {{ seccolumn.0 }}
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            {{ seccolumn.1 }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 {% endblock %}

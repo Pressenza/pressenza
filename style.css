@@ -60,7 +60,7 @@ Version: 1.0.1
 
 ul.top_social_icons {
     height: 35px;
-    margin: 3px 10px 0 0;
+    margin: 3px 15px 0 0;
     list-style-type: none;
 }
 ul.top_social_icons li {
@@ -218,9 +218,11 @@ figcaption {
 }
 
 #header {
-	padding-top: 28px;
+	/*padding-top: 10px;*/
+	text-align: right;
 	line-height: 0;
-	background: #fff url(images/grid_pat.png);
+	/*background: #fff url(images/grid_pat.png);*/
+	background-color: #ffffff;
 	border-bottom: 1px solid #c3c3c3;
 }
 #meta {
