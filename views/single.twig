@@ -33,6 +33,8 @@
                             {{ post.thumbnail.caption_it }}
                         {% elseif language.language_code == 'pt' %}
                             {{ post.thumbnail.caption_pt }}
+                        {% elseif language.language_code == 'el' %}
+                            {{ post.thumbnail.caption_el }}
                         {% else %}
                             {{ post.thumbnail.caption }}
                         {% endif %}
@@ -100,6 +102,12 @@
                         {% elseif language.language_code == 'pt' %}
                             {% if post.get_author.bio_pt != '' %}
                                 {{ post.get_author.bio_pt }}
+                            {% else %}
+                                {{ post.get_author.description }}
+                            {% endif %}
+                        {% elseif language.language_code == 'el' %}
+                            {% if post.get_author.bio_el != '' %}
+                                {{ post.get_author.bio_el }}
                             {% else %}
                                 {{ post.get_author.description }}
                             {% endif %}

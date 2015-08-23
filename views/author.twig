@@ -44,6 +44,12 @@
                                 {% else %}
                                     {{ author.description }}
                                 {% endif %}
+                            {% elseif language.language_code == 'el' %}
+                                {% if author.bio_el != '' %}
+                                    {{ author.bio_el }}
+                                {% else %}
+                                    {{ author.description }}
+                                {% endif %}
                             {% else %}
                                 {{ author.description }}
                             {% endif %}
@@ -79,6 +85,12 @@
                             {% elseif language.language_code == 'pt' %}
                                 {% if author.bio_pt != '' %}
                                     {{ author.bio_pt }}
+                                {% else %}
+                                    {{ author.description }}
+                                {% endif %}
+                            {% elseif language.language_code == 'el' %}
+                                {% if author.bio_el != '' %}
+                                    {{ author.bio_el }}
                                 {% else %}
                                     {{ author.description }}
                                 {% endif %}
