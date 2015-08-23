@@ -19,6 +19,8 @@
 				    {{TimberImage(photo).caption_it}}
 				{% elseif language.language_code == 'pt' %}
 				    {{TimberImage(photo).caption_pt}}
+				{% elseif language.language_code == 'el' %}
+					{{TimberImage(photo).caption_el}}
 				{% else %}
 				    {{TimberImage(photo).post_excerpt}}
 				{% endif %}
@@ -27,7 +29,7 @@
 		</div>
 	{% endfor %}
 	</div>
-	
+
 	<a class="left carousel-control" href="#featured" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
 	<a class="right carousel-control" href="#featured" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
 </div>
