@@ -21,7 +21,7 @@
 
             {% if post.get_thumbnail %}
                 <figure>
-                    <img src="{{ post.thumbnail.src }}" class="img-responsive" alt="{{ post.title }}"/>
+                    <img src="{{ post.thumbnail.src('large') }}" class="img-responsive" alt="{{ post.title }}"/>
                     <figcaption>
                         {% if language.language_code == 'de' %}
                             {{ post.thumbnail.caption_de }}
