@@ -29,7 +29,7 @@ $context['latest'] = Timber::get_posts(array('numberposts' => '5', 'suppress_fil
 $context['opinions'] = Timber::get_posts(array('numberposts' => '3', 'cat' => 160, 'suppress_filters' => 0));
 
 // get Interviews (Category 154)
-$context['interviews'] = Timber::get_posts(array('numberposts' => '3', 'cat' => 154, 'suppress_filters' => 0));
+$context['interviews'] = Timber::get_posts(array('numberposts' => '3', 'cat' => 19316, 'suppress_filters' => 0));
 
 // get Sections and recent posts
 $transient = 'latest_by_sections_' . ICL_LANGUAGE_CODE;
