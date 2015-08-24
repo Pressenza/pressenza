@@ -205,14 +205,17 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover, a:hover 
 
 h1 {
   margin      : 4px 0 8px 0;
-  font-family : 'Play','Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-family : 'Play',sans-serif;
   font-size   : 30px;
   color       : #40454d;
 }
 
 h1.pagetitle {
   margin      : 7px 0 20px 14px;
-  font-family : 'Play','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+html:lang(el) h1 {
+  font-family : 'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 
 h2 {
@@ -282,8 +285,12 @@ figcaption {
 }
 
 #meta .nav {
-  font-family : 'Play','Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-family : 'Play',sans-serif;
   font-size   : 16px;
+}
+
+html:lang(el) #meta .nav {
+  font-family : 'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 
 #meta .nav-pills > li > a {
@@ -314,9 +321,13 @@ figcaption {
 
 .carousel-caption h2 {
   margin      : 0;
-  font-family : 'Play','Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-family : 'Play',sans-serif;
   font-size   : 14px;
   font-weight : bold;
+}
+
+html:lang(el) .carousel-caption h2 {
+  font-family : 'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 
 .carousel-caption h2 a {
@@ -366,23 +377,31 @@ figcaption {
 .box h2, h4.panel-title {
   margin           : 0;
   padding          : 6px 18px;
-  font-family : 'Play','Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-family : 'Play',sans-serif;
   font-size        : 1.125em;
   font-weight      : normal;
   color            : #2f2f2f;
   background-color : #ebebeb;
 }
 
+html:lang(el) .box h2, html:lang(el) h4.panel-title {
+  font-family : 'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
 .box h3 {
   margin           : 0;
   padding          : 0 10px;
   height           : 28px;
-  font-family : 'Play','Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-family : 'Play',sans-serif;
   font-size        : 14px;
   font-weight      : normal;
   color            : #2f2f2f;
   line-height      : 28px;
   background-color : #ebebeb;
+}
+
+html:lang(el) .box h3 {
+  font-family : 'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 
 .box-content {
@@ -405,10 +424,14 @@ figcaption {
 }
 
 .sections h5 {
-  font-family : 'Play','Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-family : 'Play',sans-serif;
   font-size   : 14px;
   margin      : 0 0 5px 0;
   color       : #222;
+}
+
+html:lang(el) .sections h5 {
+  font-family : 'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 
 .sections ul {
@@ -431,10 +454,14 @@ figcaption {
 }
 
 #crumbs {
-  font-family : 'Play','Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-family : 'Play',sans-serif;
   font-size   : 12px;
   line-height : 1;
   padding     : 0 0 16px 18px
+}
+
+html:lang(el) #crumbs {
+  font-family : 'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 
 /* Article */
@@ -448,10 +475,14 @@ figcaption {
 }
 
 .article-latest h5 {
-  font-family : 'Play','Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-family : 'Play',sans-serif;
   font-size   : 15px;
   margin      : 0 0 5px 0;
   color       : #222;
+}
+
+html:lang(el) .article-latest h5 {
+  font-family : 'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 
 .article-latest p {
@@ -470,10 +501,14 @@ figcaption {
 }
 
 .article-list h4 {
-  font-family : 'Play','Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-family : 'Play',sans-serif;
   font-size   : 20px;
   margin      : 0 0 15px 0;
   color       : #222;
+}
+
+html:lang(el) .article-list h4 {
+  font-family : 'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 
 .article-list h4 a {
@@ -620,10 +655,16 @@ figcaption {
 #footer h5,
 #footer .footerwidget h2 {
   margin      : 0 0 5px 0;
-  font-family : 'Play','Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-family : 'Play',sans-serif;
   font-size   : 15px;
   font-weight : bold;
   color       : #5E6066;
+}
+
+
+html:lang(el) #footer h5,
+html:lang(el) #footer .footerwidget h2 {
+  font-family : 'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 
 #footer ul {
