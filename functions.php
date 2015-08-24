@@ -66,7 +66,7 @@ function add_to_context($data)
     $data['sidebar_right'] = Timber::get_widgets('sidebar-1');
     $data['sidebar_bottom'] = Timber::get_widgets('sidebar-2');
     // Languages WPML
-    $data['languages'] = icl_get_languages('skip_missing=0&orderby=code');
+    $data['languages'] = icl_get_languages('skip_missing=0');
     $data['language'] = $data['languages'][ICL_LANGUAGE_CODE];
     return $data;
 }
