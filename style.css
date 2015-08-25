@@ -608,8 +608,8 @@ html:lang(el) .article-list h4 {
   color : #217dd3;
 }
 
-/* Search */
-.widget_search h3 {
+.widget_search h3,
+.widget_archive label {
   display : none;
 }
 
