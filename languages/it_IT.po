@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Pressenza\n"
-"POT-Creation-Date: 2015-02-01 21:52+0100\n"
-"PO-Revision-Date: 2015-02-01 21:52+0100\n"
+"POT-Creation-Date: 2015-08-27 22:00+0100\n"
+"PO-Revision-Date: 2015-08-27 22:00+0100\n"
 "Last-Translator: Tom Bütikofer\n"
 "Language-Team: Pressenza\n"
 "Language: it\n"
@@ -17,8 +17,8 @@ msgstr ""
 
 #: /Users/tbutikofer/Documents/Work/Projects/pressenza/archive.php:21
 #: /Users/tbutikofer/Documents/Work/Projects/pressenza/archive.php:23
-#: /Users/tbutikofer/Documents/Work/Projects/pressenza/archive.php:25
-#: /Users/tbutikofer/Documents/Work/Projects/pressenza/archive.php:27
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/archive.php:26
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/archive.php:29
 msgid "Archive"
 msgstr "Archivi"
 
@@ -74,6 +74,45 @@ msgstr "Qui l'articolo originale sul sito del nostro partner"
 #, php-format
 msgid "This post is also available in: %s"
 msgstr "Quest'articolo è disponibile anche in: %s"
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:16
+msgid "Search results for"
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:17
+msgid "Archives"
+msgstr "Archivio"
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/plugins/timber-library/lib/timber-archives.php:100
+#, php-format
+msgid "%1$s %2$d"
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/plugins/timber-library/lib/timber-archives.php:102
+#, php-format
+msgid "%1$s"
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/plugins/timber-library/lib/timber-helper.php:177
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/plugins/timber-library/lib/timber-helper.php:562
+msgid "&hellip;"
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/plugins/timber-library/lib/timber-helper.php:496
+msgid "&laquo; Previous"
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/plugins/timber-library/lib/timber-helper.php:497
+msgid "Next &raquo;"
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/plugins/timber-library/lib/timber-url-helper.php:209
+msgid "Invalid URL Provided."
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/plugins/timber-library/lib/timber-url-helper.php:214
+msgid "Could not create Temporary file."
+msgstr ""
 
 #: /Users/tbutikofer/Documents/Work/Projects/pressenza/searchform.php:3
 msgid "Search"

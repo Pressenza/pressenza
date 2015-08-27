@@ -14,6 +14,7 @@
 //$e1 = __('The original article can be found on our partner\'s website here', 'pressenza');
 //$e1 = __('This post is also available in: %s', 'pressenza');
 //$e1 = __('Search results for', 'pressenza');
+//$e1 = __('Archives', 'pressenza');
 
 add_theme_support('post-formats');
 add_theme_support('post-thumbnails');

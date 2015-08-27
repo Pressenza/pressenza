@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Pressenza\n"
-"POT-Creation-Date: 2014-11-09 19:44+0100\n"
-"PO-Revision-Date: 2014-11-09 19:44+0100\n"
+"POT-Creation-Date: 2015-08-27 22:00+0100\n"
+"PO-Revision-Date: 2015-08-27 22:01+0100\n"
 "Last-Translator: Tom Bütikofer\n"
 "Language-Team: Pressenza\n"
 "Language: pt\n"
@@ -17,15 +17,10 @@ msgstr ""
 
 #: /Users/tbutikofer/Documents/Work/Projects/pressenza/archive.php:21
 #: /Users/tbutikofer/Documents/Work/Projects/pressenza/archive.php:23
-#: /Users/tbutikofer/Documents/Work/Projects/pressenza/archive.php:25
-#: /Users/tbutikofer/Documents/Work/Projects/pressenza/archive.php:27
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/archive.php:26
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/archive.php:29
 msgid "Archive"
 msgstr "Arquivo"
-
-#: /Users/tbutikofer/Documents/Work/Projects/pressenza/author.php:21
-#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:9
-msgid "Posted by"
-msgstr "Publicado por"
 
 #: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:3
 msgid "Read articles by region"
@@ -51,6 +46,10 @@ msgstr "Entrevista"
 msgid "Latest News"
 msgstr "Últimas notícias"
 
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:9
+msgid "Posted by"
+msgstr "Publicado por"
+
 #: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:10
 msgid "Categories"
 msgstr "Categorias"
@@ -70,6 +69,50 @@ msgstr "Crédito da Imagem:"
 #: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:14
 msgid "The original article can be found on our partner's website here"
 msgstr "Link para o arquivo original do nosso parceiro"
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:15
+#, php-format
+msgid "This post is also available in: %s"
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:16
+msgid "Search results for"
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:17
+msgid "Archives"
+msgstr "Arquivo"
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/plugins/timber-library/lib/timber-archives.php:100
+#, php-format
+msgid "%1$s %2$d"
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/plugins/timber-library/lib/timber-archives.php:102
+#, php-format
+msgid "%1$s"
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/plugins/timber-library/lib/timber-helper.php:177
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/plugins/timber-library/lib/timber-helper.php:562
+msgid "&hellip;"
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/plugins/timber-library/lib/timber-helper.php:496
+msgid "&laquo; Previous"
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/plugins/timber-library/lib/timber-helper.php:497
+msgid "Next &raquo;"
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/plugins/timber-library/lib/timber-url-helper.php:209
+msgid "Invalid URL Provided."
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/plugins/timber-library/lib/timber-url-helper.php:214
+msgid "Could not create Temporary file."
+msgstr ""
 
 #: /Users/tbutikofer/Documents/Work/Projects/pressenza/searchform.php:3
 msgid "Search"
