@@ -198,6 +198,19 @@ function pressenza_tag_cloud_args($args)
 
 add_filter('widget_tag_cloud_args', 'pressenza_tag_cloud_args');
 
+// Translate Widget Title
+// Only for the term Archives ...
+function translate_title($title)
+{
+    if ($title == 'Archives') {
+        return __($title);
+    } else {
+        return $title;
+    }
+}
+
+add_filter('widget_title', 'translate_title');
+
 // Thumbnails for RSS
 function insertThumbnailRSS($content)
 {
