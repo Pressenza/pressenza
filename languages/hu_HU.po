@@ -1,0 +1,344 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Pressenza\n"
+"POT-Creation-Date: 2015-10-10 11:16+0100\n"
+"PO-Revision-Date: 2015-10-10 11:46+0100\n"
+"Last-Translator: Tom Bütikofer\n"
+"Language-Team: Pressenza\n"
+"Language: hu_HU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.10\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-SearchPath-0: /Users/tbutikofer/Documents/Work/Projects/pressenza\n"
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/archive.php:21
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/archive.php:23
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/archive.php:26
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/archive.php:29
+msgid "Archive"
+msgstr "Archívum"
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/edi.php:101
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/wp-login.php:101
+msgid "https://wordpress.org/"
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/edi.php:102
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/wp-login.php:102
+msgid "Powered by WordPress"
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/edi.php:219
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/wp-login.php:219
+#, php-format
+msgid "&larr; Back to %s"
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/edi.php:278
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/wp-login.php:278
+msgid "<strong>ERROR</strong>: Enter a username or e-mail address."
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/edi.php:282
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/wp-login.php:282
+msgid ""
+"<strong>ERROR</strong>: There is no user registered with that email address."
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/edi.php:299
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/wp-login.php:299
+msgid "<strong>ERROR</strong>: Invalid username or e-mail."
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/edi.php:337
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/wp-login.php:337
+msgid "Password reset is not allowed for this user"
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/edi.php:363
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/wp-login.php:363
+msgid "Someone requested that the password be reset for the following account:"
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/edi.php:365
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/wp-login.php:365
+#, php-format
+msgid "Username: %s"
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/edi.php:366
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/wp-login.php:366
+msgid "If this was a mistake, just ignore this email and nothing will happen."
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/edi.php:367
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/wp-login.php:367
+msgid "To reset your password, visit the following address:"
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/edi.php:379
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/wp-login.php:379
+#, php-format
+msgid "[%s] Password Reset"
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/edi.php:404
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/wp-login.php:404
+msgid "The e-mail could not be sent."
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/edi.php:404
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/wp-login.php:404
+msgid "Possible reason: your host may have disabled the mail() function."
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/edi.php:526
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/wp-login.php:526
+msgid "Sorry, that key does not appear to be valid."
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/edi.php:528
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/wp-login.php:528
+msgid "Sorry, that key has expired. Please try again."
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/edi.php:548
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/wp-login.php:548
+msgid "Lost Password"
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/edi.php:548
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/wp-login.php:548
+msgid ""
+"Please enter your username or email address. You will receive a link to "
+"create a new password via email."
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/edi.php:574
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/edi.php:679
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/edi.php:936
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/wp-login.php:574
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/wp-login.php:679
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/wp-login.php:936
+msgid "Register"
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/edi.php:619
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/wp-login.php:619
+msgid "The passwords do not match."
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/edi.php:634
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/wp-login.php:634
+msgid "Password Reset"
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/edi.php:634
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/wp-login.php:634
+msgid "Your password has been reset."
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/edi.php:634
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/wp-login.php:634
+msgid "Log in"
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/edi.php:642
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/wp-login.php:642
+msgid "Reset Password"
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/edi.php:642
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/wp-login.php:642
+msgid "Enter your new password below."
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/edi.php:731
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/wp-login.php:731
+msgid "Registration Form"
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/edi.php:731
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/wp-login.php:731
+msgid "Register For This Site"
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/edi.php:799
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/wp-login.php:799
+#, php-format
+msgid ""
+"<strong>ERROR</strong>: Cookies are blocked due to unexpected output. For "
+"help, please see <a href=\"%1$s\">this documentation</a> or try the <a href="
+"\"%2$s\">support forums</a>."
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/edi.php:800
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/edi.php:804
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/wp-login.php:800
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/wp-login.php:804
+msgid "https://codex.wordpress.org/Cookies"
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/edi.php:800
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/wp-login.php:800
+msgid "https://wordpress.org/support/"
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/edi.php:803
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/wp-login.php:803
+#, php-format
+msgid ""
+"<strong>ERROR</strong>: Cookies are blocked or not supported by your "
+"browser. You must <a href=\"%s\">enable cookies</a> to use WordPress."
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/edi.php:822
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/wp-login.php:822
+msgid "You have logged in successfully."
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/edi.php:856
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/wp-login.php:856
+msgid ""
+"Session expired. Please log in again. You will not move away from this page."
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/edi.php:860
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/wp-login.php:860
+msgid "You are now logged out."
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/edi.php:862
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/wp-login.php:862
+msgid "User registration is currently not allowed."
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/edi.php:864
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/wp-login.php:864
+msgid "Check your e-mail for the confirmation link."
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/edi.php:866
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/wp-login.php:866
+msgid "Check your e-mail for your new password."
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/edi.php:868
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/wp-login.php:868
+msgid "Registration complete. Please check your e-mail."
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/edi.php:870
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/wp-login.php:870
+msgid ""
+"<strong>You have successfully updated WordPress!</strong> Please log back in "
+"to see what&#8217;s new."
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/edi.php:887
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/wp-login.php:887
+msgid "Log In"
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:3
+msgid "Read articles by region"
+msgstr "Cikkek olvasása régiónként"
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:4
+msgid "Read articles by section"
+msgstr "Cikkek olvasása rovatonként"
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:5
+msgid "Sections"
+msgstr "Rovatok"
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:6
+msgid "Opinions"
+msgstr "Vélemények"
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:7
+msgid "Interviews"
+msgstr "Interjúk"
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:8
+msgid "Latest News"
+msgstr "Rovatok"
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:9
+msgid "Posted by"
+msgstr "Szerző"
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:10
+msgid "Categories"
+msgstr "Kategóriák"
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:11
+msgid "About The Author"
+msgstr "A szerzőről"
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:12
+msgid "Number of Entries"
+msgstr "Bejegyzések száma"
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:13
+msgid "Image by"
+msgstr "Fotó:"
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:14
+msgid "The original article can be found on our partner's website here"
+msgstr "Az eredeti cikk a partnerünk honlapján található"
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:15
+#, php-format
+msgid "This post is also available in: %s"
+msgstr "Ez a bejegyzés a következő nyelveken is elérhető: %s"
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:16
+msgid "Search results for"
+msgstr "Keresési találatok"
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:17
+msgid "Archives"
+msgstr "Archívumok"
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/plugins/timber-library/lib/timber-archives.php:100
+#, php-format
+msgid "%1$s %2$d"
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/plugins/timber-library/lib/timber-archives.php:102
+#, php-format
+msgid "%1$s"
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/plugins/timber-library/lib/timber-helper.php:177
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/plugins/timber-library/lib/timber-helper.php:562
+msgid "&hellip;"
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/plugins/timber-library/lib/timber-helper.php:496
+msgid "&laquo; Previous"
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/plugins/timber-library/lib/timber-helper.php:497
+msgid "Next &raquo;"
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/plugins/timber-library/lib/timber-url-helper.php:209
+msgid "Invalid URL Provided."
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/plugins/timber-library/lib/timber-url-helper.php:214
+msgid "Could not create Temporary file."
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/searchform.php:3
+msgid "Search"
+msgstr "Keresés"
+
+#~ msgid "in"
+#~ msgstr "in"
