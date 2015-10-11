@@ -1,5 +1,5 @@
 <?php
-// Texts in order to create a po-file
+//Texts in order to create a po-file
 //$e1 = __('Read articles by region', 'pressenza');
 //$e1 = __('Read articles by section', 'pressenza');
 //$e1 = __('Sections', 'pressenza');
@@ -59,10 +59,8 @@ function add_to_context($data)
     // Menus
     $data['topmenu'] = new TimberMenu(36);
     $data['menu'] = new TimberMenu(35);
-    //$data['footerregion'] = new TimberMenu(9606);
-    //$data['footersection'] = new TimberMenu(9607);
-    $data['footerregion'] = new TimberMenu(13395);
-    $data['footersection'] = new TimberMenu(13396);
+    $data['footer1'] = Timber::get_terms('category', array('parent' => 9)); // Region
+    $data['footer2'] = Timber::get_terms('category', array('parent' => 11)); // Section
     // Sidebar
     $data['sidebar_right'] = Timber::get_widgets('sidebar-1');
     $data['sidebar_bottom'] = Timber::get_widgets('sidebar-2');
@@ -223,3 +221,21 @@ function insertThumbnailRSS($content)
 
 add_filter('the_excerpt_rss', 'insertThumbnailRSS');
 add_filter('the_content_feed', 'insertThumbnailRSS');
+
+// Change Logout URL
+//function pressenza_logout_url($logout_url)
+//{
+//    $url = str_replace('wp-login', 'edi', $logout_url);
+//    return $url;
+//}
+//
+//add_filter('logout_url', 'pressenza_logout_url');
+//
+//// Change Lostpassword URL
+//function pressenza_password_url($lostpassword_url)
+//{
+//    $url = str_replace('wp-login', 'edi', $lostpassword_url);
+//    return $url;
+//}
+//
+//add_filter('lostpassword_url', 'pressenza_password_url');

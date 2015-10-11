@@ -130,16 +130,16 @@
 				<div class="col-md-3 hidden-sm hidden-xs">
 					<h5>{{__('Read articles by region', 'pressenza')}}</h5>
 					<ul>
-					{% for item in footerregion.items %}
-						<li>&raquo; <a href="{{item.url}}">{{item.title}}</a></li>
-                  	{% endfor %}
+						{% for item in footer1 %}
+							<li>&raquo; <a href="{{item.link}}">{{item.name}}</a></li>
+	                  	{% endfor %}
                   	</ul>
 				</div>
 				<div class="col-md-3 hidden-sm hidden-xs">
 					<h5>{{__('Read articles by section', 'pressenza')}}</h5>
 					<ul>
-					{% for item in footersection.items %}
-						<li>&raquo; <a href="{{item.url}}">{{item.title}}</a></li>
+					{% for item in footer2 %}
+						<li>&raquo; <a href="{{item.link}}">{{item.name}}</a></li>
                   	{% endfor %}
                   	</ul>
 				</div>
