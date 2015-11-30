@@ -81,6 +81,7 @@ function load_scripts()
 {
     wp_enqueue_style('bootstrap', THEME_URL . '/vendor/bootstrap/css/bootstrap.min.css', array(), '3.3');
     wp_enqueue_style('style', get_stylesheet_uri());
+    wp_enqueue_script('jquery', THEME_URL . '/js/jquery-1.10.2.min.js', array(), false, true);
     wp_enqueue_script('bootstrap', THEME_URL . '/vendor/bootstrap/js/bootstrap.min.js', array(), false, true);
     wp_enqueue_script('pressenza', THEME_URL . '/js/pressenza.js', array(), false, true);
 }
