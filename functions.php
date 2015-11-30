@@ -1,5 +1,5 @@
 <?php
-//Texts in order to create a po-file
+// Texts in order to create a po-file
 //$e1 = __('Read articles by region', 'pressenza');
 //$e1 = __('Read articles by section', 'pressenza');
 //$e1 = __('Sections', 'pressenza');
@@ -19,19 +19,18 @@
 add_theme_support('post-formats');
 add_theme_support('post-thumbnails');
 add_theme_support('menus');
-
-add_filter('timber_context', 'add_to_context');
-
-add_action('wp_enqueue_scripts', 'load_scripts');
-
 add_image_size('featured', 750, 422, true);
-
 define('THEME_URL', get_template_directory_uri());
-
 define('ICL_DONT_LOAD_LANGUAGE_SELECTOR_CSS', true);
 define('ICL_DONT_LOAD_LANGUAGES_JS', true);
 load_theme_textdomain('pressenza', get_template_directory());
+global $shortcode_tags;
 
+/*
+ * Register Sidebars
+ * Primary Sidebar for displaying the widgets in the right column
+ * Footer Sidebar for the right textbox in the footer
+ */
 register_sidebar(array(
     'name' => 'Primary Sidebar',
     'id' => 'sidebar-1',
@@ -49,6 +48,10 @@ register_sidebar(array(
     'after_widget' => '</div>'
 ));
 
+/*
+ * Add context for Timber
+ */
+add_filter('timber_context', 'add_to_context');
 function add_to_context($data)
 {
     $data['THEME_URL'] = THEME_URL;
@@ -70,6 +73,10 @@ function add_to_context($data)
     return $data;
 }
 
+/*
+ * Load CSS and JS
+ */
+add_action('wp_enqueue_scripts', 'load_scripts');
 function load_scripts()
 {
     wp_enqueue_style('bootstrap', THEME_URL . '/vendor/bootstrap/css/bootstrap.min.css', array(), '3.3');
@@ -78,9 +85,9 @@ function load_scripts()
     wp_enqueue_script('pressenza', THEME_URL . '/js/pressenza.js', array(), false, true);
 }
 
-global $shortcode_tags;
-
-// Custom gallery
+/*
+ * Custom gallery for bootstrap carousel - see views/gallery.twig
+ */
 add_shortcode('gallery', 'pressenza_gallery_shortcode');
 function pressenza_gallery_shortcode($attr)
 {
@@ -155,8 +162,10 @@ function pressenza_gallery_shortcode($attr)
 }
 
 /*
- * disable the [media-credit] shortcodes, as explained here http://wordpress.org/plugins/media-credit/faq/
+ * Shortcodes
  */
+
+// disable the [media-credit] shortcodes, as explained here http://wordpress.org/plugins/media-credit/faq/
 function ignore_media_credit_shortcode($atts, $content = null)
 {
     return $content;
@@ -185,7 +194,9 @@ if (!array_key_exists('image', $shortcode_tags)) {
     add_shortcode('image', 'image_shortcode');
 }
 
-// Tag Cloud
+/*
+ * Tag Cloud Settings
+ */
 function pressenza_tag_cloud_args($args)
 {
     $args['largest'] = 24;
@@ -196,8 +207,10 @@ function pressenza_tag_cloud_args($args)
 
 add_filter('widget_tag_cloud_args', 'pressenza_tag_cloud_args');
 
-// Translate Widget Title
-// Only for the term Archives ...
+/*
+ * Translate Widget Title
+ * Only for the term Archives ...
+ */
 function translate_title($title)
 {
     if ($title == 'Archives') {
@@ -209,7 +222,9 @@ function translate_title($title)
 
 add_filter('widget_title', 'translate_title');
 
-// Thumbnails for RSS
+/*
+ * Add Thumbnails for RSS
+ */
 function insertThumbnailRSS($content)
 {
     global $post;
@@ -222,20 +237,23 @@ function insertThumbnailRSS($content)
 add_filter('the_excerpt_rss', 'insertThumbnailRSS');
 add_filter('the_content_feed', 'insertThumbnailRSS');
 
-// Change Logout URL
-//function pressenza_logout_url($logout_url)
-//{
-//    $url = str_replace('wp-login', 'edi', $logout_url);
-//    return $url;
-//}
-//
-//add_filter('logout_url', 'pressenza_logout_url');
-//
-//// Change Lostpassword URL
-//function pressenza_password_url($lostpassword_url)
-//{
-//    $url = str_replace('wp-login', 'edi', $lostpassword_url);
-//    return $url;
-//}
-//
-//add_filter('lostpassword_url', 'pressenza_password_url');
+/*
+ * Remove unneeded CSS and JS from WP-View
+ */
+function wsis_remove_wpv_frontend_enqueue_scripts()
+{
+// Remove: /res/js/wpv-pagination-embedded.js
+    wp_dequeue_script('views-pagination-script');
+// Remove: /res/css/wpv-pagination.css
+    wp_dequeue_style('views-pagination-style');
+// Remove: /common/toolset-forms/css/wpt-jquery-ui/datepicker.css
+    wp_dequeue_style('wptoolset-field-datepicker');
+}
+
+add_action('wp_enqueue_scripts', 'wsis_remove_wpv_frontend_enqueue_scripts', 20);
+
+/*
+* Remove Emoji CSS and JS
+*/
+remove_action('wp_head', 'print_emoji_detection_script', 7);
+remove_action('wp_print_styles', 'print_emoji_styles');
