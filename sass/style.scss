@@ -1,0 +1,14 @@
+/*!
+Theme Name: Pressenza
+Author: Tom Butikofer & Stefano Cecere
+Version: 1.1.0
+*/
+@import "compass";
+@import "bootstrap-compass";
+@import "bootstrap-variables";
+@import "bootstrap";
+// Import Pressenza Styles
+@import "partials/slider";
+@import "partials/social";
+@import "pressenza";
+@import "partials/greek";

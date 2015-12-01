@@ -1,0 +1,44 @@
+#featured {
+  max-width     : 780px;
+  margin-bottom : 25px;
+}
+
+.carousel-caption {
+  left             : 0;
+  right            : 0;
+  bottom           : 0;
+  width            : 100%;
+  padding          : 5px 8px;
+  text-align       : left;
+  background-color : rgba(0, 0, 0, 0.6);
+  h2 {
+    margin      : 0;
+    font-family : $font-family-play;
+    font-size   : $font-size-base;
+    font-weight : bold;
+    a {
+      color       : #fff;
+      font-weight : bold;
+    }
+  }
+  p {
+    margin    : 0;
+    font-size : $font-size-h6;
+  }
+}
+
+.carousel-control {
+  width : 5%;
+}
+
+@media (min-width : 768px) {
+  .carousel-caption {
+    width   : 90%;
+    padding : 15px;
+  }
+
+  .carousel-caption h2 {
+    font-size : $font-size-h4;
+    margin    : 0 0 5px 0;
+  }
+}

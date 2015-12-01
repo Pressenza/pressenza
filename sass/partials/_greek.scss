@@ -1,0 +1,15 @@
+// Override Play font with default for greek language as not all chars are supported
+html:lang(el) h1,
+html:lang(el) .carousel-caption h2,
+html:lang(el) #meta .nav,
+html:lang(el) .box h2,
+html:lang(el) .box h3,
+html:lang(el) h4.panel-title,
+html:lang(el) .sections h5,
+html:lang(el) #crumbs,
+html:lang(el) .article-latest h5,
+html:lang(el) .article-list h4,
+html:lang(el) #footer h5,
+html:lang(el) #footer .footerwidget h2 {
+  font-family : $font-family-base;
+}
