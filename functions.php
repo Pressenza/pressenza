@@ -16,13 +16,18 @@
 //$e1 = __('Search results for', 'pressenza');
 //$e1 = __('Archives', 'pressenza');
 
+/*
+ * Settings
+ */
 add_theme_support('post-formats');
 add_theme_support('post-thumbnails');
 add_theme_support('menus');
+// Add image size for Home slider
 add_image_size('featured', 750, 422, true);
-define('THEME_URL', get_template_directory_uri());
+// deactivate WPML language selector includes
 define('ICL_DONT_LOAD_LANGUAGE_SELECTOR_CSS', true);
 define('ICL_DONT_LOAD_LANGUAGES_JS', true);
+define('THEME_URL', get_template_directory_uri());
 load_theme_textdomain('pressenza', get_template_directory());
 global $shortcode_tags;
 
@@ -79,7 +84,6 @@ function add_to_context($data)
 add_action('wp_enqueue_scripts', 'load_scripts');
 function load_scripts()
 {
-   // wp_enqueue_style('bootstrap', THEME_URL . '/vendor/bootstrap/css/bootstrap.min.css', array(), '3.3');
     wp_enqueue_style('style', get_stylesheet_uri());
     wp_enqueue_script('bootstrap', THEME_URL . '/js/bootstrap.min.js', array('jquery'), false, true);
     wp_enqueue_script('pressenza', THEME_URL . '/js/pressenza.js', array(), false, true);
