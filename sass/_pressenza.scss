@@ -378,6 +378,16 @@ figcaption {
   color : $brand-info;
 }
 
+.share {
+  margin-top : 30px;
+  padding : 20px 0 16px 0;
+}
+
+.share-fb-like, .share-fb, .share-twitter, .share-google {
+  margin-right : 15px;
+  float      : left;
+}
+
 .widget_search h3,
 .widget_archive label {
   display : none;

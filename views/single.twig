@@ -55,6 +55,42 @@
                     </div>
                 {% endif %}
 
+                <div class="share clearfix">
+                    <div class="share-fb-like">
+                        <div class="fb-like" data-href="{{ language.url }}" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
+                    </div>
+                    <div class="share-fb">
+                        <div class="fb-share-button" data-href="{{ language.url }}" data-layout="button_count"></div>
+                    </div>
+
+                    <div class="share-twitter">
+                        <a href="https://twitter.com/share" class="twitter-share-button" data-url="{{ language.url }}" data-text="{{ post.title }}" data-lang="{{ language.language_code }}"></a>
+                    </div>
+
+                    <div class="share-google">
+                        <div class="g-plusone" data-size="medium" data-href="{{ language.url }}"></div>
+                    </div>
+                </div>
+                <div id="fb-root"></div>
+                <script>(function (d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0];
+                        if (d.getElementById(id)) return;
+                        js = d.createElement(s);
+                        js.id = id;
+                        js.src = "//connect.facebook.net/{{ language.default_locale }}/sdk.js#xfbml=1&version=v2.5";
+                        fjs.parentNode.insertBefore(js, fjs);
+                    }(document, 'script', 'facebook-jssdk'));</script>
+                <script>!function (d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+                        if (!d.getElementById(id)) {
+                            js = d.createElement(s);
+                            js.id = id;
+                            js.src = p + '://platform.twitter.com/widgets.js';
+                            fjs.parentNode.insertBefore(js, fjs);
+                        }
+                    }(document, 'script', 'twitter-wjs');</script>
+                <script src="https://apis.google.com/js/platform.js" async defer></script>
+
                 <div class="article-view-meta-bottom">{{ __('Categories', 'pressenza') }}: {{ postcats }}<br>{{ posttags }}</div>
             </div>
 
