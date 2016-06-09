@@ -19,6 +19,9 @@
     a {
       color       : #fff;
       font-weight : bold;
+      &:hover {
+        color : #fff;
+      }
     }
   }
   p {

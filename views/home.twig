@@ -3,23 +3,21 @@
 {% block content %}
 
     <div id="featured" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-        {% for post in featured %}
-        {% if post.get_thumbnail %}
-        {% if loop.index == 1 %}
-        <div class="item active">
-            {% else %}
-            <div class="item">
+        <div class="carousel-inner">
+            {% for post in featured %}
+                {% if loop.index == 1 %}
+                    <div class="item active">
+                {% else %}
+                    <div class="item">
                 {% endif %}
-                <a href="{{ post.link }}"><img src="{{ post.thumbnail.src('featured') }}" alt="{{ post.title }}"></a>
+                    <a href="{{ post.url }}"><img src="{{ post.img }}" alt="{{ post.title }}"></a>
 
-                <div class="carousel-caption">
-                    <h2><a href="{{ post.link }}">{{ post.title }}</a></h2>
+                    <div class="carousel-caption">
+                        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
 
-                    <p class="hidden-xs">{{ post.get_preview(40,false,'',true) }}</p>
+                        <p class="hidden-xs">{{ post.text }}</p>
+                    </div>
                 </div>
-            </div>
-            {% endif %}
             {% endfor %}
         </div>
         <a class="left carousel-control" href="#featured" data-slide="prev">

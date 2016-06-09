@@ -31,7 +31,7 @@
                             {{ post.thumbnail.caption_fr }}
                         {% elseif language.language_code == 'it' %}
                             {{ post.thumbnail.caption_it }}
-                        {% elseif language.language_code == 'pt' %}
+                        {% elseif language.language_code == 'pt-pt' %}
                             {{ post.thumbnail.caption_pt }}
                         {% elseif language.language_code == 'el' %}
                             {{ post.thumbnail.caption_el }}
@@ -135,7 +135,7 @@
                             {% else %}
                                 {{ post.get_author.description }}
                             {% endif %}
-                        {% elseif language.language_code == 'pt' %}
+                        {% elseif language.language_code == 'pt-pt' %}
                             {% if post.get_author.bio_pt != '' %}
                                 {{ post.get_author.bio_pt }}
                             {% else %}

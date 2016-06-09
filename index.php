@@ -19,10 +19,38 @@ if (!class_exists('Timber')) {
 
 $context = Timber::get_context();
 
-// get Featured (dev: 9609, live: 11385)
-$context['featured'] = Timber::get_posts(array('numberposts' => '8', 'cat' => 11385, 'suppress_filters' => 0));
+// get Featured articles for image slider from category 11385
+// check if image size is a least 750 x 422 pixel
+$featuredposts = get_posts(array('numberposts' => '15', 'cat' => 11385, 'suppress_filters' => 0));
+$featured = array();
+$counter = 1;
+foreach ($featuredposts as $fp) {
+    if ($counter < 8) {
+        $img = wp_get_attachment_image_src(get_post_thumbnail_id($fp->ID), 'featured');
+        if (is_array($img)) {
+            if ($img[1] >= 750 && $img[2] >= 422) {
+                //print_r($fp);
+                $featured[] = array(
+                    'id' => $fp->ID,
+                    'title' => $fp->post_title,
+                    'text' => substr(strip_tags($fp->post_content), 0 , 180) .'…',
+                    'url' => get_permalink($fp),
+                    'img' => $img[0]
+                );
+                $counter++;
+            }
+        }
+    } else {
+        break;
+    }
+}
+//print_r($featured);
 
-// get Latest
+// get Featured (dev: 9609, live: 11385)
+//$context['featured'] = Timber::get_posts(array('numberposts' => '8', 'cat' => 11385, 'suppress_filters' => 0));
+$context['featured'] = $featured;
+
+// get Latest articles
 $context['latest'] = Timber::get_posts(array('numberposts' => '5', 'suppress_filters' => 0));
 
 // get Opinions (Category 160)
@@ -53,7 +81,7 @@ if (false === ($seccolumn = get_transient($transient))) {
             }
         }
     }
-    set_transient($transient, $seccolumn , 600);
+    set_transient($transient, $seccolumn, 600);
 }
 $context['seccolumn'] = $seccolumn;
 $context['wp_title'] = 'Pressenza';

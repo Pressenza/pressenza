@@ -1,28 +1,28 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	<h1 class="pagetitle">{{ __('Search results for', 'pressenza') }}: {{ title }}</h1>
-	{% for post in posts %}
-		{% include ['tease.twig'] %}
-	{% endfor %}
-
-	<ul class="pagination">
-    {% if pagination.prev %}
-        <li><a href="{{pagination.prev.link}}" class="prev {{pagination.prev.link|length ? '' : 'invisible'}}">&laquo;</a></li>
-    {% endif %}
-
-	{% for page in pagination.pages %}
-	    <li>
-    	{% if page.link %}
-        	<a href="{{page.link}}" class="{{page.class}}">{{page.title}}</a>
-		{% else %}
-        	<span class="{{page.class}}">{{page.title}}</span>
-  		{% endif %}
-        </li>
+    <h1 class="pagetitle">{{ __('Search results for', 'pressenza') }}: {{ title }}</h1>
+    {% for post in posts %}
+        {% include ['tease.twig'] %}
     {% endfor %}
 
-    {% if pagination.next %}
-        <li><a href="{{pagination.next.link}}" class="next {{pagination.next.link|length ? '' : 'invisible'}}">&raquo;</a></li>
-    {% endif %}
-	</ul>
+    <ul class="pagination">
+        {% if pagination.prev %}
+            <li><a href="{{ pagination.prev.link }}" class="prev {{ pagination.prev.link|length ? '' : 'invisible' }}">&laquo;</a></li>
+        {% endif %}
+
+        {% for page in pagination.pages %}
+            <li>
+                {% if page.link %}
+                    <a href="{{ page.link }}" class="{{ page.class }}">{{ page.title }}</a>
+                {% else %}
+                    <span class="{{ page.class }}">{{ page.title }}</span>
+                {% endif %}
+            </li>
+        {% endfor %}
+
+        {% if pagination.next %}
+            <li><a href="{{ pagination.next.link }}" class="next {{ pagination.next.link|length ? '' : 'invisible' }}">&raquo;</a></li>
+        {% endif %}
+    </ul>
 {% endblock %}

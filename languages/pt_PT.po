@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pressenza\n"
 "POT-Creation-Date: 2015-08-27 22:00+0100\n"
-"PO-Revision-Date: 2015-08-27 22:01+0100\n"
+"PO-Revision-Date: 2016-06-01 16:02+0100\n"
 "Last-Translator: Tom Bütikofer\n"
 "Language-Team: Pressenza\n"
 "Language: pt\n"
@@ -77,7 +77,7 @@ msgstr ""
 
 #: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:16
 msgid "Search results for"
-msgstr ""
+msgstr "Resultado(s) da busca por"
 
 #: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:17
 msgid "Archives"
