@@ -333,6 +333,12 @@ figcaption {
       height        : auto;
       margin-bottom : 15px;
     }
+    .carousel {
+      margin-bottom: 25px;
+      img {
+        margin-bottom : 0;
+      }
+    }
     div.wp-caption {
       margin : 0 0 15px 0;
       img {
