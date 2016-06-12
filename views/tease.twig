@@ -1,33 +1,29 @@
-<article class="box-page tease-{{ post.post_type }}" id="tease-{{ post.ID }}">
-    <section class="box-content">
-        {% block content %}
-            <div class="article-list">
+<section class="article-list">
+    {% block content %}
+        <div class="article-list-item">
 
-                <div class="article-list-date">
-                    <span class="pull-left">{{ post.post_date|date("d.m.Y") }}</span>
-                    <span class="pull-right"><a href="{{ post.author.path }}"> {{ post.author.name }}</a></span>
-
-                    <div class="clearfix"></div>
-                </div>
-
-                <h4><a href="{{ post.link }}">{{ post.title }}</a></h4>
-
-                <div class="row">
-                    {% if post.get_thumbnail %}
-                        <div class="col-sm-4 col-xs-12">
-                            <a href="{{ post.link }}"><img src="{{ post.thumbnail.src('medium') }}" alt="{{ post.title }}" class="img-responsive"></a>
-                        </div>
-                        <div class="col-sm-8 col-xs-12">
-                            <p>{{ post.get_preview(50,false,'&raquo;') }}</p>
-                        </div>
-                    {% else %}
-                        <div class="col-xs-12">
-                            <p>{{ post.get_preview(50,false,'&raquo;') }}</p>
-                        </div>
-                    {% endif %}
-                </div>
-
+            <div class="article-list-date clearfix">
+                <div class="pull-left">{{ post.post_date|date("d.m.Y") }}</div>
+                <div class="pull-right"><a href="{{ post.author.path }}"> {{ post.author.name }}</a></div>
             </div>
-        {% endblock %}
-    </section>
-</article>
+
+            <h2><a href="{{ post.link }}">{{ post.title }}</a></h2>
+
+            <div class="row">
+                {% if post.get_thumbnail %}
+                    <div class="col-sm-4 col-xs-12">
+                        <a href="{{ post.link }}"><img src="{{ post.thumbnail.src('medium') }}" alt="{{ post.title }}" class="img-responsive"></a>
+                    </div>
+                    <div class="col-sm-8 col-xs-12">
+                        <p>{{ post.get_preview(50,false,'&raquo;') }}</p>
+                    </div>
+                {% else %}
+                    <div class="col-xs-12">
+                        <p>{{ post.get_preview(50,false,'&raquo;') }}</p>
+                    </div>
+                {% endif %}
+            </div>
+
+        </div>
+    {% endblock %}
+</section>

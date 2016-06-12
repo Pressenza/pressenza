@@ -1,104 +1,104 @@
 {% extends "base.twig" %}
 
 {% block content %}
-    <article class="box-page" id="post-{{ post.ID }}">
-        <section class="box-content">
+    <article class="article-view" id="post-{{ post.ID }}">
+        <header>
 
             <h1>{{ post.title }}</h1>
 
-            <div class="article-view-meta">
+            <p class="article-view-meta">
                 <strong>
                     {{ post.post_date|date("d.m.Y") }}
                     {% if post.place != '' %}
                         - {{ post.place }}
                     {% endif %}
                 </strong> - <a href="{{ post.author.get_link }}">{{ post.author.name }}</a>
-            </div>
+            </p>
+        </header>
 
-            {% if otherlanguages != '' %}
-                <p class="icl_post_in_other_langs">{{ __('This post is also available in: %s', 'pressenza')|format(otherlanguages) }}</p>
-            {% endif %}
+        {% if otherlanguages != '' %}
+            <p class="post_in_other_langs">{{ __('This post is also available in: %s', 'pressenza')|format(otherlanguages) }}</p>
+        {% endif %}
 
-            {% if post.get_thumbnail %}
-                <figure>
-                    <img src="{{ post.thumbnail.src('large') }}" class="img-responsive" alt="{{ post.title }}"/>
-                    <figcaption>
-                        {% if language.language_code == 'de' %}
-                            {{ post.thumbnail.caption_de }}
-                        {% elseif language.language_code == 'es' %}
-                            {{ post.thumbnail.caption_es }}
-                        {% elseif language.language_code == 'fr' %}
-                            {{ post.thumbnail.caption_fr }}
-                        {% elseif language.language_code == 'it' %}
-                            {{ post.thumbnail.caption_it }}
-                        {% elseif language.language_code == 'pt-pt' %}
-                            {{ post.thumbnail.caption_pt }}
-                        {% elseif language.language_code == 'el' %}
-                            {{ post.thumbnail.caption_el }}
-                        {% else %}
-                            {{ post.thumbnail.caption }}
-                        {% endif %}
+        {% if post.get_thumbnail %}
+            <figure>
+                <img src="{{ post.thumbnail.src('large') }}" class="img-responsive" alt="{{ post.title }}"/>
+                <figcaption>
+                    {% if language.language_code == 'de' %}
+                        {{ post.thumbnail.caption_de }}
+                    {% elseif language.language_code == 'es' %}
+                        {{ post.thumbnail.caption_es }}
+                    {% elseif language.language_code == 'fr' %}
+                        {{ post.thumbnail.caption_fr }}
+                    {% elseif language.language_code == 'it' %}
+                        {{ post.thumbnail.caption_it }}
+                    {% elseif language.language_code == 'pt-pt' %}
+                        {{ post.thumbnail.caption_pt }}
+                    {% elseif language.language_code == 'el' %}
+                        {{ post.thumbnail.caption_el }}
+                    {% else %}
+                        {{ post.thumbnail.caption }}
+                    {% endif %}
 
-                        {% if post.thumbnail.credits_pod != '' %}
-                            ({{ __('Image by', 'pressenza') }} {{ post.thumbnail.credits_pod }})
-                        {% endif %}
-                    </figcaption>
-                </figure>
-            {% endif %}
+                    {% if post.thumbnail.credits_pod != '' %}
+                        ({{ __('Image by', 'pressenza') }} {{ post.thumbnail.credits_pod }})
+                    {% endif %}
+                </figcaption>
+            </figure>
+        {% endif %}
 
-            <div class="article-view-content">
-                {{ post.content }}
+        <div class="article-view-content">
+            {{ post.content }}
 
-                {% if post.original_article_url != '' %}
-                    <div style="font-size:15px; margin-top:15px;">
-                        <p><a href="{{ post.original_article_url }}" target="_blank"><span class="glyphicon glyphicon-globe" style="font-size:11px;"></span> {{ __('The original article can be found on our partner\'s website here', 'pressenza') }}</a></p>
-                    </div>
-                {% endif %}
-
-                <div class="share clearfix">
-                    <div class="share-fb-like">
-                        <div class="fb-like" data-href="{{ language.url }}" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
-                    </div>
-                    <div class="share-fb">
-                        <div class="fb-share-button" data-href="{{ language.url }}" data-layout="button_count"></div>
-                    </div>
-
-                    <div class="share-twitter">
-                        <a href="https://twitter.com/share" class="twitter-share-button" data-url="{{ language.url }}" data-text="{{ post.title }}" data-lang="{{ language.language_code }}"></a>
-                    </div>
-
-                    <div class="share-google">
-                        <div class="g-plusone" data-size="medium" data-href="{{ language.url }}"></div>
-                    </div>
+            {% if post.original_article_url != '' %}
+                <div style="font-size:15px; margin-top:15px;">
+                    <p><a href="{{ post.original_article_url }}" target="_blank"><span class="glyphicon glyphicon-globe" style="font-size:11px;"></span> {{ __('The original article can be found on our partner\'s website here', 'pressenza') }}</a></p>
                 </div>
-                <div id="fb-root"></div>
-                <script>(function (d, s, id) {
-                        var js, fjs = d.getElementsByTagName(s)[0];
-                        if (d.getElementById(id)) return;
+            {% endif %}
+
+            <div class="share clearfix">
+                <div class="share-fb-like">
+                    <div class="fb-like" data-href="{{ language.url }}" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
+                </div>
+                <div class="share-fb">
+                    <div class="fb-share-button" data-href="{{ language.url }}" data-layout="button_count"></div>
+                </div>
+
+                <div class="share-twitter">
+                    <a href="https://twitter.com/share" class="twitter-share-button" data-url="{{ language.url }}" data-text="{{ post.title }}" data-lang="{{ language.language_code }}"></a>
+                </div>
+
+                <div class="share-google">
+                    <div class="g-plusone" data-size="medium" data-href="{{ language.url }}"></div>
+                </div>
+            </div>
+            <div id="fb-root"></div>
+            <script>(function (d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) return;
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = "//connect.facebook.net/{{ language.default_locale }}/sdk.js#xfbml=1&version=v2.5";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));</script>
+            <script>!function (d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+                    if (!d.getElementById(id)) {
                         js = d.createElement(s);
                         js.id = id;
-                        js.src = "//connect.facebook.net/{{ language.default_locale }}/sdk.js#xfbml=1&version=v2.5";
+                        js.src = p + '://platform.twitter.com/widgets.js';
                         fjs.parentNode.insertBefore(js, fjs);
-                    }(document, 'script', 'facebook-jssdk'));</script>
-                <script>!function (d, s, id) {
-                        var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
-                        if (!d.getElementById(id)) {
-                            js = d.createElement(s);
-                            js.id = id;
-                            js.src = p + '://platform.twitter.com/widgets.js';
-                            fjs.parentNode.insertBefore(js, fjs);
-                        }
-                    }(document, 'script', 'twitter-wjs');</script>
-                <script src="https://apis.google.com/js/platform.js" async defer></script>
+                    }
+                }(document, 'script', 'twitter-wjs');</script>
+            <script src="https://apis.google.com/js/platform.js" async defer></script>
 
-                <div class="article-view-meta-bottom">{{ __('Categories', 'pressenza') }}: {{ postcats }}<br>{{ posttags }}</div>
-            </div>
+            <div class="article-view-meta-bottom">{{ __('Categories', 'pressenza') }}: {{ postcats }}<br>{{ posttags }}</div>
+        </div>
 
-        </section>
     </article>
 
-    <div class="box">
-        <h2>{{ __('About The Author', 'pressenza') }}</h2>
+    <aside class="box">
+        <h2 class="box-title">{{ __('About The Author', 'pressenza') }}</h2>
 
         <div class="box-content">
             <div class="row">
@@ -112,54 +112,54 @@
                 <div class="col-sm-10 col-xs-8">
                     <p><strong><a href="{{ post.author.link }}" rel="author">{{ post.author.name }}</a></strong><br/>
                         {% if language.language_code == 'de' %}
-                            {% if post.get_author.bio_de != '' %}
-                                {{ post.get_author.bio_de }}
+                            {% if post.author.bio_de != '' %}
+                                {{ post.author.bio_de }}
                             {% else %}
-                                {{ post.get_author.description }}
+                                {{ post.author.description }}
                             {% endif %}
                         {% elseif language.language_code == 'es' %}
-                            {% if post.get_author.bio_es != '' %}
-                                {{ post.get_author.bio_es }}
+                            {% if post.author.bio_es != '' %}
+                                {{ post.author.bio_es }}
                             {% else %}
-                                {{ post.get_author.description }}
+                                {{ post.author.description }}
                             {% endif %}
                         {% elseif language.language_code == 'fr' %}
-                            {% if post.get_author.bio_fr != '' %}
-                                {{ post.get_author.bio_fr }}
+                            {% if post.author.bio_fr != '' %}
+                                {{ post.author.bio_fr }}
                             {% else %}
-                                {{ post.get_author.description }}
+                                {{ post.author.description }}
                             {% endif %}
                         {% elseif language.language_code == 'it' %}
-                            {% if post.get_author.bio_it != '' %}
-                                {{ post.get_author.bio_it }}
+                            {% if post.author.bio_it != '' %}
+                                {{ post.author.bio_it }}
                             {% else %}
-                                {{ post.get_author.description }}
+                                {{ post.author.description }}
                             {% endif %}
                         {% elseif language.language_code == 'pt-pt' %}
-                            {% if post.get_author.bio_pt != '' %}
-                                {{ post.get_author.bio_pt }}
+                            {% if post.author.bio_pt != '' %}
+                                {{ post.author.bio_pt }}
                             {% else %}
-                                {{ post.get_author.description }}
+                                {{ post.author.description }}
                             {% endif %}
                         {% elseif language.language_code == 'el' %}
-                            {% if post.get_author.bio_el != '' %}
-                                {{ post.get_author.bio_el }}
+                            {% if post.author.bio_el != '' %}
+                                {{ post.author.bio_el }}
                             {% else %}
-                                {{ post.get_author.description }}
+                                {{ post.author.description }}
                             {% endif %}
                         {% else %}
-                            {{ post.get_author.description }}
+                            {{ post.author.description }}
                         {% endif %}
                     </p>
 
                     <div class="author_info">
                         <div class="pull-left">{{ __('Number of Entries', 'pressenza') }} : {{ authorposts }}</div>
                         <div class="pull-right">
-                            {% if post.get_author.facebook %}
-                                <a href="{{ post.get_author.facebook }}"><img src="/wp-content/themes/pressenza/images/icons/facebook.png" alt="Facebook"></a> &nbsp;
+                            {% if post.author.facebook %}
+                                <a href="{{ post.author.facebook }}"><img src="/wp-content/themes/pressenza/images/icons/facebook.png" alt="Facebook"></a> &nbsp;
                             {% endif %}
-                            {% if post.get_author.twitter %}
-                                <a href="http://twitter.com/{{ post.get_author.twitter }}"><img src="/wp-content/themes/pressenza/images/icons/twitter.png" alt="Twitter"></a>
+                            {% if post.author.twitter %}
+                                <a href="http://twitter.com/{{ post.author.twitter }}"><img src="/wp-content/themes/pressenza/images/icons/twitter.png" alt="Twitter"></a>
                             {% endif %}
                         </div>
                         <div class="clearfix"></div>
@@ -167,5 +167,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </aside>
 {% endblock %}

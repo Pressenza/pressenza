@@ -25,7 +25,7 @@
                         {% endfor %}
                     </ul>
                 </div>
-                <a href="{{ homeurl }}" class="navbar-brand"><span class="glyphicon glyphicon-home"></span></a>
+                <a href="{{ homeurl }}" class="navbar-brand"><span class="glyphicon glyphicon-home"></span><span class="sr-only">Home</span></a>
             </div>
 
             <div class="collapse navbar-collapse" id="pressenza-navbar-collapse-1">
@@ -33,7 +33,7 @@
                     {% for item in menu.get_items %}
                         {% if item.get_children %}
                             <li class="dropdown visible-xs"><a class="dropdown-toggle" data-toggle="dropdown" href="{{ item.get_path }}">{{ item.title }} <span class="caret"></span></a>
-                                <ul class="dropdown-menu">
+                                <ul class="dropdown-menu" role="menu">
                                     {% for child in item.get_children %}
                                         <li><a href="{{ child.get_path }}">{{ child.title }}</a></li>
                                     {% endfor %}
@@ -53,7 +53,7 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right hidden-xs">
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{ language.country_flag_url }}" alt="{{ language.native_name }}" class="flag"> {{ language.native_name }} &nbsp; <b class="caret"></b></a>
-                        <ul class="dropdown-menu hidden-xs">
+                        <ul class="dropdown-menu hidden-xs" role="menu">
                             {% for lang in languages %}
                                 {% if lang.active == 0 %}
                                     <li><a href="{{ lang.url }}"><img src="{{ lang.country_flag_url }}" alt="{{ lang.native_name }}" class="flag"> {{ lang.native_name }}</a></li>
@@ -129,7 +129,7 @@
         <div class="row">
             <div class="col-md-3 hidden-sm hidden-xs">
                 <h5>{{ __('Read articles by region', 'pressenza') }}</h5>
-                <ul>
+                <ul role="menu">
                     {% for item in footer1 %}
                         <li>&raquo; <a href="{{ item.link }}">{{ item.name }}</a></li>
                     {% endfor %}
@@ -137,7 +137,7 @@
             </div>
             <div class="col-md-3 hidden-sm hidden-xs">
                 <h5>{{ __('Read articles by section', 'pressenza') }}</h5>
-                <ul>
+                <ul role="menu">
                     {% for item in footer2 %}
                         <li>&raquo; <a href="{{ item.link }}">{{ item.name }}</a></li>
                     {% endfor %}

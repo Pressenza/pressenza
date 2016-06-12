@@ -44,9 +44,6 @@ foreach ($featuredposts as $fp) {
         break;
     }
 }
-//print_r($featured);
-
-// get Featured (dev: 9609, live: 11385)
 //$context['featured'] = Timber::get_posts(array('numberposts' => '8', 'cat' => 11385, 'suppress_filters' => 0));
 $context['featured'] = $featured;
 
@@ -70,7 +67,7 @@ if (false === ($seccolumn = get_transient($transient))) {
     foreach ($categories as $category) {
         $posts = wp_get_recent_posts(array('numberposts' => '3', 'category' => $category->cat_ID, 'post_status' => 'publish', 'suppress_filters' => 0));
         if (count($posts) > 0) {
-            $seccolumn[$s] .= '<div class="sections"><h5><a href="' . get_category_link($category->term_id) . '">' . $category->name . '</a></h5><ul>';
+            $seccolumn[$s] .= '<div class="sections"><h2><a href="' . get_category_link($category->term_id) . '">' . $category->name . '</a></h2><ul>';
             foreach ($posts as $post) {
                 $seccolumn[$s] .= '<li><a href="' . get_permalink($post["ID"]) . '">' . $post["post_title"] . '</a></li>';
             }

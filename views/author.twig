@@ -4,104 +4,100 @@
 
     <h1 class="pagetitle">{{ title }}</h1>
 
-    <div class="panel panel-default">
-        <div class="panel-body">
-
-            <div class="row">
-                {% if author.photo %}
-                    <div class="col-sm-4 col-xs-12">
-                        <img src="{{ TimberImage(author.photo)|resize(200) }}" alt="{{ title }}" title="{{ title }}" class="img-responsive"/>
-                    </div>
-                    <div class="col-sm-8 col-xs-12">
-                        <p class="single">
-                            {% if language.language_code == 'de' %}
-                                {% if author.bio_de != '' %}
-                                    {{ author.bio_de }}
-                                {% else %}
-                                    {{ author.description }}
-                                {% endif %}
-                            {% elseif language.language_code == 'es' %}
-                                {% if author.bio_es != '' %}
-                                    {{ author.bio_es }}
-                                {% else %}
-                                    {{ author.description }}
-                                {% endif %}
-                            {% elseif language.language_code == 'fr' %}
-                                {% if author.bio_fr != '' %}
-                                    {{ author.bio_fr }}
-                                {% else %}
-                                    {{ author.description }}
-                                {% endif %}
-                            {% elseif language.language_code == 'it' %}
-                                {% if author.bio_it != '' %}
-                                    {{ author.bio_it }}
-                                {% else %}
-                                    {{ author.description }}
-                                {% endif %}
-                            {% elseif language.language_code == 'pt-pt' %}
-                                {% if author.bio_pt != '' %}
-                                    {{ author.bio_pt }}
-                                {% else %}
-                                    {{ author.description }}
-                                {% endif %}
-                            {% elseif language.language_code == 'el' %}
-                                {% if author.bio_el != '' %}
-                                    {{ author.bio_el }}
-                                {% else %}
-                                    {{ author.description }}
-                                {% endif %}
+    <div class="author-box">
+        <div class="row">
+            {% if author.photo %}
+                <div class="col-sm-4 col-xs-12">
+                    <img src="{{ TimberImage(author.photo)|resize(200) }}" alt="{{ title }}" title="{{ title }}" class="img-responsive"/>
+                </div>
+                <div class="col-sm-8 col-xs-12">
+                    <p class="single">
+                        {% if language.language_code == 'de' %}
+                            {% if author.bio_de != '' %}
+                                {{ author.bio_de }}
                             {% else %}
                                 {{ author.description }}
                             {% endif %}
-                        </p>
-                    </div>
-                {% else %}
-                    <div class="col-xs-12">
-                        <p class="single">
-                            {% if language.language_code == 'de' %}
-                                {% if author.bio_de != '' %}
-                                    {{ author.bio_de }}
-                                {% else %}
-                                    {{ author.description }}
-                                {% endif %}
-                            {% elseif language.language_code == 'es' %}
-                                {% if author.bio_es != '' %}
-                                    {{ author.bio_es }}
-                                {% else %}
-                                    {{ author.description }}
-                                {% endif %}
-                            {% elseif language.language_code == 'fr' %}
-                                {% if author.bio_fr != '' %}
-                                    {{ author.bio_fr }}
-                                {% else %}
-                                    {{ author.description }}
-                                {% endif %}
-                            {% elseif language.language_code == 'it' %}
-                                {% if author.bio_it != '' %}
-                                    {{ author.bio_it }}
-                                {% else %}
-                                    {{ author.description }}
-                                {% endif %}
-                            {% elseif language.language_code == 'pt-pt' %}
-                                {% if author.bio_pt != '' %}
-                                    {{ author.bio_pt }}
-                                {% else %}
-                                    {{ author.description }}
-                                {% endif %}
-                            {% elseif language.language_code == 'el' %}
-                                {% if author.bio_el != '' %}
-                                    {{ author.bio_el }}
-                                {% else %}
-                                    {{ author.description }}
-                                {% endif %}
+                        {% elseif language.language_code == 'es' %}
+                            {% if author.bio_es != '' %}
+                                {{ author.bio_es }}
                             {% else %}
                                 {{ author.description }}
                             {% endif %}
-                        </p>
-                    </div>
-                {% endif %}
-            </div>
-
+                        {% elseif language.language_code == 'fr' %}
+                            {% if author.bio_fr != '' %}
+                                {{ author.bio_fr }}
+                            {% else %}
+                                {{ author.description }}
+                            {% endif %}
+                        {% elseif language.language_code == 'it' %}
+                            {% if author.bio_it != '' %}
+                                {{ author.bio_it }}
+                            {% else %}
+                                {{ author.description }}
+                            {% endif %}
+                        {% elseif language.language_code == 'pt-pt' %}
+                            {% if author.bio_pt != '' %}
+                                {{ author.bio_pt }}
+                            {% else %}
+                                {{ author.description }}
+                            {% endif %}
+                        {% elseif language.language_code == 'el' %}
+                            {% if author.bio_el != '' %}
+                                {{ author.bio_el }}
+                            {% else %}
+                                {{ author.description }}
+                            {% endif %}
+                        {% else %}
+                            {{ author.description }}
+                        {% endif %}
+                    </p>
+                </div>
+            {% else %}
+                <div class="col-xs-12">
+                    <p class="single">
+                        {% if language.language_code == 'de' %}
+                            {% if author.bio_de != '' %}
+                                {{ author.bio_de }}
+                            {% else %}
+                                {{ author.description }}
+                            {% endif %}
+                        {% elseif language.language_code == 'es' %}
+                            {% if author.bio_es != '' %}
+                                {{ author.bio_es }}
+                            {% else %}
+                                {{ author.description }}
+                            {% endif %}
+                        {% elseif language.language_code == 'fr' %}
+                            {% if author.bio_fr != '' %}
+                                {{ author.bio_fr }}
+                            {% else %}
+                                {{ author.description }}
+                            {% endif %}
+                        {% elseif language.language_code == 'it' %}
+                            {% if author.bio_it != '' %}
+                                {{ author.bio_it }}
+                            {% else %}
+                                {{ author.description }}
+                            {% endif %}
+                        {% elseif language.language_code == 'pt-pt' %}
+                            {% if author.bio_pt != '' %}
+                                {{ author.bio_pt }}
+                            {% else %}
+                                {{ author.description }}
+                            {% endif %}
+                        {% elseif language.language_code == 'el' %}
+                            {% if author.bio_el != '' %}
+                                {{ author.bio_el }}
+                            {% else %}
+                                {{ author.description }}
+                            {% endif %}
+                        {% else %}
+                            {{ author.description }}
+                        {% endif %}
+                    </p>
+                </div>
+            {% endif %}
         </div>
     </div>
 

@@ -1,14 +1,14 @@
 {% extends "base.twig" %}
 
 {% block content %}
-
+    <h1 class="sr-only">Pressenza Featured Articles</h1>
     <div id="featured" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             {% for post in featured %}
                 {% if loop.index == 1 %}
-                    <div class="item active">
+                <div class="item active">
                 {% else %}
-                    <div class="item">
+                <div class="item">
                 {% endif %}
                     <a href="{{ post.url }}"><img src="{{ post.img }}" alt="{{ post.title }}"></a>
 
@@ -30,8 +30,8 @@
 
     <div class="row">
         <div class="col-xs-12">
-            <div class="box">
-                <h2>{{ __('Latest News', 'pressenza') }}</h2>
+            <section class="box">
+                <h1>{{ __('Latest News', 'pressenza') }}</h1>
 
                 <div class="box-content">
                     {% for post in latest %}
@@ -44,7 +44,7 @@
                                 </div>
                                 <div class="col-xs-8 col-sm-10">
                                     <div class="article-list-date">{{ post.post_date|date("d.m.Y") }}</div>
-                                    <h5>{{ post.title }}</h5>
+                                    <h2>{{ post.title }}</h2>
 
                                     <p class="hidden-xs">{{ post.get_preview(20,false,'',true) }}</p>
                                 </div>
@@ -52,39 +52,39 @@
                         </div>
                     {% endfor %}
                 </div>
-            </div>
+            </section>
         </div>
     </div>
 
     <div class="row">
         <div class="col-xs-12 col-sm-6">
-            <div class="box">
-                <h2>{{ __('Opinions', 'pressenza') }}</h2>
+            <section class="box">
+                <h1>{{ __('Opinions', 'pressenza') }}</h1>
 
                 <div class="box-content">
                     {% for post in opinions %}
                         <p class="list"><a href="{{ post.link }}">{{ post.title }}</a></p>
                     {% endfor %}
                 </div>
-            </div>
+            </section>
         </div>
         <div class="col-xs-12 col-sm-6">
-            <div class="box">
-                <h2>{{ __('Interviews', 'pressenza') }}</h2>
+            <section class="box">
+                <h1>{{ __('Interviews', 'pressenza') }}</h1>
 
                 <div class="box-content">
                     {% for post in interviews %}
                         <p class="list"><a href="{{ post.link }}">{{ post.title }}</a></p>
                     {% endfor %}
                 </div>
-            </div>
+            </section>
         </div>
     </div>
 
     <div class="row hidden-sm">
         <div class="col-xs-12">
-            <div class="box">
-                <h2>{{ __('Sections', 'pressenza') }}</h2>
+            <section class="box">
+                <h1>{{ __('Sections', 'pressenza') }}</h1>
 
                 <div class="box-content">
                     <div class="row">
@@ -96,7 +96,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
         </div>
     </div>
 

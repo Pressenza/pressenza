@@ -74,11 +74,12 @@ h1.pagetitle {
   margin : 7px 0 20px 14px;
 }
 
-h2 {
+h2, h3 {
   color : $gray;
 }
 
 h4 {
+  color : $gray;
   margin : 0 0 15px 0;
 }
 
@@ -99,10 +100,13 @@ p.list {
   margin : 0 0 10px 0;
 }
 
-p.icl_post_in_other_langs {
+p.post_in_other_langs {
   padding          : 3px 5px;
   font-size        : $font-size-h6;
   background-color : $gray-lighter-5;
+  a {
+    color : $brand-info;
+  }
 }
 
 span.list-caret {
@@ -153,44 +157,31 @@ figcaption {
   margin : 20px 0;
 }
 
-/* Panel */
-.panel-group .panel {
-  border-radius : 0;
-  box-shadow    : 1px 1px 2px 0 $gray-light-2;
-}
-
-.panel-heading {
-  padding       : 0;
-  border-radius : 0;
-}
-
 /* Boxes */
-.box, .box-page {
+.box {
   margin-bottom    : 25px;
   background-color : $body-bg;
   box-shadow       : 2px 2px 4px 0 $gray-light-2;
-}
-
-.box h2, h4.panel-title {
-  margin           : 0;
-  padding          : 6px 18px;
-  font-family      : $font-family-play;
-  font-size        : 1.125em;
-  font-weight      : normal;
-  color            : $gray-darker-2;
-  background-color : $gray-lighter-2;
-}
-
-.box h3 {
-  margin           : 0;
-  padding          : 0 10px;
-  height           : 28px;
-  font-family      : $font-family-play;
-  font-size        : $font-size-base;
-  font-weight      : normal;
-  color            : $gray-darker-2;
-  line-height      : 28px;
-  background-color : $gray-lighter-2;
+  h1, h2.box-title, h4.panel-title {
+    margin           : 0;
+    padding          : 6px 18px;
+    font-family      : $font-family-play;
+    font-size        : 1.125em;
+    font-weight      : normal;
+    color            : $gray-darker-2;
+    background-color : $gray-lighter-2;
+  }
+  h3 {
+    margin           : 0;
+    padding          : 0 10px;
+    height           : 28px;
+    font-family      : $font-family-play;
+    font-size        : $font-size-base;
+    font-weight      : normal;
+    color            : $gray-darker-2;
+    line-height      : 28px;
+    background-color : $gray-lighter-2;
+  }
 }
 
 .box-content {
@@ -209,11 +200,15 @@ figcaption {
     margin-bottom : 0;
     border-bottom : none;
   }
-  h5 {
+  h2 {
     font-family : $font-family-play;
     font-size   : $font-size-base;
+    font-weight : bold;
     margin      : 0 0 5px 0;
     color       : $gray-darker;
+    a {
+      font-weight : bold;
+    }
   }
   ul {
     margin          : 0;
@@ -240,6 +235,12 @@ figcaption {
   padding     : 0 0 16px 18px
 }
 
+.author-box {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid $gray-lighter-3;
+}
+
 /* Article */
 .article-latest {
   margin-bottom : 10px;
@@ -247,9 +248,10 @@ figcaption {
   &:hover {
     background-color : #efefef;
   }
-  h5 {
+  h2 {
     font-family : $font-family-play;
     font-size   : $font-size-h5;
+    font-weight : bold;
     margin      : 0 0 5px 0;
     color       : $gray-darker;
   }
@@ -260,32 +262,36 @@ figcaption {
 }
 
 .article-list {
-  padding       : 10px 0 20px 0;
-  border-bottom : 1px solid $gray-lighter-2;
-  &:last-child {
-    padding : 10px 0;
-    border  : 0;
-  }
-  h4 {
-    font-family : $font-family-play;
-    font-size   : 20px;
-    margin      : 0 0 15px 0;
-    color       : $gray-darker;
-    a {
-      color : $gray-darker;
+  padding          : 10px 18px;
+  margin-bottom    : 25px;
+  background-color : $body-bg;
+  box-shadow       : 2px 2px 4px 0 $gray-light-2;
+  &-item {
+    padding       : 10px 0 20px 0;
+    border-bottom : 1px solid $gray-lighter-2;
+    &:last-child {
+      padding : 10px 0;
+      border  : 0;
+    }
+    h2 {
+      font-family : $font-family-play;
+      font-size   : 20px;
+      margin      : 0 0 15px 0;
+      color       : $gray-darker;
+      a {
+        color : $gray-darker;
+      }
     }
   }
-}
-
-.article-list-date {
-  padding-bottom : 4px;
-  font-size      : $font-size-h6;
-  line-height    : 13px;
-  color          : $gray-3;
-}
-
-.article-list-author {
-  color : $gray-light;
+  &-date {
+    padding-bottom : 4px;
+    font-size      : $font-size-h6;
+    line-height    : 13px;
+    color          : $gray-3;
+  }
+  &-author {
+    color : $gray-light;
+  }
 }
 
 .pagination {
@@ -295,57 +301,55 @@ figcaption {
   }
 }
 
-.article-view-date {
-  font-weight : bold;
-}
-
-.article-view-meta {
-  margin-bottom : 15px;
-  font-size     : $font-size-h6;
-  color         : $gray-3;
-  border-bottom : 1px dotted $gray-3;
-  a {
-    font-weight : bold;
-    color       : $gray-3;
-    &:hover {
-      color : $brand-danger;
+.article-view {
+  padding          : 10px 18px;
+  margin-bottom    : 25px;
+  background-color : $body-bg;
+  box-shadow       : 2px 2px 4px 0 $gray-light-2;
+  &-meta {
+    margin-bottom : 15px;
+    font-size     : $font-size-h6;
+    color         : $gray-3;
+    border-bottom : 1px dotted $gray-3;
+    a {
+      font-weight : bold;
+      color       : $gray-3;
+      &:hover {
+        color : $brand-danger;
+      }
+    }
+    &-bottom {
+      margin-top  : 15px;
+      padding-top : 5px;
+      font-size   : 12px;
+      color       : $gray-3;
+      border-top  : 1px dotted $gray-3;
     }
   }
-}
-
-.article-view-meta-bottom {
-  margin-top  : 15px;
-  padding-top : 5px;
-  font-size   : 12px;
-  color       : $gray-3;
-  border-top  : 1px dotted $gray-3;
-}
-
-.article-view-content a {
-  color : $brand-info;
-}
-
-.article-view-content img {
-  display       : block;
-  max-width     : 100%;
-  height        : auto;
-  margin-bottom : 15px;
-}
-
-.article-view-content {
-  div.wp-caption {
-    margin : 0 0 15px 0;
+  &-content {
     img {
-      margin : 0 0 5px 0;
+      display       : block;
+      max-width     : 100%;
+      height        : auto;
+      margin-bottom : 15px;
     }
-  }
-  p.wp-caption-text {
-    font-size : $font-size-small;
-    color     : $gray-light;
-    margin    : 0;
-  }
-  a.carousel-control {
-    color : #fff;
+    div.wp-caption {
+      margin : 0 0 15px 0;
+      img {
+        margin : 0 0 5px 0;
+      }
+    }
+    p.wp-caption-text {
+      font-size : $font-size-small;
+      color     : $gray-light;
+      margin    : 0;
+    }
+    a {
+      color : $brand-info;
+    }
+    a.carousel-control {
+      color : #fff;
+    }
   }
 }
 
@@ -358,22 +362,14 @@ figcaption {
   color     : $gray-light;
 }
 
-.icl_post_in_other_langs {
-  font-size : $font-size-h6;
-}
-
-.icl_post_in_other_langs a {
-  color : $brand-info;
-}
-
 .share {
   margin-top : 30px;
-  padding : 20px 0 16px 0;
+  padding    : 20px 0 16px 0;
 }
 
 .share-fb-like, .share-fb, .share-twitter, .share-google {
   margin-right : 15px;
-  float      : left;
+  float        : left;
 }
 
 .widget_search h3,
@@ -429,15 +425,13 @@ figcaption {
       color : $brand-danger;
     }
   }
-}
-
-#footer h5,
-#footer .footerwidget h2 {
-  margin      : 0 0 5px 0;
-  font-family : $font-family-play;
-  font-size   : $font-size-h5;
-  font-weight : bold;
-  color       : $gray-2;
+  h5, .footerwidget h2 {
+    margin      : 0 0 5px 0;
+    font-family : $font-family-play;
+    font-size   : $font-size-h5;
+    font-weight : bold;
+    color       : $gray-2;
+  }
 }
 
 .bottom-bar {

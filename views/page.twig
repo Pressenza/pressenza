@@ -1,9 +1,7 @@
 {% extends "base.twig" %}
 
 {% block content %}
-    <article class="box-page" id="post-{{ post.ID }}">
-        <div class="box-content">
-            {{ post.content }}
-        </div>
+    <article class="page-post" id="post-{{ post.ID }}">
+        {{ post.content }}
     </article>
 {% endblock %}
