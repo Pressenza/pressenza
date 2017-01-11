@@ -22,7 +22,7 @@ if (!class_exists('Timber')) {
 $context = Timber::get_context();
 
 // get Featured articles for image slider from category 11385
-// check if image size is a least 750 x 422 pixel
+// check if image size is a least 750 x 415 pixel
 $featuredposts = get_posts(array('numberposts' => '15', 'cat' => 11385, 'suppress_filters' => 0));
 $featured = array();
 $counter = 1;
@@ -30,7 +30,7 @@ foreach ($featuredposts as $fp) {
     if ($counter < 8) {
         $img = wp_get_attachment_image_src(get_post_thumbnail_id($fp->ID), 'featured');
         if (is_array($img)) {
-            if ($img[1] >= 750 && $img[2] >= 422) {
+            if ($img[1] >= 750 && $img[2] >= 415) {
                 //print_r($fp);
                 $featured[] = array(
                     'id' => $fp->ID,
