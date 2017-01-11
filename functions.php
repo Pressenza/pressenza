@@ -84,7 +84,7 @@ function add_to_context($data)
 add_action('wp_enqueue_scripts', 'load_scripts');
 function load_scripts()
 {
-    wp_enqueue_style('style', get_stylesheet_uri());
+    wp_enqueue_style('style', get_stylesheet_uri(), array(), '2.0');
     wp_enqueue_script('bootstrap', THEME_URL . '/js/bootstrap.min.js', array('jquery'), false, true);
     wp_enqueue_script('pressenza', THEME_URL . '/js/pressenza.js', array(), false, true);
 }
@@ -263,6 +263,51 @@ remove_action('wp_head', 'print_emoji_detection_script', 7);
 remove_action('wp_print_styles', 'print_emoji_styles');
 
 /*
+* Remove meta generator tag
+*/
+remove_action('wp_head', 'wp_generator');
+global $sitepress;
+remove_action('wp_head', array($sitepress, 'meta_generator_tag'));
+
+/*
+* Remove wp-embed.js
+*/
+function my_deregister_scripts()
+{
+    wp_deregister_script('wp-embed');
+}
+
+add_action('wp_footer', 'my_deregister_scripts');
+
+/*
+* Deferred JavaScript
+* see https://wpshout.com/make-site-faster-async-deferred-javascript-introducing-script_loader_tag/
+*/
+
+//add_action( 'wp_print_scripts', 'wsds_detect_enqueued_scripts' );
+//function wsds_detect_enqueued_scripts() {
+//	global $wp_scripts;
+//	foreach( $wp_scripts->queue as $handle ) :
+//		echo $handle . ' | ';
+//	endforeach;
+//}
+
+add_filter('script_loader_tag', 'wsds_defer_scripts', 10, 3);
+function wsds_defer_scripts($tag, $handle, $src)
+{
+    $defer_scripts = array(
+        'bootstrap',
+        'pressenza'
+    );
+
+    if (in_array($handle, $defer_scripts)) {
+        return '<script src="' . $src . '" defer="defer" type="text/javascript"></script>' . "\n";
+    }
+
+    return $tag;
+}
+
+/*
  * Remove unneeded CSS from Jetpack
  */
 // First, make sure Jetpack doesn't concatenate all its CSS
@@ -296,12 +341,5 @@ remove_action('wp_print_styles', 'print_emoji_styles');
 //  wp_deregister_style( 'jetpack-widgets' ); // Widgets
 //}
 //add_action('wp_print_styles', 'remove_jetpack_styles' );
-
-/*
-* Remove meta generator tag
-*/
-remove_action('wp_head', 'wp_generator');
-global $sitepress;
-remove_action('wp_head', array( $sitepress, 'meta_generator_tag'));
 
 ?>
