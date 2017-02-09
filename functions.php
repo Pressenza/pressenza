@@ -241,30 +241,26 @@ function insertThumbnailRSS($content)
 add_filter('the_excerpt_rss', 'insertThumbnailRSS');
 add_filter('the_content_feed', 'insertThumbnailRSS');
 
+
 /*
- * Remove unneeded CSS and JS from WP-View
+ *  Cleanup Frontend output and remove unneeded CSS and JS
  */
+
+// Remove from WP-View Plugin
 function wsis_remove_wpv_frontend_enqueue_scripts()
 {
-// Remove: /res/js/wpv-pagination-embedded.js
     wp_dequeue_script('views-pagination-script');
-// Remove: /res/css/wpv-pagination.css
     wp_dequeue_style('views-pagination-style');
-// Remove: /common/toolset-forms/css/wpt-jquery-ui/datepicker.css
     wp_dequeue_style('wptoolset-field-datepicker');
 }
 
 add_action('wp_enqueue_scripts', 'wsis_remove_wpv_frontend_enqueue_scripts', 20);
 
-/*
-* Remove Emoji CSS and JS
-*/
+// Remove Emoji CSS and JS
 remove_action('wp_head', 'print_emoji_detection_script', 7);
 remove_action('wp_print_styles', 'print_emoji_styles');
 
-/*
-* Remove meta generator tag
-*/
+// Remove meta generator tag
 remove_action('wp_head', 'wp_generator');
 global $sitepress;
 remove_action('wp_head', array($sitepress, 'meta_generator_tag'));
@@ -280,18 +276,9 @@ function my_deregister_scripts()
 add_action('wp_footer', 'my_deregister_scripts');
 
 /*
-* Deferred JavaScript
+* Add defer to JavaScript for non-blocking loading
 * see https://wpshout.com/make-site-faster-async-deferred-javascript-introducing-script_loader_tag/
 */
-
-//add_action( 'wp_print_scripts', 'wsds_detect_enqueued_scripts' );
-//function wsds_detect_enqueued_scripts() {
-//	global $wp_scripts;
-//	foreach( $wp_scripts->queue as $handle ) :
-//		echo $handle . ' | ';
-//	endforeach;
-//}
-
 add_filter('script_loader_tag', 'wsds_defer_scripts', 10, 3);
 function wsds_defer_scripts($tag, $handle, $src)
 {
