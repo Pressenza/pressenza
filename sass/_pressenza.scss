@@ -192,7 +192,7 @@ figcaption {
   padding : 10px;
 }
 
-#text-7 {
+#text-7, #text-8, #text-9, #text-10, #text-11, #text-12, #text-15 {
   border: 1px solid #f93;
   h3 {
     background-color : #f93;
@@ -460,6 +460,12 @@ figcaption {
       }
     }
   }
+}
+
+/* Google Search */
+input.gsc-search-button-v2 {
+   width: initial;
+   height: initial;
 }
 
 @media only screen and (max-width : 992px) {
