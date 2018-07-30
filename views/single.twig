@@ -36,6 +36,8 @@
                         {{ post.thumbnail.caption_pt }}
                     {% elseif language.language_code == 'el' %}
                         {{ post.thumbnail.caption_el }}
+                    {% elseif language.language_code == 'ca' %}
+                        {{ post.thumbnail.caption_ca }}
                     {% else %}
                         {{ post.thumbnail.caption }}
                     {% endif %}
@@ -70,6 +72,14 @@
 
                 <div class="share-google">
                     <div class="g-plusone" data-size="medium" data-href="{{ language.url }}"></div>
+                </div>
+
+                <div class="share-whatsapp visible-xs">
+                    <a href="WhatsApp://send?text={{ language.url }}"></a>
+                </div>
+
+                <div class="share-telegram visible-xs">
+                    <a href="https://t.me/share/url?url={{ language.url }}"></a>
                 </div>
             </div>
             <div id="fb-root"></div>
@@ -144,6 +154,12 @@
                         {% elseif language.language_code == 'el' %}
                             {% if post.author.bio_el != '' %}
                                 {{ post.author.bio_el }}
+                            {% else %}
+                                {{ post.author.description }}
+                            {% endif %}
+                        {% elseif language.language_code == 'ca' %}
+                            {% if post.author.bio_ca != '' %}
+                                {{ post.author.bio_ca }}
                             {% else %}
                                 {{ post.author.description }}
                             {% endif %}

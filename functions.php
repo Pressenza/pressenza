@@ -241,7 +241,6 @@ function insertThumbnailRSS($content)
 add_filter('the_excerpt_rss', 'insertThumbnailRSS');
 add_filter('the_content_feed', 'insertThumbnailRSS');
 
-
 /*
  *  Cleanup Frontend output and remove unneeded CSS and JS
  */
@@ -293,6 +292,87 @@ function wsds_defer_scripts($tag, $handle, $src)
 
     return $tag;
 }
+
+/*
+* Costum REST API Endpoint for newsletter
+* get all posts from the past 24h
+*/
+function newsletter_latest($data)
+{
+    $args = array(
+        'post_type' => 'post',
+        'nopaging' => true,
+        'date_query' => array(
+            array(
+                'after' => '24 hours ago'
+            )
+        ),
+        'suppress_filters' => 0
+    );
+
+    $the_query = new WP_Query($args);
+
+    // Loop posts and build array with all needed informations
+    $latest = array();
+    if ($the_query->have_posts()) {
+        while ($the_query->have_posts()) {
+            $the_query->the_post();
+
+            // get thumbnail as image src
+            $image = '';
+            if (has_post_thumbnail()) {
+                $thumb = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'medium');
+                $image = $thumb['0'];
+            }
+
+            // build array with all categories (name and url)
+            $postcategories = wp_get_post_categories(get_the_ID());
+            $cats = array();
+            // exclude original content category
+            $catexlude = array(11385, 11386, 11387, 11388, 11389, 11390, 19112); // live
+            $key = 0;
+            foreach ($postcategories as $c) {
+                if (!in_array($c, $catexlude)) {
+                    $cat = get_category($c);
+                    $cats[$key]['name'] = $cat->name;
+                    $cats[$key]['url'] = get_category_link($cat->term_id);
+                    $key++;
+                }
+            }
+
+            // Get post place from Pods
+            $pod = pods('post', get_the_ID());
+            $place = $pod->field('place');
+
+            // build array for this post
+            $temppost = array(
+                'title' => get_the_title(),
+                'text' => get_the_excerpt(),
+                'image' => $image,
+                'url' => get_permalink(),
+                'author' => get_the_author(),
+                'authorurl' => get_author_posts_url(get_the_author_meta('ID')),
+                'categories' => $cats,
+                'place' => $place
+            );
+            $latest[] = $temppost;
+            unset($temppost);
+        }
+    }
+
+    if (empty($latest)) {
+        return null;
+    }
+
+    return $latest;
+}
+
+add_action('rest_api_init', function () {
+    register_rest_route('newsletter/v2', '/latest', array(
+        'methods' => 'GET',
+        'callback' => 'newsletter_latest',
+    ));
+});
 
 /*
  * Remove unneeded CSS from Jetpack

@@ -79,7 +79,7 @@ h2, h3 {
 }
 
 h4 {
-  color : $gray;
+  color  : $gray;
   margin : 0 0 15px 0;
 }
 
@@ -192,8 +192,8 @@ figcaption {
   padding : 10px;
 }
 
-#text-7, #text-8, #text-9, #text-10, #text-11, #text-12, #text-15 {
-  border: 1px solid #f93;
+#text-7, #text-8, #text-9, #text-10, #text-11, #text-12, #text-15, #text-16, #text-18 {
+  border : 1px solid #f93;
   h3 {
     background-color : #f93;
   }
@@ -243,9 +243,9 @@ figcaption {
 }
 
 .author-box {
-  padding: 15px;
-  margin-bottom: 20px;
-  border: 1px solid $gray-lighter-3;
+  padding       : 15px;
+  margin-bottom : 20px;
+  border        : 1px solid $gray-lighter-3;
 }
 
 /* Article */
@@ -341,7 +341,7 @@ figcaption {
       margin-bottom : 15px;
     }
     .carousel {
-      margin-bottom: 25px;
+      margin-bottom : 25px;
       img {
         margin-bottom : 0;
       }
@@ -380,9 +380,22 @@ figcaption {
   padding    : 20px 0 16px 0;
 }
 
-.share-fb-like, .share-fb, .share-twitter, .share-google {
-  margin-right : 15px;
-  float        : left;
+.share-fb-like, .share-fb, .share-twitter, .share-google, .share-whatsapp, .share-telegram {
+  margin : 0 15px 15px 0;
+  float  : left;
+}
+
+.share-whatsapp a {
+  display    : block;
+  height     : 25px;
+  width      : 42px;
+  background : url(images/whatsapp.png) no-repeat;
+}
+.share-telegram a {
+  display    : block;
+  height     : 25px;
+  width      : 41px;
+  background : url(images/telegram.png) no-repeat;
 }
 
 .widget_search h3,
@@ -464,8 +477,8 @@ figcaption {
 
 /* Google Search */
 input.gsc-search-button-v2 {
-   width: initial;
-   height: initial;
+  width  : initial;
+  height : initial;
 }
 
 @media only screen and (max-width : 992px) {

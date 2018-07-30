@@ -38,7 +38,7 @@ $context['otherlanguages'] = $otherlanguages;
 // get post categories
 $postcategories = wp_get_post_categories($post->ID);
 $cats = array();
-$catexlude = array(11385, 11386, 11387, 11388, 11389, 11390, 19112);
+$catexlude = array(11385, 11386, 11387, 11388, 11389, 11390, 19112, 35531);
 $needles = array('@de', '@es', '@fr', '@pt');
 foreach ($postcategories as $c) {
     if (!in_array($c, $catexlude)) {

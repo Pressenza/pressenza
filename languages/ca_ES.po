@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pressenza\n"
 "POT-Creation-Date: 2015-08-27 21:58+0100\n"
-"PO-Revision-Date: 2017-04-17 11:42+0100\n"
+"PO-Revision-Date: 2017-09-15 14:23+0100\n"
 "Last-Translator: Tom Bütikofer\n"
 "Language-Team: Pressenza\n"
 "MIME-Version: 1.0\n"
@@ -64,7 +64,7 @@ msgstr "Nombre d'entrades"
 
 #: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:13
 msgid "Image by"
-msgstr "Imatge de"
+msgstr "Imatge:"
 
 #: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:14
 msgid "The original article can be found on our partner's website here"

@@ -48,6 +48,12 @@
                             {% else %}
                                 {{ author.description }}
                             {% endif %}
+                        {% elseif language.language_code == 'ca' %}
+                            {% if author.bio_ca != '' %}
+                                {{ author.bio_ca }}
+                            {% else %}
+                                {{ author.description }}
+                            {% endif %}
                         {% else %}
                             {{ author.description }}
                         {% endif %}

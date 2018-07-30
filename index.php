@@ -61,10 +61,13 @@ $context['interviews'] = Timber::get_posts(array('numberposts' => '3', 'cat' => 
 // get Sections and recent posts
 $transient = 'latest_by_sections_' . ICL_LANGUAGE_CODE;
 if (false === ($seccolumn = get_transient($transient))) {
+    $category_ID = get_cat_ID("Section");
+    //$get_correct_ID_lang = icl_object_id($category_ID, 'category', false);
+    $get_correct_ID_lang = apply_filters( 'wpml_object_id', $category_ID, 'category', TRUE);
     $c = 0;
     $s = 0;
     $seccolumn = array(0 => '', 1 => '');
-    $categories = get_categories(array('child_of' => get_cat_ID("Section")));
+    $categories = get_categories(array('child_of' => $get_correct_ID_lang));
     $percolumn = ceil(count($categories) / 2);
     foreach ($categories as $category) {
         $posts = wp_get_recent_posts(array('numberposts' => '3', 'category' => $category->cat_ID, 'post_status' => 'publish', 'suppress_filters' => 0));
