@@ -38,6 +38,8 @@
                         {{ post.thumbnail.caption_el }}
                     {% elseif language.language_code == 'ca' %}
                         {{ post.thumbnail.caption_ca }}
+                    {% elseif language.language_code == 'tr' %}
+                        {{ post.thumbnail.caption_tr }}
                     {% else %}
                         {{ post.thumbnail.caption }}
                     {% endif %}
@@ -83,14 +85,13 @@
                 </div>
             </div>
             <div id="fb-root"></div>
-            <script>(function (d, s, id) {
-                    var js, fjs = d.getElementsByTagName(s)[0];
-                    if (d.getElementById(id)) return;
-                    js = d.createElement(s);
-                    js.id = id;
-                    js.src = "//connect.facebook.net/{{ language.default_locale }}/sdk.js#xfbml=1&version=v2.5";
-                    fjs.parentNode.insertBefore(js, fjs);
-                }(document, 'script', 'facebook-jssdk'));</script>
+            <script>(function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "https://connect.facebook.net/{{ language.default_locale }}/sdk.js#xfbml=1&version=v3.0";
+                fjs.parentNode.insertBefore(js, fjs);
+              }(document, 'script', 'facebook-jssdk'));</script>
             <script>!function (d, s, id) {
                     var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
                     if (!d.getElementById(id)) {
@@ -160,6 +161,12 @@
                         {% elseif language.language_code == 'ca' %}
                             {% if post.author.bio_ca != '' %}
                                 {{ post.author.bio_ca }}
+                            {% else %}
+                                {{ post.author.description }}
+                            {% endif %}
+                        {% elseif language.language_code == 'tr' %}
+                            {% if post.author.bio_tr != '' %}
+                                {{ post.author.bio_tr }}
                             {% else %}
                                 {{ post.author.description }}
                             {% endif %}

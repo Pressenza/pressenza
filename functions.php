@@ -1,20 +1,20 @@
 <?php
 // Texts in order to create a po-file
-//$e1 = __('Read articles by region', 'pressenza');
-//$e1 = __('Read articles by section', 'pressenza');
-//$e1 = __('Sections', 'pressenza');
-//$e1 = __('Opinions', 'pressenza');
-//$e1 = __('Interviews', 'pressenza');
-//$e1 = __('Latest News', 'pressenza');
-//$e1 = __('Posted by', 'pressenza');
-//$e1 = __('Categories', 'pressenza');
-//$e1 = __('About The Author', 'pressenza');
-//$e1 = __('Number of Entries', 'pressenza');
-//$e1 = __('Image by', 'pressenza');
-//$e1 = __('The original article can be found on our partner\'s website here', 'pressenza');
-//$e1 = __('This post is also available in: %s', 'pressenza');
-//$e1 = __('Search results for', 'pressenza');
-//$e1 = __('Archives', 'pressenza');
+$e1 = __('Read articles by region', 'pressenza');
+$e1 = __('Read articles by section', 'pressenza');
+$e1 = __('Sections', 'pressenza');
+$e1 = __('Opinions', 'pressenza');
+$e1 = __('Interviews', 'pressenza');
+$e1 = __('Latest News', 'pressenza');
+$e1 = __('Posted by', 'pressenza');
+$e1 = __('Categories', 'pressenza');
+$e1 = __('About The Author', 'pressenza');
+$e1 = __('Number of Entries', 'pressenza');
+$e1 = __('Image by', 'pressenza');
+$e1 = __('The original article can be found on our partner\'s website here', 'pressenza');
+$e1 = __('This post is also available in: %s', 'pressenza');
+$e1 = __('Search results for', 'pressenza');
+$e1 = __('Archives', 'pressenza');
 
 /*
  * Settings

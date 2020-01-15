@@ -1,121 +1,118 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Pressenza\n"
-"POT-Creation-Date: 2015-08-27 21:58+0100\n"
-"PO-Revision-Date: 2015-08-27 21:59+0100\n"
+"POT-Creation-Date: 2018-09-24 18:07+0200\n"
+"PO-Revision-Date: 2018-09-24 18:11+0200\n"
 "Last-Translator: Tom Bütikofer\n"
 "Language-Team: Pressenza\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.10\n"
-"X-Poedit-Basepath: .\n"
+"X-Generator: Poedit 2.1.1\n"
+"X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: __\n"
-"X-Poedit-SearchPath-0: /Users/tbutikofer/Documents/Work/Projects/pressenza\n"
+"X-Poedit-SearchPath-0: .\n"
 
-#: /Users/tbutikofer/Documents/Work/Projects/pressenza/archive.php:21
-#: /Users/tbutikofer/Documents/Work/Projects/pressenza/archive.php:23
-#: /Users/tbutikofer/Documents/Work/Projects/pressenza/archive.php:26
-#: /Users/tbutikofer/Documents/Work/Projects/pressenza/archive.php:29
+#: archive.php:21 archive.php:23 archive.php:26 archive.php:29
 msgid "Archive"
 msgstr "Archivo"
 
-#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:3
+#: functions.php:3
 msgid "Read articles by region"
 msgstr "Noticias por Región"
 
-#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:4
+#: functions.php:4
 msgid "Read articles by section"
 msgstr "Noticias por Sección"
 
-#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:5
+#: functions.php:5
 msgid "Sections"
 msgstr "Temas"
 
-#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:6
+#: functions.php:6
 msgid "Opinions"
 msgstr "Opiniones"
 
-#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:7
+#: functions.php:7
 msgid "Interviews"
 msgstr "Entrevistas"
 
-#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:8
+#: functions.php:8
 msgid "Latest News"
 msgstr "Últimas noticias"
 
-#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:9
+#: functions.php:9
 msgid "Posted by"
 msgstr "Autor"
 
-#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:10
+#: functions.php:10
 msgid "Categories"
 msgstr "Categorías"
 
-#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:11
+#: functions.php:11
 msgid "About The Author"
 msgstr "Acerca del autor"
 
-#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:12
+#: functions.php:12
 msgid "Number of Entries"
 msgstr "Número de entradas"
 
-#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:13
+#: functions.php:13
 msgid "Image by"
 msgstr "Imagen de"
 
-#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:14
+#: functions.php:14
 msgid "The original article can be found on our partner's website here"
-msgstr ""
-"El artículo original puede encontrarse en el sitio web de nuestros asociados"
+msgstr "El artículo original puede encontrarse en el sitio web de nuestros asociados"
 
-#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:15
+#: functions.php:15
 #, php-format
 msgid "This post is also available in: %s"
 msgstr "Este artículo también está disponible en: %s"
 
-#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:16
+#: functions.php:16
 msgid "Search results for"
 msgstr ""
 
-#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:17
+#: functions.php:17
 msgid "Archives"
 msgstr "Archivos"
 
-#: /Users/tbutikofer/Documents/Work/Projects/pressenza/plugins/timber-library/lib/timber-archives.php:100
-#, php-format
-msgid "%1$s %2$d"
+#: pressenza-newsletter/pressenza-newsletter.php:24
+msgid "Newsletter subscription"
 msgstr ""
 
-#: /Users/tbutikofer/Documents/Work/Projects/pressenza/plugins/timber-library/lib/timber-archives.php:102
-#, php-format
-msgid "%1$s"
+#: pressenza-newsletter/pressenza-newsletter.php:25
+msgid "Add Newsletter subscription widget"
 msgstr ""
 
-#: /Users/tbutikofer/Documents/Work/Projects/pressenza/plugins/timber-library/lib/timber-helper.php:177
-#: /Users/tbutikofer/Documents/Work/Projects/pressenza/plugins/timber-library/lib/timber-helper.php:562
-msgid "&hellip;"
+#: pressenza-newsletter/pressenza-newsletter.php:37
+msgid "Newsletter"
+msgstr "Boletín de noticias"
+
+#: pressenza-newsletter/pressenza-newsletter.php:41
+msgid "Enter your e-mail address to subscribe to our daily news service."
+msgstr "Escriba su correo electrónico para suscribirse a nuestro servicio diario de noticias."
+
+#: pressenza-newsletter/pressenza-newsletter.php:44
+msgid "Please add a valid E-Mail"
+msgstr "Por favor, agregue una dirección de correo electrónico válida"
+
+#: pressenza-newsletter/pressenza-newsletter.php:45
+msgid "Please confirm the data protection consent"
+msgstr "Por favor, confirme el consentimiento de protección de datos"
+
+#: pressenza-newsletter/pressenza-newsletter.php:47
+msgid "Subscribe"
+msgstr "Suscribirse"
+
+#: pressenza-newsletter/pressenza-newsletter.php:59
+msgid "New title"
 msgstr ""
 
-#: /Users/tbutikofer/Documents/Work/Projects/pressenza/plugins/timber-library/lib/timber-helper.php:496
-msgid "&laquo; Previous"
-msgstr ""
-
-#: /Users/tbutikofer/Documents/Work/Projects/pressenza/plugins/timber-library/lib/timber-helper.php:497
-msgid "Next &raquo;"
-msgstr ""
-
-#: /Users/tbutikofer/Documents/Work/Projects/pressenza/plugins/timber-library/lib/timber-url-helper.php:209
-msgid "Invalid URL Provided."
-msgstr ""
-
-#: /Users/tbutikofer/Documents/Work/Projects/pressenza/plugins/timber-library/lib/timber-url-helper.php:214
-msgid "Could not create Temporary file."
-msgstr ""
-
-#: /Users/tbutikofer/Documents/Work/Projects/pressenza/searchform.php:3
+#: searchform.php:3
 msgid "Search"
 msgstr "Buscar"
 

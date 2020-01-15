@@ -63,13 +63,54 @@
                     </li>
                     <li>
                         <ul class="top_social_icons">
-                            <li class="twitter"><a href="http://twitter.com/PressenzaIPA" target="_blank">twitter</a></li>
-                            <li class="facebook"><a href="https://www.facebook.com/pressenza" target="_blank">facebook</a></li>
+                            <li class="twitter">
+                                {% if language.language_code == 'de' %}
+                                    <a href="https://twitter.com/pressenza_ger" target="_blank">twitter</a>
+                                {% elseif language.language_code == 'es' %}
+                                    <a href="https://twitter.com/pressenza" target="_blank">twitter</a>
+                                {% elseif language.language_code == 'fr' %}
+                                    <a href="https://twitter.com/Pressenza_fr" target="_blank">twitter</a>
+                                {% elseif language.language_code == 'it' %}
+                                    <a href="https://twitter.com/Pressenza_it" target="_blank">twitter</a>
+                                {% elseif language.language_code == 'pt-pt' %}
+                                    <a href="https://twitter.com/pressenzapt" target="_blank">twitter</a>
+                                {% elseif language.language_code == 'el' %}
+                                    <a href="https://twitter.com/Pressenza_ath" target="_blank">twitter</a>
+                                {% elseif language.language_code == 'ca' %}
+                                    <a href="https://twitter.com/PressenzaCat" target="_blank">twitter</a>
+                                {% elseif language.language_code == 'tr' %}
+                                    <a href="http://twitter.com/PressenzaIPA" target="_blank">twitter</a>
+                                {% elseif language.language_code == 'hu' %}
+                                    <a href="https://twitter.com/Pressenza_Hu" target="_blank">twitter</a>
+                                {% else %}
+                                    <a href="https://twitter.com/PressenzaIPA" target="_blank">twitter</a>
+                                {% endif %}
+                            </li>
+                            <li class="facebook">
+                                {% if language.language_code == 'de' %}
+                                    <a href="https://www.facebook.com/PressenzaDeutschlandOsterreichSchweiz/" target="_blank">facebook</a>
+                                {% elseif language.language_code == 'es' %}
+                                    <a href="https://www.facebook.com/pressenza" target="_blank">facebook</a>
+                                {% elseif language.language_code == 'fr' %}
+                                    <a href="https://www.facebook.com/pressenzafrancophone/" target="_blank">facebook</a>
+                                {% elseif language.language_code == 'it' %}
+                                    <a href="https://www.facebook.com/PressenzaItalia/" target="_blank">facebook</a>
+                                {% elseif language.language_code == 'pt-pt' %}
+                                    <a href="https://www.facebook.com/PressenzaPortugues/" target="_blank">facebook</a>
+                                {% elseif language.language_code == 'el' %}
+                                    <a href="https://www.facebook.com/pressenzagr/" target="_blank">facebook</a>
+                                {% elseif language.language_code == 'ca' %}
+                                    <a href="https://www.facebook.com/PressenzaBarcelona/" target="_blank">facebook</a>
+                                {% elseif language.language_code == 'tr' %}
+                                    <a href="https://www.facebook.com/PressenzaEnglish/" target="_blank">facebook</a>
+                                {% else %}
+                                    <a href="https://www.facebook.com/PressenzaEnglish/" target="_blank">facebook</a>
+                                {% endif %}
+                            </li>
                             <li class="rss"><a href="{{ homeurl }}/feed/" target="_blank">rss</a></li>
                         </ul>
                     </li>
                 </ul>
-
             </div>
         </div>
     {% endblock %}
