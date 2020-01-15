@@ -1,0 +1,48 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2018-10-15 17:34+0200\n"
+"PO-Revision-Date: 2018-10-15 17:36+0200\n"
+"Last-Translator: Tom Bütikofer\n"
+"Language-Team: \n"
+"Language: ca_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.1.1\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: pressenza-newsletter.php:35
+msgid "Newsletter subscription"
+msgstr ""
+
+#: pressenza-newsletter.php:36
+msgid "Add Newsletter subscription widget"
+msgstr ""
+
+#: pressenza-newsletter.php:48
+msgid "Newsletter"
+msgstr "Diari de notícies"
+
+#: pressenza-newsletter.php:52
+msgid "Enter your e-mail address to subscribe to our daily news service."
+msgstr "Introduïu la vostra adreça de correu electrònic per subscriure-us al nostre servei diari de notícies."
+
+#: pressenza-newsletter.php:55
+msgid "Please add a valid E-Mail"
+msgstr "Si us plau, agregueu un E-mail vàlid"
+
+#: pressenza-newsletter.php:56
+msgid "Please confirm the data protection consent"
+msgstr "Si us plau, confirmeu el vostre consentiment de protecció de dades"
+
+#: pressenza-newsletter.php:77
+msgid "Subscribe"
+msgstr "Subscriure-us"
+
+#: pressenza-newsletter.php:89
+msgid "Pressenza Newsletter subscription"
+msgstr ""

@@ -1,0 +1,125 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Pressenza\n"
+"POT-Creation-Date: 2015-08-25 23:28+0100\n"
+"PO-Revision-Date: 2019-05-17 16:48+0200\n"
+"Language-Team: Pressenza\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.1.1\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __\n"
+"Last-Translator: Tom Bütikofer\n"
+"Language: tr_TR\n"
+"X-Poedit-SearchPath-0: /Users/tbutikofer/Documents/Work/Projects/pressenza\n"
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/archive.php:21
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/archive.php:23
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/archive.php:26
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/archive.php:29
+msgid "Archive"
+msgstr "Arşiv"
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:3
+msgid "Read articles by region"
+msgstr "Bölgeye göre haber oku"
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:4
+msgid "Read articles by section"
+msgstr "Bölüme göre haber oku"
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:5
+msgid "Sections"
+msgstr "Bölümler"
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:6
+msgid "Opinions"
+msgstr "Yorumlar"
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:7
+msgid "Interviews"
+msgstr "Ropörtajlar"
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:8
+msgid "Latest News"
+msgstr "Son haberler"
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:9
+msgid "Posted by"
+msgstr "Tarafından gönderildi"
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:10
+msgid "Categories"
+msgstr "Kategoriler"
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:11
+msgid "About The Author"
+msgstr "Yazar hakkında"
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:12
+msgid "Number of Entries"
+msgstr "İçerik sayısı"
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:13
+msgid "Image by"
+msgstr "Resim kaynağı"
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:14
+msgid "The original article can be found on our partner's website here"
+msgstr "Bu haberin orijinaline partnerımızın sitesinden ulaşabilirsiniz"
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:15
+#, php-format
+msgid "This post is also available in: %s"
+msgstr "Bu yazı şu adreste de bulunuyor: %s"
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:16
+msgid "Search results for"
+msgstr "Arama sonuçları"
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/functions.php:17
+msgid "Archives"
+msgstr "Arşivler"
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/plugins/timber-library/lib/timber-archives.php:100
+#, php-format
+msgid "%1$s %2$d"
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/plugins/timber-library/lib/timber-archives.php:102
+#, php-format
+msgid "%1$s"
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/plugins/timber-library/lib/timber-helper.php:177
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/plugins/timber-library/lib/timber-helper.php:562
+msgid "&hellip;"
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/plugins/timber-library/lib/timber-helper.php:496
+msgid "&laquo; Previous"
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/plugins/timber-library/lib/timber-helper.php:497
+msgid "Next &raquo;"
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/plugins/timber-library/lib/timber-url-helper.php:209
+msgid "Invalid URL Provided."
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/plugins/timber-library/lib/timber-url-helper.php:214
+msgid "Could not create Temporary file."
+msgstr ""
+
+#: /Users/tbutikofer/Documents/Work/Projects/pressenza/searchform.php:3
+msgid "Search"
+msgstr "Arama"
+
+msgid "This post is also available2 in: %s"
+msgstr ""
+
+msgid "in"
+msgstr "in"
